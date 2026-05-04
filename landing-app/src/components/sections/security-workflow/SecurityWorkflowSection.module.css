@@ -1,0 +1,572 @@
+/* ─────────────────────────────────────────────
+   Wrapper
+───────────────────────────────────────────── */
+.wrapper {
+  background: #f4f5fb;
+}
+
+/* ─────────────────────────────────────────────
+   Security Section  (dark top strip)
+───────────────────────────────────────────── */
+.securitySection {
+  background: radial-gradient(ellipse 900px 500px at 18% 30%, rgba(90, 66, 196, 0.28), transparent 65%),
+    #0b0817;
+  color: #ffffff;
+  padding: 88px 0 96px;
+}
+
+.securityInner {
+  width: min(1160px, 100% - 48px);
+  margin: 0 auto;
+}
+
+.securityBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f3f3ff;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.securityGrid {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.securityText h2 {
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-family: "Funnel Display", "Geist", system-ui, sans-serif;
+}
+
+.securityText p {
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  line-height: 1.65;
+  max-width: 48ch;
+}
+
+/* ── Compliance badge cluster ── */
+.badgeCluster {
+  display: grid;
+  grid-template-columns: repeat(2, 120px);
+  gap: 16px;
+  justify-content: end;
+}
+
+.badgeHex {
+  width: 120px;
+  height: 120px;
+  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-weight: 700;
+  font-size: 13px;
+  color: #1a1040;
+}
+
+.badgeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3a2d8a;
+}
+
+.badgeLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #2d2260;
+}
+
+.blue  { background: linear-gradient(160deg, #d6e8ff, #aac8ff); }
+.purple { background: linear-gradient(160deg, #f0d8ff, #d4a6ff); }
+.green  { background: linear-gradient(160deg, #d8f8e8, #a2f0c4); }
+.orange { background: linear-gradient(160deg, #ffe3bb, #f7b565); }
+
+/* ─────────────────────────────────────────────
+   Workflow Section  (light bottom)
+───────────────────────────────────────────── */
+.workflowSection {
+  padding: 72px 0 100px;
+  background: #f4f5fb;
+}
+
+.workflowInner {
+  width: min(1160px, 100% - 48px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.workflowBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #e2e4f0;
+  color: #6b6f8a;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.workflowInner h2 {
+  margin-top: 18px;
+  font-size: clamp(28px, 3.8vw, 46px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #16122e;
+  font-family: "Funnel Display", "Geist", system-ui, sans-serif;
+}
+
+/* ── Stage (cards + orbit) ── */
+.workflowStage {
+  position: relative;
+  margin-top: 52px;
+  /* large card to hold everything — rounded white card from design */
+  background: #ffffff;
+  border-radius: 28px;
+  border: 1px solid #e5e7f2;
+  box-shadow: 0 20px 60px rgba(20, 12, 60, 0.07);
+  min-height: 520px;
+  padding: 44px 36px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Orbit area (absolutely centred) ── */
+.orbitArea {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  flex-shrink: 0;
+}
+
+/* Outer solid faint ring */
+.outerRing {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(111, 91, 255, 0.12);
+}
+
+/* Inner dashed purple ring */
+.innerRing {
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(111, 91, 255, 0.38);
+}
+
+/* ── Center box ── */
+.centerBox {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerIconWrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  background: linear-gradient(160deg, #7560ff, #4a35d5);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 16px 40px rgba(94, 72, 226, 0.45);
+}
+
+.centerLogoImg {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.centerLabel {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #6a6d88;
+  font-weight: 500;
+}
+
+/* ── Orbit nodes (the 4 purple circles) ── */
+.orbitNode {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #7c6bff, #5640e0);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 20px rgba(111, 91, 255, 0.38);
+  animation: nodePulse 3s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* Position each node on the dashed ring (inner ring radius ~160px from center) */
+/* ring center offset = 180px (half of 360px orbitArea) */
+/* inner ring = inset 20px → radius = 160px → offset from edge of orbitArea = 180 - 160 = 20px from that side */
+/* Placing on 4 corners of the ring at ~45° positions */
+
+.nodeComment {
+  /* top-left on ring ~315° → left edge */
+  left: 15px;
+  top: 10%;
+  transform: translateY(-50%);
+  animation-delay: 0s;
+}
+
+.nodeDM {
+  /* top-right on ring ~45° → right edge */
+  right: 15px;
+  top: 10%;
+  transform: translateY(-50%);
+  animation-delay: 0.5s;
+}
+
+.nodeLead {
+  /* bottom-left ~225° */
+  left: 15%;
+  bottom: 30px;
+  transform: translateX(-60%);
+  animation-delay: 1s;
+}
+
+.nodeFollowUp {
+  /* bottom-right ~135° */
+  right: 13%;
+  bottom: 30px;
+  transform: translateX(20%);
+  animation-delay: 1.5s;
+}
+
+/* ── Node labels ── */
+.nodeLabel {
+  position: absolute;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6f5bff;
+  background: #edeaff;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.labelComment {
+  left: 2px;
+  top: calc(15% + 32px);
+}
+
+.labelDM {
+  right: 2px;
+  top: calc(15% + 32px);
+}
+
+.labelLead {
+  bottom: -4px;
+  left: calc(25% - 80px);
+}
+
+.labelFollowUp {
+  bottom: 4px;
+  right: calc(30% - 120px);
+}
+
+/* ── 4 stat cards (absolutely positioned) ── */
+.statCard {
+  position: absolute;
+  width: 205px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px 16px 18px;
+  box-shadow: 0 12px 32px rgba(20, 12, 60, 0.1);
+  text-align: left;
+  border: 1px solid #ebebf5;
+  animation: floatCard 4s ease-in-out infinite;
+}
+
+.topLeft    { top: 36px;    left: 170px; }
+.topRight   { top: 36px;    right: 170px; }
+.bottomLeft { bottom: 40px; left: 170px; }
+.bottomRight { bottom: 40px; right: 170px; }
+
+/* Card header row */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cardTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #5a5d78;
+}
+
+.cardTitleSuccess {
+  font-size: 13px;
+  font-weight: 700;
+  color: #16122e;
+}
+
+.cardBigNumber {
+  display: block;
+  margin-top: 10px;
+  font-size: 26px;
+  font-weight: 800;
+  color: #16122e;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.cardSubtext {
+  margin-top: 5px;
+  font-size: 11px;
+  color: #888aaa;
+  line-height: 1.4;
+}
+
+/* Total Leads bottom row */
+.leadsBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.leadsLabel {
+  font-size: 11px;
+  color: #888aaa;
+}
+
+.avatarGroup {
+  display: flex;
+}
+
+.avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-left: -8px;
+  object-fit: cover;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+/* Progress bar */
+.progressWrap {
+  margin-top: 12px;
+  position: relative;
+  height: 6px;
+  background: #eeeff8;
+  border-radius: 999px;
+  overflow: visible;
+}
+
+.progressBar {
+  width: 68%;
+  height: 100%;
+  background: linear-gradient(90deg, #6f5bff, #9380ff);
+  border-radius: 999px;
+}
+
+.progressLabel {
+  position: absolute;
+  right: 0;
+  top: -16px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #6f5bff;
+}
+
+/* Activity list */
+.activityList {
+  margin-top: 12px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.activityList li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  color: #5a5d78;
+  font-weight: 500;
+}
+
+.activityDot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #f0eeff;
+  flex-shrink: 0;
+}
+
+/* Success list */
+.successList {
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.successList li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #5a5d78;
+  font-weight: 500;
+}
+
+/* ─────────────────────────────────────────────
+   Keyframe Animations
+───────────────────────────────────────────── */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-7px); }
+}
+
+@keyframes nodePulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 8px 20px rgba(111, 91, 255, 0.38); }
+  50%       { transform: scale(1.12); box-shadow: 0 12px 28px rgba(111, 91, 255, 0.55); }
+}
+
+/* nodeLead & nodeFollowUp have translateX applied so we combine */
+.nodeLead {
+  animation-name: nodePulseShiftLeft;
+}
+.nodeFollowUp {
+  animation-name: nodePulseShiftRight;
+}
+
+@keyframes nodePulseShiftLeft {
+  0%, 100% { transform: translateX(-60%) scale(1);    box-shadow: 0 8px 20px rgba(111,91,255,0.38); }
+  50%       { transform: translateX(-60%) scale(1.12); box-shadow: 0 12px 28px rgba(111,91,255,0.55); }
+}
+
+@keyframes nodePulseShiftRight {
+  0%, 100% { transform: translateX(20%) scale(1);    box-shadow: 0 8px 20px rgba(111,91,255,0.38); }
+  50%       { transform: translateX(20%) scale(1.12); box-shadow: 0 12px 28px rgba(111,91,255,0.55); }
+}
+
+/* ─────────────────────────────────────────────
+   Responsive
+───────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .workflowStage {
+    flex-direction: column;
+    min-height: unset;
+    padding: 40px 24px 48px;
+  }
+
+  .statCard {
+    position: static;
+    width: 100%;
+    margin-top: 14px;
+    animation: none;
+  }
+
+  .orbitArea {
+    margin-bottom: 24px;
+  }
+
+  .topLeft, .topRight, .bottomLeft, .bottomRight {
+    position: static;
+  }
+}
+
+@media (max-width: 980px) {
+  .securityGrid {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .badgeCluster {
+    justify-content: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .securitySection {
+    padding: 64px 0 72px;
+  }
+
+  .securityInner,
+  .workflowInner {
+    width: min(1160px, 100% - 24px);
+  }
+
+  .badgeCluster {
+    grid-template-columns: repeat(2, 100px);
+  }
+
+  .badgeHex {
+    width: 100px;
+    height: 100px;
+    font-size: 11px;
+  }
+
+  .workflowStage {
+    padding: 28px 16px 36px;
+    border-radius: 20px;
+  }
+
+  .orbitArea {
+    width: 290px;
+    height: 290px;
+  }
+
+  .centerIconWrap {
+    width: 78px;
+    height: 78px;
+  }
+
+  .centerLogoImg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .orbitNode {
+    width: 40px;
+    height: 40px;
+  }
+
+  .workflowInner h2 {
+    font-size: clamp(24px, 6vw, 34px);
+  }
+}
