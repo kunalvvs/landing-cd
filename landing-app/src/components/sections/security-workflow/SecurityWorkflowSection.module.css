@@ -235,6 +235,7 @@
   top: 10%;
   transform: translateY(-50%);
   animation-delay: 0s;
+  border: white solid 5px;
 }
 
 .nodeDM {
@@ -243,6 +244,7 @@
   top: 10%;
   transform: translateY(-50%);
   animation-delay: 0.5s;
+  border: white solid 5px;
 }
 
 .nodeLead {
@@ -251,6 +253,7 @@
   bottom: 30px;
   transform: translateX(-60%);
   animation-delay: 1s;
+  border: white solid 5px;
 }
 
 .nodeFollowUp {
@@ -259,6 +262,7 @@
   bottom: 30px;
   transform: translateX(20%);
   animation-delay: 1.5s;
+  border: white solid 5px;
 }
 
 /* ── Node labels ── */
