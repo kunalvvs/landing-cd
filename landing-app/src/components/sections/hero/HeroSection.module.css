@@ -1,0 +1,275 @@
+.heroSection {
+  background: #f3e7ff url("/images/Hero section/hero-bg.png") center top / cover
+    no-repeat;
+  min-height: 100vh;
+  padding-bottom: 72px;
+}
+
+.logoText{
+  font-family: "Funnel Display";
+  font-weight: 600;
+  color: #2F3033;
+  font-style: "semibold";
+}
+
+.announcementBar {
+  background: #030116;
+  color: #ffffff;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.2;
+  padding: 12px 16px;
+}
+
+.announcementBar a {
+  color: #06a8ff;
+  font-weight: 500;
+}
+
+.contentWrap {
+  width: min(1200px, 100% - 48px);
+  margin: 24px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navShell {
+  width: 100%;
+  min-height: 62px;
+  border-radius: 999px;
+  padding: 8px 10px 8px 14px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 24px rgba(20, 12, 52, 0.08);
+  gap: 12px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #29233d;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 2vw, 28px);
+}
+
+.navList a {
+  font-size: 14px;
+  color: #2f2f41;
+  font-weight: 600;
+}
+
+.signupButton {
+  height: 40px;
+  border-radius: 999px;
+  background: #030116;
+  color: #ffffff;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroBadge {
+  margin-top: 76px;
+  min-height: 38px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #4a445f;
+  box-shadow: 0 8px 24px rgba(20, 12, 52, 0.08);
+}
+
+.metaBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.metaBadge::before {
+  content: "∞";
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #efe7ff;
+  color: #5e36f0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.avatarStack {
+  display: inline-flex;
+  align-items: center;
+}
+
+.avatarStack span {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 1.5px solid #ffffff;
+  margin-left: -5px;
+}
+
+.avatarStack span:nth-child(1) {
+  margin-left: 0;
+  background: linear-gradient(180deg, #baaf99 0%, #8b7e65 100%);
+}
+
+.avatarStack span:nth-child(2) {
+  background: linear-gradient(180deg, #7c5e52 0%, #503229 100%);
+}
+
+.avatarStack span:nth-child(3) {
+  background: linear-gradient(180deg, #ccbc9b 0%, #927251 100%);
+}
+
+.title {
+  margin-top: 34px;
+  max-width: 980px;
+  text-align: center;
+  color: #100b2f;
+  font-size: clamp(44px, 5vw, 72px);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  font-family: "funnel display";
+}
+
+.subtitle {
+  margin-top: 22px;
+  font-size: 20px;
+  color: #635d7a;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.ctaButton {
+  margin-top: 22px;
+  min-width: 202px;
+  min-height: 48px;
+  padding: 0 32px;
+  border-radius: 999px;
+  background: #030116;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brandStrip {
+  margin-top: 36px;
+  width: min(100%, 1440px);
+  height: auto;
+}
+
+.heroPreview {
+  margin-top: 42px;
+  width: min(1087px, 100%);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(31, 26, 63, 0.15);
+}
+
+.previewImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1160px) {
+  .contentWrap {
+    width: min(1240px, 100% - 28px);
+  }
+
+  .navShell {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    border-radius: 24px;
+    padding: 12px;
+  }
+
+  .navShell nav {
+    order: 3;
+    grid-column: 1 / -1;
+    padding-bottom: 2px;
+  }
+
+  .navList {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .announcementBar {
+    font-size: 11px;
+  }
+
+  .brand {
+    font-size: 20px;
+  }
+
+  .signupButton {
+    padding: 0 20px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .heroBadge {
+    margin-top: 40px;
+    font-size: 10px;
+    gap: 8px;
+    padding: 6px 10px;
+  }
+
+  .title {
+    margin-top: 26px;
+    font-size: clamp(34px, 9vw, 52px);
+  }
+
+  .subtitle {
+    margin-top: 16px;
+    font-size: clamp(16px, 3.8vw, 22px);
+    max-width: 560px;
+  }
+
+  .ctaButton {
+    margin-top: 18px;
+    min-width: 156px;
+    min-height: 52px;
+    font-size: 18px;
+  }
+
+  .brandStrip {
+    margin-top: 26px;
+  }
+
+  .heroPreview {
+    margin-top: 26px;
+    border-radius: 16px;
+  }
+}
