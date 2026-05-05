@@ -1,4 +1,7 @@
+"use client";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 import styles from "./HeroSection.module.css";
 
 const NAV_ITEMS = [
@@ -10,6 +13,27 @@ const NAV_ITEMS = [
 ];
 
 export default function HeroSection() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const marqueeRef = useRef(null);
+
+  useEffect(() => {
+    if (!marqueeRef.current) return;
+
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReduced) return;
+
+    const tween = gsap.to(marqueeRef.current, {
+      xPercent: -50,
+      duration: 18,
+      ease: "linear",
+      repeat: -1,
+    });
+
+    return () => tween.kill();
+  }, []);
+
   return (
     <section className={styles.heroSection} aria-labelledby="hero-title">
       <p className={styles.announcementBar}>
@@ -25,6 +49,7 @@ export default function HeroSection() {
 
       <div className={styles.contentWrap}>
         <header className={styles.navShell}>
+          {/* Brand */}
           <div className={styles.brand}>
             <Image
               src="/images/icons/logo.png"
@@ -36,7 +61,8 @@ export default function HeroSection() {
             <span className={styles.logoText}>Creatordesks</span>
           </div>
 
-          <nav aria-label="Primary navigation">
+          {/* Desktop nav */}
+          <nav aria-label="Primary navigation" className={styles.desktopNav}>
             <ul className={styles.navList}>
               {NAV_ITEMS.map((item) => (
                 <li key={item}>
@@ -46,11 +72,46 @@ export default function HeroSection() {
             </ul>
           </nav>
 
-          <a href="#" className={styles.signupButton}>
+          {/* Desktop CTA */}
+          <a href="#" className={`${styles.signupButton} ${styles.desktopCta}`}>
             SIGN UP NOW
           </a>
+
+          {/* Hamburger */}
+          <button
+            className={styles.hamburger}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            <span className={`${styles.bar} ${menuOpen ? styles.barTop : ""}`} />
+            <span className={`${styles.bar} ${menuOpen ? styles.barMid : ""}`} />
+            <span className={`${styles.bar} ${menuOpen ? styles.barBot : ""}`} />
+          </button>
         </header>
 
+        {/* Mobile dropdown */}
+        <div
+          className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}
+          aria-hidden={!menuOpen}
+        >
+          <nav aria-label="Mobile navigation">
+            <ul className={styles.mobileNavList}>
+              {NAV_ITEMS.map((item) => (
+                <li key={item}>
+                  <a href="#" onClick={() => setMenuOpen(false)}>
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <a href="#" className={styles.mobileCtaButton}>
+            SIGN UP NOW
+          </a>
+        </div>
+
+        {/* Hero content */}
         <div className={styles.heroBadge}>
           <span className={styles.metaBadge}>Meta Tech Provider</span>
           <span className={styles.avatarStack} aria-hidden="true">
@@ -73,14 +134,50 @@ export default function HeroSection() {
           TRY FOR FREE
         </a>
 
-        <Image
-          src="/images/Hero section/Container.png"
-          alt="Brands that trust Creatordesks"
-          width={1440}
-          height={32}
-          className={styles.brandStrip}
-          priority
-        />
+        <div className={styles.brandMarquee} aria-label="Brands that trust Creatordesks">
+          <div className={styles.marqueeTrack} ref={marqueeRef}>
+            <div className={styles.marqueeItem} aria-hidden="true">
+              <Image
+                src="/images/Hero section/Container.png"
+                alt="Brands that trust Creatordesks"
+                width={1440}
+                height={32}
+                className={styles.brandStrip}
+                priority
+              />
+            </div>
+            <div className={styles.marqueeItem} aria-hidden="true">
+              <Image
+                src="/images/Hero section/Container.png"
+                alt=""
+                width={1440}
+                height={32}
+                className={styles.brandStrip}
+                priority
+              />
+            </div>
+            <div className={styles.marqueeItem} aria-hidden="true">
+              <Image
+                src="/images/Hero section/Container.png"
+                alt=""
+                width={1440}
+                height={32}
+                className={styles.brandStrip}
+                priority
+              />
+            </div>
+            <div className={styles.marqueeItem} aria-hidden="true">
+              <Image
+                src="/images/Hero section/Container.png"
+                alt=""
+                width={1440}
+                height={32}
+                className={styles.brandStrip}
+                priority
+              />
+            </div>
+          </div>
+        </div>
 
         <div className={styles.heroPreview}>
           <Image

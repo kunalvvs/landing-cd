@@ -55,7 +55,11 @@ const BOTTOM_FEATURES = [
 
 export default function FeaturesAutomationSection() {
   return (
-    <section className={styles.section} aria-labelledby="automation-title">
+    <section
+      className={styles.section}
+      aria-labelledby="automation-title"
+      data-gsap-section="features"
+    >
       <div className={styles.panel}>
         <div className={styles.bgWords} aria-hidden="true">
           <span className={styles.wordA}>CREATE EVENT</span>
@@ -65,7 +69,8 @@ export default function FeaturesAutomationSection() {
         </div>
 
         <div className={styles.inner}>
-          <div className={styles.brandRow}>
+          {/* Brand row */}
+          <div className={styles.brandRow} data-gsap="fade-up">
             <Image
               src="/images/features automation section img/ClickUp Brain icon.png"
               alt="Creatordesks AI"
@@ -77,14 +82,24 @@ export default function FeaturesAutomationSection() {
             <p className={styles.brandText}>Creatordesks AI</p>
           </div>
 
-          <h2 id="automation-title" className={styles.title}>
+          <h2
+            id="automation-title"
+            className={styles.title}
+            data-gsap="fade-up"
+          >
             <span className={styles.titleStrong}>The Smartest AI Social</span>
             <span className={styles.titleMuted}>Media Automation</span>
           </h2>
 
+          {/* Top 3 feature cards */}
           <div className={styles.topCards}>
-            {TOP_FEATURES.map((feature) => (
-              <article key={feature.id} className={styles.card}>
+            {TOP_FEATURES.map((feature, i) => (
+              <article
+                key={feature.id}
+                className={styles.card}
+                data-gsap="card"
+                data-gsap-delay={i * 0.12}
+              >
                 <div className={styles.cardTop}>
                   <span className={styles.cardLabel}>{feature.label}</span>
                   {feature.comingSoon ? (
@@ -107,7 +122,12 @@ export default function FeaturesAutomationSection() {
             ))}
           </div>
 
-          <article className={styles.bigCard} aria-label="Engage AI overview">
+          {/* Big card — Engage AI */}
+          <article
+            className={styles.bigCard}
+            aria-label="Engage AI overview"
+            data-gsap="fade-up"
+          >
             <div className={styles.bigLeft}>
               <div className={styles.engageRow}>
                 <Image
@@ -161,19 +181,29 @@ export default function FeaturesAutomationSection() {
             </div>
           </article>
 
+          {/* Bottom 3 feature items — FIXED structure for mobile */}
           <div className={styles.bottomGrid}>
-            {BOTTOM_FEATURES.map((feature) => (
-              <article key={feature.id} className={styles.bottomCard}>
-                <div className={styles.bottomMedia}>
-                  <Image
-                    src={feature.image}
-                    alt={feature.imageAlt}
-                    width={760}
-                    height={420}
-                    className={styles.bottomImage}
-                  />
+            {BOTTOM_FEATURES.map((feature, i) => (
+              <article
+                key={feature.id}
+                className={styles.bottomCard}
+                data-gsap="card"
+                data-gsap-delay={i * 0.1}
+              >
+                {/* Image + Title header row */}
+                <div className={styles.bottomHeader}>
+                  <div className={styles.bottomMedia}>
+                    <Image
+                      src={feature.image}
+                      alt={feature.imageAlt}
+                      width={760}
+                      height={420}
+                      className={styles.bottomImage}
+                    />
+                  </div>
+                  <h3 className={styles.bottomTitle}>{feature.title}</h3>
                 </div>
-                <h3 className={styles.bottomTitle}>{feature.title}</h3>
+                {/* Description below — always full width */}
                 <p className={styles.bottomDescription}>{feature.description}</p>
               </article>
             ))}
