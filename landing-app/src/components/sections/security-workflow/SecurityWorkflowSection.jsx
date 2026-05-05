@@ -201,9 +201,27 @@ export default function SecurityWorkflowSection() {
               <div className={styles.leadsBottom}>
                 <span className={styles.leadsLabel}>Leads captured</span>
                 <div className={styles.avatarGroup}>
-                  <img className={styles.avatar} src="https://i.pravatar.cc/28?img=11" alt="user" />
-                  <img className={styles.avatar} src="https://i.pravatar.cc/28?img=22" alt="user" />
-                  <img className={styles.avatar} src="https://i.pravatar.cc/28?img=33" alt="user" />
+                  <Image
+                    className={styles.avatar}
+                    src="https://i.pravatar.cc/28?img=11"
+                    alt="User avatar"
+                    width={26}
+                    height={26}
+                  />
+                  <Image
+                    className={styles.avatar}
+                    src="https://i.pravatar.cc/28?img=22"
+                    alt="User avatar"
+                    width={26}
+                    height={26}
+                  />
+                  <Image
+                    className={styles.avatar}
+                    src="https://i.pravatar.cc/28?img=33"
+                    alt="User avatar"
+                    width={26}
+                    height={26}
+                  />
                 </div>
               </div>
             </article>
