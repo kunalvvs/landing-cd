@@ -1,4 +1,5 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono ,Inter, Nunito_Sans, Plus_Jakarta_Sans , Funnel_Display,
+  Funnel_Sans,} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +11,38 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+});
+
+const nunito = Nunito_Sans({
+  subsets: ["latin"],
+  variable: "--font-nunito",
+  weight: ["400", "600", "700"],
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  weight: ["400", "600", "700"],
+});
+
+const funnelDisplay = Funnel_Display({
+  subsets: ["latin"],
+  variable: "--font-funnel-display",
+  weight: ["400", "500", "600", "700"],
+});
+
+const funnelSans = Funnel_Sans({
+  subsets: ["latin"],
+  variable: "--font-funnel-sans",
+  weight: ["400", "500", "600"],
+});
+
 
 export const metadata = {
   metadataBase: new URL("https://creatordesks.com"),
@@ -34,7 +67,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${nunito.variable} ${jakarta.variable} ${funnelDisplay.variable}
+        ${funnelSans.variable}`}>
       <body>{children}</body>
     </html>
   );

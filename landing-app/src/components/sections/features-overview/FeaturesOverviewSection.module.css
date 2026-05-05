@@ -79,8 +79,9 @@
 .wideText h3 {
   color: #1f1a3b;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -0.01em;
+  font-family: var(--font-funnel-display);
 }
 
 .cardContent p,

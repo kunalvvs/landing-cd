@@ -130,7 +130,7 @@
 .workflowInner h2 {
   margin-top: 18px;
   font-size: clamp(28px, 3.8vw, 46px);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.025em;
   color: #16122e;

@@ -1,5 +1,5 @@
 .section {
-  padding: 78px 0 96px;
+  padding: 40px 0 9px;
   background: #f8f8fb;
 }
 
@@ -103,15 +103,21 @@
 }
 
 .brandIcon {
-  width: 64px;
-  height: 64px;
+  width: 150px;
+  height: 150px;
+  box-shadow: 0 0px 50px  rgba(207, 207, 128, 0.669);
+   border-radius: 50%;
 }
+
+
 
 .brandText {
   color: rgba(255, 255, 255, 0.82);
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 26px;
   letter-spacing: -0.01em;
+  font-family: 'Plus Jakarta Sans';
+  font-style: italic;
 }
 
 .title {
@@ -119,32 +125,32 @@
   text-align: center;
   line-height: 0.98;
   letter-spacing: -0.035em;
+  
 }
 
 .titleStrong {
   display: block;
-  color: #ffffff;
+  color: #EEEEEE;
   font-size: clamp(46px, 5.6vw, 72px);
   font-weight: 700;
-  font-family: "Funnel Display", var(--font-geist-sans), Arial, Helvetica,
-    sans-serif;
+  font-family: 'Plus Jakarta Sans';
 }
 
 .titleMuted {
   display: block;
   margin-top: 6px;
-  color: rgba(255, 255, 255, 0.46);
+  color: #8F8F8F;
   font-size: clamp(46px, 5.6vw, 72px);
   font-weight: 700;
-  font-family: "Funnel Display", var(--font-geist-sans), Arial, Helvetica,
-    sans-serif;
+  font-family: 'Plus Jakarta Sans';
 }
 
 .topCards {
   margin-top: 46px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(3, .3fr);
+  gap: 25px;
+  justify-content: center;
 }
 
 .card {
@@ -191,6 +197,7 @@
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.02em;
+  font-family: 'Plus Jakarta Sans';
 }
 
 .cardMedia {
@@ -219,7 +226,8 @@
   backdrop-filter: blur(10px);
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
+  grid-template-columns: 1.05fr .5fr;
+  margin: 26px 50px;
 }
 
 .bigLeft {
@@ -236,12 +244,13 @@
 }
 
 .engageIcon {
-  width: 22px;
-  height: 22px;
+  width: 32px;
+  height: 32px;
 }
 
 .engageName {
   letter-spacing: -0.01em;
+  font-family: 'Plus Jakarta Sans';
 }
 
 .bigTitle {
@@ -251,6 +260,8 @@
   line-height: 1.15;
   letter-spacing: -0.02em;
   font-weight: 700;
+  font-family: var(--font-jakarta);
+  text-align: left;
 }
 
 .bigDescription {
@@ -259,6 +270,7 @@
   font-size: 14px;
   line-height: 1.55;
   max-width: 42ch;
+  font-family: 'Funnel Sans';
 }
 
 .bigMeta {
@@ -280,6 +292,7 @@
   color: rgba(0, 0, 0, 0.88);
   font-weight: 600;
   font-size: 13px;
+  font-family: 'Inter';
 }
 
 .bigRight {
@@ -294,7 +307,7 @@
   width: 100%;
   height: auto;
   display: block;
-  max-width: 560px;
+  max-width: 683px;
 }
 
 .productHuntPill {

@@ -1,0 +1,147 @@
+.footer {
+  background: #f6f6f8;
+  padding: 90px 0 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  width: min(1180px, 100% - 40px);
+  margin: 0 auto;
+  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.brandBlock {
+  display: grid;
+  gap: 18px;
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brandName {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2b2b35;
+  font-family: var(--font-funnel-display);
+}
+
+.brandCopy {
+  color: #8b8c98;
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 36ch;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.socialIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e4e6ef;
+  color: #2a2745;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.linkColumns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 42px;
+  font-family: 'Inter';
+  font-weight: 400;
+}
+
+.linkColumns h3 {
+  font-size: 16px;
+  color: #0D062D;
+  margin-bottom: 16px;
+}
+
+.linkColumns ul {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  color: #7b7d8a;
+  font-size: 14px;
+}
+
+.linkColumns a {
+  color: inherit;
+}
+
+.contactList {
+  gap: 14px;
+}
+
+.watermark {
+  position: absolute;
+  left: 50%;
+  bottom: -40px;
+  transform: translateX(-50%);
+  font-size: clamp(80px, 16vw, 160px);
+  letter-spacing: 0;
+  color: rgba(32, 28, 60, 0.04);
+  font-weight: 800;
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: "Funnel Display";
+  font-style: ExtraBold;
+  /* line-height: 36.73px; */
+}
+
+@media (max-width: 980px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+
+
+.watermark {
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  font-size: clamp(30px, 16vw, 48px);
+  letter-spacing: 0.1em;
+  color: rgba(32, 28, 60, 0.04);
+  font-weight: 800;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+  .linkColumns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 70px 0 100px;
+  }
+
+  .inner {
+    width: min(1180px, 100% - 24px);
+  }
+
+  .linkColumns {
+    grid-template-columns: 1fr;
+  }
+}
