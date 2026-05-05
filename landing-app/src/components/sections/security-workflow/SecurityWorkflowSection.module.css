@@ -10,9 +10,9 @@
 ───────────────────────────────────────────── */
 .securitySection {
   background: radial-gradient(ellipse 900px 500px at 18% 30%, rgba(90, 66, 196, 0.28), transparent 65%),
-    #0b0817;
+    #060014;
   color: #ffffff;
-  padding: 88px 0 96px;
+  padding: 70px 0 40px;
 }
 
 .securityInner {
@@ -26,16 +26,22 @@
   gap: 7px;
   padding: 5px 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #f3f3ff;
-  font-size: 12px;
-  letter-spacing: 0.04em;
+  background: #fff;
+  border: 1px solid #8D5CFF;
+  color: #060014;
+  font-size: 16px;
+  letter-spacing: 1px;
   font-weight: 500;
+  font-family: "Funnel Sans";
+
+}
+
+.securityBadge svg{
+  color: #8d5cff;
 }
 
 .securityGrid {
-  margin-top: 22px;
+  margin-top: 12px;
   display: grid;
   grid-template-columns: 1.35fr 1fr;
   gap: 32px;
@@ -43,7 +49,7 @@
 }
 
 .securityText h2 {
-  font-size: clamp(28px, 3.6vw, 44px);
+  font-size: clamp(28px, 3.6vw, 56px);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.025em;
@@ -69,7 +75,7 @@
 .badgeHex {
   width: 120px;
   height: 120px;
-  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+  /* clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,24 +86,17 @@
   color: #1a1040;
 }
 
-.badgeIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #3a2d8a;
+.badgeImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.badgeLabel {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  color: #2d2260;
-}
 
-.blue  { background: linear-gradient(160deg, #d6e8ff, #aac8ff); }
+/* .blue  { background: linear-gradient(160deg, #d6e8ff, #aac8ff); }
 .purple { background: linear-gradient(160deg, #f0d8ff, #d4a6ff); }
 .green  { background: linear-gradient(160deg, #d8f8e8, #a2f0c4); }
-.orange { background: linear-gradient(160deg, #ffe3bb, #f7b565); }
+.orange { background: linear-gradient(160deg, #ffe3bb, #f7b565); } */
 
 /* ─────────────────────────────────────────────
    Workflow Section  (light bottom)
@@ -589,6 +588,7 @@
     width: 260px;
     height: 260px;
     flex-shrink: 0;
+    margin-top: 30px;
   }
 
   .centerIconWrap {

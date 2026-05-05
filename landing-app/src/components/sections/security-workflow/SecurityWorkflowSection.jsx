@@ -6,50 +6,25 @@ const COMPLIANCE_BADGES = [
     id: "soc2",
     label: "SOC 2",
     tone: "blue",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.35C16.5 22.15 20 17.25 20 12V6L12 2z" fill="currentColor" opacity="0.2"/>
-        <path d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.35C16.5 22.15 20 17.25 20 12V6L12 2z" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-        <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
+    image: "/images/badges/badge1.svg.png",
   },
   {
     id: "gdpr",
     label: "GDPR",
     tone: "purple",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M12 7v5l3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-        <circle cx="17" cy="5" r="1.5" fill="currentColor"/>
-        <circle cx="19" cy="9" r="1.5" fill="currentColor"/>
-        <circle cx="19" cy="14" r="1.5" fill="currentColor"/>
-      </svg>
-    ),
+    image: "/images/badges/badge2.svg.png",
   },
   {
     id: "hippa",
     label: "HIPPA",
     tone: "green",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <path d="M12 3C7 3 4 6 4 10c0 6 8 11 8 11s8-5 8-11c0-4-3-7-8-7z" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-        <path d="M10 10h4M12 8v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
+    image: "/images/badges/badge3.svg.png",
   },
   {
     id: "pci",
     label: "PCI DSS",
     tone: "orange",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M3 10h18" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M7 14h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
+    image: "/images/badges/badge4.svg.png",
   },
 ];
 
@@ -149,9 +124,23 @@ export default function SecurityWorkflowSection() {
       <section className={styles.securitySection} aria-labelledby="security-title">
         <div className={styles.securityInner}>
           <span className={styles.securityBadge}>
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
-              <path d="M5 0l1.18 3.59H10L6.91 5.82l1.18 3.59L5 7.18l-3.09 2.23L3.09 5.82.0 3.59h3.82z"/>
-            </svg>
+           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path 
+    d="M12 3L13.5 8.5L19 10L13.5 11.5L12 17L10.5 11.5L5 10L10.5 8.5L12 3Z" 
+    stroke="#6C4CFF" 
+    stroke-width="1.8" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+  />
+  
+  <path 
+    d="M18 3L18.6 4.8L20.4 5.4L18.6 6L18 7.8L17.4 6L15.6 5.4L17.4 4.8L18 3Z" 
+    stroke="#6C4CFF" 
+    stroke-width="1.5" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+  />
+</svg>
             Security
           </span>
           <div className={styles.securityGrid}>
@@ -168,8 +157,13 @@ export default function SecurityWorkflowSection() {
             <div className={styles.badgeCluster} aria-label="Compliance badges">
               {COMPLIANCE_BADGES.map((badge) => (
                 <div key={badge.id} className={`${styles.badgeHex} ${styles[badge.tone]}`}>
-                  <span className={styles.badgeIcon}>{badge.icon}</span>
-                  <span className={styles.badgeLabel}>{badge.label}</span>
+                  <Image
+                    src={badge.image}
+                    alt={`${badge.label} compliance badge`}
+                    width={120}
+                    height={120}
+                    className={styles.badgeImage}
+                  />
                 </div>
               ))}
             </div>
