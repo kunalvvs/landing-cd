@@ -141,8 +141,7 @@ export default function FeaturesAutomationSection() {
               </div>
 
               <h3 className={styles.bigTitle}>
-                Meet Engage AI : The Creator  Focused AI Model Built to Understand
-                Your Audience.
+               <span className={styles.greytext} >Meet</span>  Engage AI <span className={styles.greytext}>: The</span>  Creator <span className={styles.greytext}>Focused</span>  AI Model <span className={styles.greytext}>Built to Understand Your</span>  Audience.
               </h3>
 
               <p className={styles.bigDescription}>
@@ -151,8 +150,8 @@ export default function FeaturesAutomationSection() {
               </p>
 
               <p className={styles.bigMeta}>
-                Coming Soon &nbsp;•&nbsp; Windows &nbsp;•&nbsp; Chrome and
-                &nbsp;•&nbsp; Mac
+                Coming Soon &nbsp; <img className={styles.osIcons} src="/images/features automation section img/window.png" alt="" />  Windows  <img className={styles.browIcons} src="/images/features automation section img/chrome.png" alt="" /> &nbsp; Chrome and
+                &nbsp;<img className={styles.appleIcons} src="/images/features automation section img/apple.png" alt="" />&nbsp; Mac
               </p>
 
               <a href="#" className={styles.bigButton}>

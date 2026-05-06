@@ -304,8 +304,8 @@
 
 .bigTitle {
   margin-top: 18px;
-  color: rgba(255, 255, 255, 0.92);
-  font-size: clamp(1.625rem, 2.6vw, 1.2rem);
+  color: rgba(255, 255, 255, 1);
+  font-size: clamp(1.5rem, 2.6vw, 1.2rem);
   line-height: 1.15;
   letter-spacing: -0.02em;
   font-weight: 700;
@@ -314,12 +314,31 @@
 }
 
 .bigDescription {
-  margin-top: 14px;
-  color: rgba(255, 255, 255, 0.62);
+  margin-top: 30px;
+  color: #B4B4B4;
   font-size: 0.875rem;
   line-height: 1.55;
   max-width: 42ch;
   font-family: 'Funnel Sans';
+  font-weight: 400;
+}
+
+.osIcons {
+  width: 16px;
+  height: 16px;
+  margin-bottom: -4px;
+}
+
+.browIcons{
+  width: 16px;
+  height: 16px;
+  margin-bottom: -4px;
+}
+
+.appleIcons{
+  width: 12px;
+  height: 14px;
+  margin-bottom: -1px;
 }
 
 .bigMeta {
@@ -389,6 +408,10 @@
   justify-content: center;
   font-weight: 700;
   color:#07070c
+}
+
+.greytext{
+  color: #C4C4C4;
 }
 
 .phText {
