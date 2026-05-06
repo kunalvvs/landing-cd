@@ -1,6 +1,8 @@
 .section {
   padding: 40px 0 9px;
   background: #f8f8fb;
+
+  
 }
 
 .panel {
@@ -27,6 +29,9 @@
     ),
     #07070c;
   overflow: hidden;
+
+
+  
 }
 
 .panel::before {
@@ -56,6 +61,9 @@
     rgba(0, 0, 0, 0.85) 70%
   );
   pointer-events: none;
+
+
+  
 }
 
 .panel::after {

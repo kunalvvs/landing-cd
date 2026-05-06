@@ -188,7 +188,7 @@ export default function SecurityWorkflowSection() {
             {/* ── Top-left card: Total Leads ── */}
             <article className={`${styles.statCard} ${styles.topLeft}`} style={{ animationDelay: "0s" }}>
               <div className={styles.cardHeader}>
-                <TotalLeadsIcon />
+               <span className={styles.statsIcon} ><TotalLeadsIcon  /></span>  
                 <span className={styles.cardTitle}>Total Leads</span>
               </div>
               <strong className={styles.cardBigNumber}>20K+</strong>
@@ -223,7 +223,7 @@ export default function SecurityWorkflowSection() {
             {/* ── Top-right card: Automation Growth ── */}
             <article className={`${styles.statCard} ${styles.topRight}`} style={{ animationDelay: "0.4s" }}>
               <div className={styles.cardHeader}>
-                <AutomationGrowthIcon />
+               <span className={styles.statsIcon} ><AutomationGrowthIcon /></span> 
                 <span className={styles.cardTitle}>Automation Growth</span>
               </div>
               <strong className={styles.cardBigNumber}>68%</strong>
@@ -237,7 +237,7 @@ export default function SecurityWorkflowSection() {
             {/* ── Bottom-left card: Recent Activity ── */}
             <article className={`${styles.statCard} ${styles.bottomLeft}`} style={{ animationDelay: "0.8s" }}>
               <div className={styles.cardHeader}>
-                <RecentActivityIcon />
+              <span className={styles.statsIcon} ><RecentActivityIcon /></span>  
                 <span className={styles.cardTitle}>Recent Activity</span>
               </div>
               <ul className={styles.activityList}>
@@ -259,7 +259,7 @@ export default function SecurityWorkflowSection() {
             {/* ── Bottom-right card: Success ── */}
             <article className={`${styles.statCard} ${styles.bottomRight}`} style={{ animationDelay: "1.2s" }}>
               <div className={styles.cardHeader}>
-                <SuccessIcon />
+               <span className={styles.statsIcon} ><SuccessIcon /></span> 
                 <span className={styles.cardTitleSuccess}>Success</span>
               </div>
               <ul className={styles.successList}>
@@ -310,7 +310,7 @@ export default function SecurityWorkflowSection() {
               <div className={styles.centerBox}>
                 <div className={styles.centerIconWrap}>
                   <Image
-                    src="/images/icons/logo.png"
+                    src="/images/logo.png"
                     alt="Creatordesks"
                     width={52}
                     height={52}
