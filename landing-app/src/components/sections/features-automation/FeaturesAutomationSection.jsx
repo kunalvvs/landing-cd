@@ -74,8 +74,8 @@ export default function FeaturesAutomationSection() {
             <Image
               src="/images/features automation section img/ClickUp Brain icon.png"
               alt="Creatordesks AI"
-              width={64}
-              height={64}
+              width={150}
+              height={150}
               className={styles.brandIcon}
               priority
             />
@@ -113,8 +113,8 @@ export default function FeaturesAutomationSection() {
                   <Image
                     src={feature.image}
                     alt={feature.imageAlt}
-                    width={680}
-                    height={520}
+                    width={317}
+                    height={238}
                     className={styles.cardImage}
                   />
                 </div>
