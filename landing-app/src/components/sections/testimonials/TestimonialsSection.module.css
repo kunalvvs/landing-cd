@@ -24,18 +24,18 @@
   border-radius: 999px;
   background: #f3f1ff;
   color: #7b6dff;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 
 .badge::before {
   content: "✦";
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 
 .title {
   margin-top: 20px;
-  font-size: clamp(36px, 5vw, 48px);
+  font-size: clamp(2.25rem, 5vw, 3rem);
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: #17133a;
@@ -51,7 +51,7 @@
 .subtitle {
   margin-top: 14px;
   color: #7e7f8f;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.7;
   max-width: 52ch;
 }
@@ -64,7 +64,7 @@
 }
 
 .trusted strong {
-  font-size: 36px;
+  font-size: 2.25rem;
   color: #1a153e;
   font-family: "Inter";
   font-weight: 400;
@@ -113,7 +113,7 @@
 }
 
 .name {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: #6b6b72;
 }
@@ -145,13 +145,13 @@
 .quote {
   margin-top: 16px;
   color: #9a9aa0;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.7;
 }
 
 .date {
   margin-top: 16px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #1f1a3b;
 }
 

@@ -16,7 +16,7 @@
   border: none;
   color: #ffffff;
   background: linear-gradient(180deg, #8b7bff, #6e59ff);
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .grid {
@@ -31,7 +31,7 @@
 }
 
 .leftColumn h2 {
-  font-size: clamp(34px, 4.8vw, 47px);
+  font-size: clamp(2.125rem, 4.8vw, 2.9375rem);
   line-height: 57.6px;
   letter-spacing: -0.62px;
   color: #17133a;
@@ -43,7 +43,7 @@
 .leftColumn p {
   margin-top: 14px;
   color: #8b8c98;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .leftColumn a {
@@ -68,7 +68,7 @@
   border: none;
   background: #ffffff;
   color: #1c1838;
-  font-size: 14px;
+  font-size: 0.875rem;
   text-align: left;
   border-bottom: 1px solid #f1f1f5;
 }
@@ -78,7 +78,7 @@
 }
 
 .plus {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #8b8c98;
 }
 

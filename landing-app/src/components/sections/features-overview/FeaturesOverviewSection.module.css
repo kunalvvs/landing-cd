@@ -19,7 +19,7 @@
   border: 1px solid #d9d9df;
   background: #ffffff;
   color: #6b6b79;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 1;
 }
 
@@ -38,7 +38,7 @@
 
 .title {
   margin-top: 18px;
-  font-size: clamp(32px, 4.5vw, 44px);
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: #1e1945;
@@ -50,7 +50,7 @@
 .subtitle {
   margin-top: 14px;
   color: #6c6f7f;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .grid {
@@ -78,7 +78,7 @@
 .cardContent h3,
 .wideText h3 {
   color: #1f1a3b;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
   letter-spacing: -0.01em;
   font-family: var(--font-funnel-display);
@@ -88,7 +88,7 @@
 .wideText p {
   margin-top: 10px;
   color: #7a7d8d;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 1.6;
 }
 
@@ -151,7 +151,7 @@
 }
 
 .projectHeader h4 {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #2a2755;
   margin-bottom: 12px;
 }
@@ -169,7 +169,7 @@
   align-items: center;
   justify-content: space-between;
   color: #6b6f84;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .projectRow span:first-child {
@@ -191,7 +191,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 0.625rem;
   margin-left: -6px;
 }
 

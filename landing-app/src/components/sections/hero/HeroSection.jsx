@@ -113,13 +113,52 @@ export default function HeroSection() {
 
         {/* Hero content */}
         <div className={styles.heroBadge}>
-          <span className={styles.metaBadge}>Meta Tech Provider</span>
-          <span className={styles.avatarStack} aria-hidden="true">
-            <span />
-            <span />
-            <span />
+          <span className={styles.metaBadge}>
+            <Image
+              className={styles.metaIcon}
+              src="/images/Hero section/metaicon.png"
+              alt=""
+              width={16}
+              height={16}
+              aria-hidden="true"
+            />
+            Meta Tech Provider
           </span>
-          <span>Trusted by 10,000+ creators &amp; brands</span>
+          <span className={styles.avatarStack} aria-hidden="true">
+            <span>
+              <Image
+                className={styles.avatarImg}
+                src="/images/Hero section/avatar1.png"
+                alt=""
+                width={20}
+                height={20}
+                aria-hidden="true"
+              />
+            </span>
+            <span>
+              <Image
+                className={styles.avatarImg}
+                src="/images/Hero section/avatar3.png"
+                alt=""
+                width={20}
+                height={20}
+                aria-hidden="true"
+              />
+            </span>
+            <span>
+              <Image
+                className={styles.avatarImg}
+                src="/images/Hero section/avatar2.png"
+                alt=""
+                width={20}
+                height={20}
+                aria-hidden="true"
+              />
+            </span>
+          </span>
+          <span>
+            Trusted by <strong className={styles.metaText}>10,000+ creators &amp; brands</strong>
+          </span>
         </div>
 
         <h1 id="hero-title" className={styles.title}>

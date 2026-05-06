@@ -29,7 +29,7 @@
   background: #fff;
   border: 1px solid #8D5CFF;
   color: #060014;
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 1px;
   font-weight: 500;
   font-family: "Funnel Sans";
@@ -49,7 +49,7 @@
 }
 
 .securityText h2 {
-  font-size: clamp(28px, 3.6vw, 56px);
+  font-size: clamp(1.75rem, 3.6vw, 3.5rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.025em;
@@ -59,7 +59,7 @@
 .securityText p {
   margin-top: 18px;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.65;
   max-width: 48ch;
 }
@@ -82,7 +82,7 @@
   justify-content: center;
   gap: 5px;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: #1a1040;
 }
 
@@ -121,14 +121,14 @@
   background: #ffffff;
   border: 1px solid #e2e4f0;
   color: #6b6f8a;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.03em;
 }
 
 .workflowInner h2 {
   margin-top: 18px;
-  font-size: clamp(28px, 3.8vw, 46px);
+  font-size: clamp(1.75rem, 3.8vw, 2.875rem);
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.025em;
@@ -204,7 +204,7 @@
 
 .centerLabel {
   margin-top: 12px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: #6a6d88;
   font-weight: 500;
 }
@@ -267,7 +267,7 @@
 /* ── Node labels ── */
 .nodeLabel {
   position: absolute;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 600;
   color: #6f5bff;
   background: #edeaff;
@@ -323,13 +323,13 @@
 }
 
 .cardTitle {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #5a5d78;
 }
 
 .cardTitleSuccess {
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 700;
   color: #16122e;
 }
@@ -337,7 +337,7 @@
 .cardBigNumber {
   display: block;
   margin-top: 10px;
-  font-size: 26px;
+  font-size: 1.625rem;
   font-weight: 800;
   color: #16122e;
   letter-spacing: -0.02em;
@@ -346,7 +346,7 @@
 
 .cardSubtext {
   margin-top: 5px;
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: #888aaa;
   line-height: 1.4;
 }
@@ -360,7 +360,7 @@
 }
 
 .leadsLabel {
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: #888aaa;
 }
 
@@ -402,7 +402,7 @@
   position: absolute;
   right: 0;
   top: -16px;
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: 700;
   color: #6f5bff;
 }
@@ -421,7 +421,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 11.5px;
+  font-size: 0.7188rem;
   color: #5a5d78;
   font-weight: 500;
 }
@@ -451,7 +451,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #5a5d78;
   font-weight: 500;
 }
@@ -553,7 +553,7 @@
   .badgeHex {
     width: 100px;
     height: 100px;
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
 
   .workflowSection {
@@ -581,7 +581,7 @@
   }
 
   .cardBigNumber {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 
   .orbitArea {
@@ -608,23 +608,23 @@
   }
 
   .nodeLabel {
-    font-size: 10px;
+    font-size: 0.625rem;
     padding: 2px 8px;
   }
 
   .workflowInner h2 {
-    font-size: clamp(22px, 6vw, 32px);
+    font-size: clamp(1.375rem, 6vw, 2rem);
   }
 
   .workflowBadge {
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
 
   .securityText h2 {
-    font-size: clamp(24px, 6vw, 36px);
+    font-size: clamp(1.5rem, 6vw, 2.25rem);
   }
 
   .securityText p {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 }

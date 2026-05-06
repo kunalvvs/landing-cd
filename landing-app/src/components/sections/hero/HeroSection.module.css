@@ -13,7 +13,7 @@
   background: #030116;
   color: #ffffff;
   text-align: center;
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.4;
   padding: 12px 16px;
 }
@@ -61,7 +61,7 @@
   align-items: center;
   gap: 8px;
   color: #29233d;
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 600;
   line-height: 1;
 }
@@ -80,7 +80,7 @@
 }
 
 .navList a {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #2f2f41;
   font-weight: 600;
   white-space: nowrap;
@@ -97,7 +97,7 @@
   background: #030116;
   color: #ffffff;
   padding: 0 24px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -189,7 +189,7 @@
 .mobileNavList li a {
   display: block;
   padding: 12px 14px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: #2f2f41;
   border-radius: 12px;
@@ -208,7 +208,7 @@
   border-radius: 999px;
   background: #030116;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 700;
   text-align: center;
   letter-spacing: 0.04em;
@@ -232,22 +232,30 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #4a445f;
   box-shadow: 0 8px 24px rgba(20, 12, 52, 0.08);
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
+  border: .5px solid #d36be7;
 }
 
 .metaBadge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-family: 'Inter';
+  font-weight: 500;
+}
+
+.metaText{
+  font-weight: 500;
+  font-family: "Inter";
 }
 
 .metaBadge::before {
-  content: "∞";
+  
   width: 18px;
   height: 18px;
   border-radius: 999px;
@@ -259,6 +267,11 @@
   font-weight: 600;
 }
 
+.metaIcon{
+  width: 16px;
+  height: 16px;
+}
+
 .avatarStack {
   display: inline-flex;
   align-items: center;
@@ -268,19 +281,24 @@
   width: 16px;
   height: 16px;
   border-radius: 999px;
-  border: 1.5px solid #ffffff;
+  /* border: 1.5px solid #ffffff; */
   margin-left: -5px;
+}
+
+.avatarImg{
+  width: 20px;
+  height: 20px;
 }
 
 .avatarStack span:nth-child(1) {
   margin-left: 0;
-  background: linear-gradient(180deg, #baaf99 0%, #8b7e65 100%);
+  /* background: linear-gradient(180deg, #baaf99 0%, #8b7e65 100%); */
 }
 .avatarStack span:nth-child(2) {
-  background: linear-gradient(180deg, #7c5e52 0%, #503229 100%);
+  /* background: linear-gradient(180deg, #7c5e52 0%, #503229 100%); */
 }
 .avatarStack span:nth-child(3) {
-  background: linear-gradient(180deg, #ccbc9b 0%, #927251 100%);
+  /* background: linear-gradient(180deg, #ccbc9b 0%, #927251 100%); */
 }
 
 .title {
@@ -288,7 +306,7 @@
   max-width: 980px;
   text-align: center;
   color: #100b2f;
-  font-size: clamp(36px, 5vw, 72px);
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
   line-height: 1.06;
   letter-spacing: -0.03em;
   font-family: "funnel display";
@@ -297,11 +315,12 @@
 
 .subtitle {
   margin-top: 22px;
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: #635d7a;
   line-height: 1.35;
   text-align: center;
   padding: 0 12px;
+  font-weight: 400;
 }
 
 .ctaButton {
@@ -312,7 +331,7 @@
   border-radius: 999px;
   background: #030116;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -332,7 +351,7 @@
 
 .brandMarquee {
   margin-top: 36px;
-  width: 100%;
+  width: 120%;
   overflow: hidden;
   position: relative;
 }
@@ -423,7 +442,7 @@
 ────────────────────────────────────────── */
 @media (max-width: 768px) {
   .announcementBar {
-    font-size: 11px;
+    font-size: 0.6875rem;
     padding: 10px 12px;
   }
 
@@ -433,32 +452,32 @@
   }
 
   .brand {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 
   .heroBadge {
     margin-top: 40px;
-    font-size: 11px;
+    font-size: 0.6875rem;
     gap: 8px;
     padding: 6px 12px;
   }
 
   .title {
     margin-top: 24px;
-    font-size: clamp(30px, 8.5vw, 52px);
+    font-size: clamp(1.875rem, 8.5vw, 3.25rem);
     padding: 0 4px;
   }
 
   .subtitle {
     margin-top: 14px;
-    font-size: clamp(15px, 4vw, 18px);
+    font-size: clamp(0.9375rem, 4vw, 1.125rem);
   }
 
   .ctaButton {
     margin-top: 20px;
     min-width: 180px;
     min-height: 52px;
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .brandMarquee {
@@ -476,7 +495,7 @@
 ────────────────────────────────────────── */
 @media (max-width: 400px) {
   .brand {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .brand img {
@@ -485,11 +504,11 @@
   }
 
   .title {
-    font-size: clamp(28px, 9vw, 40px);
+    font-size: clamp(1.75rem, 9vw, 2.5rem);
   }
 
   .heroBadge {
-    font-size: 10px;
+    font-size: 0.625rem;
     gap: 6px;
     padding: 5px 10px;
   }

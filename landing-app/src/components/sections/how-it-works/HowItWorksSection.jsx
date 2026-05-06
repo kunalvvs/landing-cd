@@ -10,19 +10,30 @@ const STEPS = [
     title: "Connect Instagram",
     description:
       "One-click Meta login. No passwords, no browser extensions. Works with Business and Creator accounts.",
-    highlighted: true,
+    image: "/images/dashboard preview/sign-image.webp.png",
+    imageAlt: "Instagram login setup preview",
+    imageWidth: 617,
+    imageHeight: 193,
   },
   {
     id: "02",
     title: "Pick a Keyword & write a DM",
     description:
       'Choose a trigger word like "LINK." Write the message your followers get. Add your link, freebie, or discount code.',
+    image: "/images/dashboard preview/sign-image.webp.png",
+    imageAlt: "Keyword DM setup preview",
+    imageWidth: 617,
+    imageHeight: 193,
   },
   {
     id: "03",
     title: "Every comment becomes a conversation",
     description:
       "Someone comments your keyword? Creatordesks sends your DM in seconds. Works on Reels, Stories, and feed posts. Runs 24/7.",
+    image: "/images/dashboard preview/sign-image.webp.png",
+    imageAlt: "Comment to DM automation preview",
+    imageWidth: 617,
+    imageHeight: 193,
   },
 ];
 
@@ -32,8 +43,20 @@ export default function HowItWorksSection() {
   return (
     <section className={styles.section} aria-labelledby="how-it-works-title">
       <div className={styles.inner}>
-        <span className={styles.badge}>How it works</span>
+        {/* Badge */}
+        <span className={styles.badge}>
+          <Image
+            className={styles.metabadge}
+            src="/images/Hero section/metaicon.png"
+            alt=""
+            width={15}
+            height={11}
+            aria-hidden="true"
+          />
+          How it works
+        </span>
 
+        {/* Heading */}
         <h2 id="how-it-works-title" className={styles.title}>
           Setup in under <span>2 Minutes</span>
         </h2>
@@ -43,63 +66,71 @@ export default function HowItWorksSection() {
           it.
         </p>
 
+        {/* 2-column grid: left dashboard preview | right accordion steps */}
         <div className={styles.contentGrid}>
+
+          {/* LEFT — dashboard screenshot in purple gradient card */}
           <figure className={styles.previewFrame}>
             <Image
               src="/images/dashboard preview/section.webp.png"
-              alt="Dashboard preview"
+              alt="Creatordesks dashboard preview"
               width={553}
               height={522}
               className={styles.previewImage}
+              priority
             />
           </figure>
 
+          {/* RIGHT — accordion steps */}
           <ol className={styles.steps} aria-label="How it works steps">
-            {STEPS.map((step) => (
-              <li
-                key={step.id}
-                className={step.highlighted ? styles.stepHighlight : styles.step}
-              >
-                <button
-                  type="button"
-                  className={styles.stepHeader}
-                  onClick={() =>
-                    setOpenStep((current) =>
-                      current === step.id ? "" : step.id
-                    )
-                  }
-                  aria-expanded={openStep === step.id}
+            {STEPS.map((step) => {
+              const isOpen = openStep === step.id;
+              return (
+                <li
+                  key={step.id}
+                  className={`${styles.stepItem} ${isOpen ? styles.stepItemOpen : ""}`}
                 >
-                  <span className={styles.stepNumber}>{step.id}</span>
-                  <span className={styles.stepTitle}>{step.title}</span>
-                  <span
-                    className={`${styles.dropdownIcon} ${
-                      openStep === step.id ? styles.dropdownOpen : ""
-                    }`}
-                    aria-hidden="true"
-                  />
-                </button>
+                  {/* Always-visible header: number bullet + title + description */}
+                  <button
+                    type="button"
+                    className={styles.stepHeader}
+                    onClick={() =>
+                      setOpenStep((cur) => (cur === step.id ? "" : step.id))
+                    }
+                    aria-expanded={isOpen}
+                  >
+                    {/* Number bullet — outlined when closed, solid when open */}
+                    <span
+                      className={`${styles.stepNumber} ${isOpen ? styles.stepNumberActive : ""}`}
+                    >
+                      {step.id}
+                    </span>
 
-                <div
-                  className={`${styles.stepBody} ${
-                    openStep === step.id ? styles.stepBodyOpen : ""
-                  }`}
-                >
-                  <div className={styles.stepContent}>
-                    <p>{step.description}</p>
-                    {step.highlighted ? (
+                    {/* Title + description — always visible */}
+                    <div className={styles.stepText}>
+                      <span className={styles.stepTitle}>{step.title}</span>
+                      <span className={styles.stepDesc}>{step.description}</span>
+                    </div>
+                  </button>
+
+                  {/* Expandable image panel with radial gradient */}
+                  <div
+                    className={`${styles.stepImagePanel} ${isOpen ? styles.stepImagePanelOpen : ""}`}
+                    aria-hidden={!isOpen}
+                  >
+                    <div className={styles.stepImageWrap}>
                       <Image
-                        src="/images/dashboard preview/sign-image.webp.png"
-                        alt="Instagram login setup preview"
-                        width={617}
-                        height={193}
-                        className={styles.signPreview}
+                        src={step.image}
+                        alt={step.imageAlt}
+                        width={step.imageWidth}
+                        height={step.imageHeight}
+                        className={styles.stepImage}
                       />
-                    ) : null}
+                    </div>
                   </div>
-                </div>
-              </li>
-            ))}
+                </li>
+              );
+            })}
           </ol>
         </div>
       </div>
