@@ -128,7 +128,7 @@ export default function SecurityWorkflowSection() {
   <path 
     d="M12 3L13.5 8.5L19 10L13.5 11.5L12 17L10.5 11.5L5 10L10.5 8.5L12 3Z" 
     stroke="#6C4CFF" 
-    stroke-width="1.8" 
+    strokeWidth="1.8" 
     stroke-linecap="round" 
     stroke-linejoin="round"
   />
@@ -136,7 +136,7 @@ export default function SecurityWorkflowSection() {
   <path 
     d="M18 3L18.6 4.8L20.4 5.4L18.6 6L18 7.8L17.4 6L15.6 5.4L17.4 4.8L18 3Z" 
     stroke="#6C4CFF" 
-    stroke-width="1.5" 
+    strokeWidth="1.5" 
     stroke-linecap="round" 
     stroke-linejoin="round"
   />

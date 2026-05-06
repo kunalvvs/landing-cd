@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import styles from "./HowItWorksSection.module.css";
 
 const STEPS = [
@@ -24,6 +27,8 @@ const STEPS = [
 ];
 
 export default function HowItWorksSection() {
+  const [openStep, setOpenStep] = useState(STEPS[0].id);
+
   return (
     <section className={styles.section} aria-labelledby="how-it-works-title">
       <div className={styles.inner}>
@@ -55,19 +60,43 @@ export default function HowItWorksSection() {
                 key={step.id}
                 className={step.highlighted ? styles.stepHighlight : styles.step}
               >
-                <span className={styles.stepNumber}>{step.id}</span>
-                <div className={styles.stepContent}>
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                  {step.highlighted ? (
-                    <Image
-                      src="/images/dashboard preview/sign-image.webp.png"
-                      alt="Instagram login setup preview"
-                      width={617}
-                      height={193}
-                      className={styles.signPreview}
-                    />
-                  ) : null}
+                <button
+                  type="button"
+                  className={styles.stepHeader}
+                  onClick={() =>
+                    setOpenStep((current) =>
+                      current === step.id ? "" : step.id
+                    )
+                  }
+                  aria-expanded={openStep === step.id}
+                >
+                  <span className={styles.stepNumber}>{step.id}</span>
+                  <span className={styles.stepTitle}>{step.title}</span>
+                  <span
+                    className={`${styles.dropdownIcon} ${
+                      openStep === step.id ? styles.dropdownOpen : ""
+                    }`}
+                    aria-hidden="true"
+                  />
+                </button>
+
+                <div
+                  className={`${styles.stepBody} ${
+                    openStep === step.id ? styles.stepBodyOpen : ""
+                  }`}
+                >
+                  <div className={styles.stepContent}>
+                    <p>{step.description}</p>
+                    {step.highlighted ? (
+                      <Image
+                        src="/images/dashboard preview/sign-image.webp.png"
+                        alt="Instagram login setup preview"
+                        width={617}
+                        height={193}
+                        className={styles.signPreview}
+                      />
+                    ) : null}
+                  </div>
                 </div>
               </li>
             ))}

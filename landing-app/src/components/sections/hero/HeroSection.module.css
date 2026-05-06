@@ -351,14 +351,8 @@
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 30px 70px rgba(31, 26, 63, 0.15);
-  /* CSS fallback float — GSAP enhances this further */
-  animation: heroFloat 4s ease-in-out infinite;
   will-change: transform;
-}
-
-@keyframes heroFloat {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-16px); }
+  /* Float is handled exclusively by GSAP to prevent jitter */
 }
 
 .previewImage {

@@ -3,135 +3,119 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
 /* ─────────────────────────────────────────────────────────────
-   GSAP Landing Page Animation Engine
-   Covers: Hero, HowItWorks, FeaturesAutomation, FeaturesOverview,
-           SecurityWorkflow, Testimonials, Blog, FAQ, Footer
+   GSAP Landing Page Animation Engine  — FAST / IMMEDIATE
+   Animations fire the instant an element enters the viewport.
 ───────────────────────────────────────────────────────────── */
 
 function registerPlugins() {
-  gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+  gsap.registerPlugin(ScrollTrigger);
 }
 
-/* ── Utility: observe elements into view then animate ── */
-function scrollReveal(selector, vars = {}, triggerVars = {}) {
+/* ──────────────────────────────────────────────────────────
+   UTILITY — batch reveal
+   Groups elements so they all animate together when the
+   PARENT enters the viewport, not each one individually.
+   This eliminates the "I have to scroll deep" problem.
+────────────────────────────────────────────────────────── */
+function batchReveal(selector, fromVars = {}, toVars = {}) {
   const els = gsap.utils.toArray(selector);
-  if (!els.length) return [];
-  return els.map((el, i) =>
+  if (!els.length) return;
+
+  // Use the first element's nearest section as the trigger
+  ScrollTrigger.batch(els, {
+    // Fire the moment the top of any element touches the bottom of the viewport
+    start: "top bottom",
+    onEnter: (batch) => {
+      gsap.fromTo(
+        batch,
+        { opacity: 0, y: fromVars.y ?? 30, scale: fromVars.scale ?? 1, x: fromVars.x ?? 0 },
+        {
+          opacity: 1,
+          y: 0,
+          x: 0,
+          scale: 1,
+          duration: toVars.duration ?? 0.45,
+          ease: toVars.ease ?? "power2.out",
+          stagger: toVars.stagger ?? 0.06,
+          overwrite: "auto",
+        }
+      );
+    },
+  });
+}
+
+/* Single-element scroll reveal — triggers the moment element enters viewport */
+function reveal(selector, fromVars = {}, toVars = {}, triggerEl = null) {
+  const els = gsap.utils.toArray(selector);
+  if (!els.length) return;
+  els.forEach((el) => {
     gsap.fromTo(
       el,
-      { opacity: 0, y: vars.y ?? 48, scale: vars.scale ?? 1, ...vars.from },
+      { opacity: 0, y: fromVars.y ?? 30, scale: fromVars.scale ?? 1, x: fromVars.x ?? 0, rotation: fromVars.rotation ?? 0 },
       {
         opacity: 1,
         y: 0,
+        x: 0,
         scale: 1,
-        duration: vars.duration ?? 0.75,
-        ease: vars.ease ?? "power3.out",
-        delay: (vars.stagger ?? 0.1) * i + (vars.delay ?? 0),
+        rotation: 0,
+        duration: toVars.duration ?? 0.45,
+        ease: toVars.ease ?? "power2.out",
+        delay: toVars.delay ?? 0,
+        overwrite: "auto",
         scrollTrigger: {
-          trigger: el,
-          start: triggerVars.start ?? "top 88%",
+          trigger: triggerEl || el,
+          // "top bottom" = fires the instant the TOP of the element reaches the BOTTOM of the viewport
+          start: "top bottom",
           toggleActions: "play none none none",
-          ...triggerVars,
-        },
-      }
-    )
-  );
-}
-
-/* ─────────────────────────────────────────────────────────────
-   1. HERO — continuous floating dashboard + entrance animation
-───────────────────────────────────────────────────────────── */
-function animateHero() {
-  // Entrance: announcement bar slides down
-  gsap.fromTo(
-    "[class*='announcementBar']",
-    { y: -40, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }
-  );
-
-  // Nav shell fades in
-  gsap.fromTo(
-    "[class*='navShell']",
-    { y: -30, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.7, delay: 0.15, ease: "power2.out" }
-  );
-
-  // Badge pops in
-  gsap.fromTo(
-    "[class*='heroBadge']",
-    { scale: 0.7, opacity: 0 },
-    { scale: 1, opacity: 1, duration: 0.65, delay: 0.3, ease: "back.out(1.7)" }
-  );
-
-  // Hero title — words stagger up
-  gsap.fromTo(
-    "[id='hero-title']",
-    { opacity: 0, y: 60 },
-    { opacity: 1, y: 0, duration: 0.8, delay: 0.45, ease: "power3.out" }
-  );
-
-  // Subtitle
-  gsap.fromTo(
-    "[class*='subtitle']:not([class*='how-it'])",
-    { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 0.7, delay: 0.6, ease: "power2.out" }
-  );
-
-  // CTA button pops
-  gsap.fromTo(
-    "[class*='ctaButton']",
-    { scale: 0.8, opacity: 0 },
-    { scale: 1, opacity: 1, duration: 0.6, delay: 0.75, ease: "back.out(1.5)" }
-  );
-
-  // Brand strip fades
-  gsap.fromTo(
-    "[class*='brandStrip']",
-    { opacity: 0, y: 20 },
-    { opacity: 1, y: 0, duration: 0.7, delay: 0.9, ease: "power2.out" }
-  );
-
-  // Hero dashboard preview — slide up + continuous infinite float
-  const preview = document.querySelector("[class*='heroPreview']");
-  if (preview) {
-    gsap.fromTo(
-      preview,
-      { opacity: 0, y: 100, scale: 0.92 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 1.1,
-        delay: 0.8,
-        ease: "power3.out",
-        onComplete() {
-          // Continuous floating animation after entrance
-          gsap.to(preview, {
-            y: -18,
-            duration: 3.2,
-            ease: "sine.inOut",
-            yoyo: true,
-            repeat: -1,
-          });
         },
       }
     );
+  });
+}
+
+/* ─────────────────────────────────────────────────────────────
+   1. HERO — immediate entrance (no scroll trigger needed)
+───────────────────────────────────────────────────────────── */
+function animateHero() {
+  const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+  tl.fromTo("[class*='announcementBar']", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 })
+    .fromTo("[class*='navShell']",        { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 }, "-=0.2")
+    .fromTo("[class*='heroBadge']",       { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.6)" }, "-=0.1")
+    .fromTo("[id='hero-title']",          { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45 }, "-=0.15")
+    .fromTo("[class*='subtitle']",        { opacity: 0, y: 25 }, { opacity: 1, y: 0, duration: 0.4 }, "-=0.2")
+    .fromTo("[class*='ctaButton']",       { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.5)" }, "-=0.15")
+    .fromTo("[class*='brandMarquee'], [class*='brandStrip']", { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35 }, "-=0.1");
+
+  // Dashboard preview entrance + then infinite float
+  const preview = document.querySelector("[class*='heroPreview']");
+  if (preview) {
+    tl.fromTo(
+      preview,
+      { opacity: 0, y: 60, scale: 0.94 },
+      {
+        opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out",
+        onComplete() {
+          gsap.to(preview, {
+            y: -16, duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1,
+          });
+        },
+      },
+      "-=0.2"
+    );
   }
 
-  // Parallax on hero section bg on scroll
+  // Scroll parallax on hero content
   ScrollTrigger.create({
     trigger: "[class*='heroSection']",
     start: "top top",
     end: "bottom top",
-    scrub: 1.5,
+    scrub: 1,
     onUpdate(self) {
-      const heroContent = document.querySelector("[class*='contentWrap']");
-      if (heroContent) {
-        gsap.set(heroContent, { y: self.progress * 60 });
-      }
+      const wrap = document.querySelector("[class*='contentWrap']");
+      if (wrap) gsap.set(wrap, { y: self.progress * 50 });
     },
   });
 }
@@ -140,350 +124,193 @@ function animateHero() {
    2. HOW IT WORKS
 ───────────────────────────────────────────────────────────── */
 function animateHowItWorks() {
-  // Badge
-  scrollReveal("[class*='how-it-works'] [class*='badge']", {
-    scale: 0.8,
-    y: 20,
-    duration: 0.6,
-  });
+  reveal("[class*='HowItWorks'] [class*='badge'], section [class*='badge']",
+    { scale: 0.85, y: 15 }, { duration: 0.35, ease: "back.out(1.5)" }
+  );
 
-  // Section title
-  scrollReveal("[id='how-it-works-title']", { y: 60, duration: 0.8 });
+  reveal("[id='how-it-works-title']", { y: 35 }, { duration: 0.45 });
 
-  // Preview frame slides in from left
+  // Preview frame — slides from left
   gsap.utils.toArray("[class*='previewFrame']").forEach((el) => {
     gsap.fromTo(
       el,
-      { opacity: 0, x: -80, scale: 0.95 },
+      { opacity: 0, x: -50, scale: 0.97 },
       {
-        opacity: 1,
-        x: 0,
-        scale: 1,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: { trigger: el, start: "top 85%" },
+        opacity: 1, x: 0, scale: 1, duration: 0.55, ease: "power3.out",
+        scrollTrigger: { trigger: el, start: "top bottom" },
+        onComplete() {
+          gsap.to(el, { y: -10, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
+        },
       }
     );
-    // Continuous slow float
-    gsap.to(el, {
-      y: -10,
-      duration: 4,
-      ease: "sine.inOut",
-      yoyo: true,
-      repeat: -1,
-      delay: 1,
-    });
   });
 
-  // Steps stagger from right
-  gsap.utils.toArray("[class*='step'], [class*='stepHighlight']").forEach((el, i) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, x: 60 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.7,
-        delay: i * 0.15,
-        ease: "power3.out",
-        scrollTrigger: { trigger: el, start: "top 88%" },
-      }
-    );
-  });
+  // Steps — batch so they all pop in together when first one enters
+  batchReveal(
+    "[class*='step'], [class*='stepHighlight']",
+    { x: 40, y: 0 },
+    { duration: 0.4, ease: "power2.out", stagger: 0.07 }
+  );
 }
 
 /* ─────────────────────────────────────────────────────────────
    3. FEATURES AUTOMATION
 ───────────────────────────────────────────────────────────── */
 function animateFeaturesAutomation() {
-  // Panel entrance
-  scrollReveal("[data-gsap-section='features'] [class*='brandRow']", {
-    y: 40,
-    scale: 0.9,
-    duration: 0.7,
-  });
+  reveal("[data-gsap-section='features'] [class*='brandRow']",
+    { scale: 0.9, y: 20 }, { duration: 0.4, ease: "back.out(1.4)" }
+  );
 
-  scrollReveal("[id='automation-title']", { y: 50, duration: 0.8 });
+  reveal("[id='automation-title']", { y: 35 }, { duration: 0.45 });
 
-  // Top 3 cards stagger with scale
-  gsap.utils.toArray("[data-gsap-section='features'] [class*='card']").forEach((el, i) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, y: 70, scale: 0.93 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.75,
-        delay: i * 0.13,
-        ease: "power3.out",
-        scrollTrigger: { trigger: el, start: "top 90%" },
-      }
-    );
-
-    // Hover tilt
-    el.addEventListener("mouseenter", () => {
-      gsap.to(el, { y: -6, scale: 1.02, duration: 0.3, ease: "power2.out" });
+  // Top 3 cards — batch
+  const cards = gsap.utils.toArray("[data-gsap-section='features'] [class*='topCards'] [class*='card']");
+  if (cards.length) {
+    ScrollTrigger.batch(cards, {
+      start: "top bottom",
+      onEnter: (batch) => {
+        gsap.fromTo(batch,
+          { opacity: 0, y: 50, scale: 0.94 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "power3.out", stagger: 0.08 }
+        );
+      },
     });
-    el.addEventListener("mouseleave", () => {
-      gsap.to(el, { y: 0, scale: 1, duration: 0.4, ease: "power2.inOut" });
+
+    cards.forEach((el) => {
+      el.addEventListener("mouseenter", () => gsap.to(el, { y: -6, scale: 1.02, duration: 0.25, ease: "power2.out" }));
+      el.addEventListener("mouseleave", () => gsap.to(el, { y: 0, scale: 1, duration: 0.3, ease: "power2.inOut" }));
     });
-  });
+  }
 
   // Big card
-  scrollReveal("[class*='bigCard']", {
-    y: 60,
-    scale: 0.96,
-    duration: 0.9,
-    delay: 0.1,
-  });
+  reveal("[class*='bigCard']", { y: 40, scale: 0.97 }, { duration: 0.5 });
 
-  // Big image subtle float
+  // Big image float
   gsap.utils.toArray("[class*='bigImage']").forEach((el) => {
-    gsap.to(el, {
-      y: -12,
-      duration: 3.8,
-      ease: "sine.inOut",
-      yoyo: true,
-      repeat: -1,
-    });
+    gsap.to(el, { y: -10, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
   });
 
-  // Bottom feature cards
-  gsap.utils.toArray("[class*='bottomCard']").forEach((el, i) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.65,
-        delay: i * 0.12,
-        ease: "power2.out",
-        scrollTrigger: { trigger: el, start: "top 90%" },
-      }
-    );
-  });
+  // Bottom feature cards — batch
+  batchReveal(
+    "[class*='bottomCard']",
+    { y: 30 },
+    { duration: 0.4, stagger: 0.07 }
+  );
 }
 
 /* ─────────────────────────────────────────────────────────────
    4. FEATURES OVERVIEW
 ───────────────────────────────────────────────────────────── */
 function animateFeaturesOverview() {
-  scrollReveal("[id='features-overview-title']", { y: 50 });
+  reveal("[id='features-overview-title']", { y: 35 }, { duration: 0.45 });
 
-  gsap.utils.toArray("[class*='card'], [class*='cardTall'], [class*='wideCard']").forEach((el, i) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, y: 60, scale: 0.95 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.8,
-        delay: i * 0.1,
-        ease: "power3.out",
-        scrollTrigger: { trigger: el, start: "top 88%" },
-      }
-    );
-    el.addEventListener("mouseenter", () => {
-      gsap.to(el, { y: -5, duration: 0.3, ease: "power2.out" });
-    });
-    el.addEventListener("mouseleave", () => {
-      gsap.to(el, { y: 0, duration: 0.4, ease: "power2.inOut" });
-    });
-  });
+  batchReveal(
+    "[class*='FeaturesOverview'] article, [class*='featuresOverview'] article, [class*='grid'] article",
+    { y: 40, scale: 0.96 },
+    { duration: 0.45, ease: "power3.out", stagger: 0.08 }
+  );
 }
 
 /* ─────────────────────────────────────────────────────────────
    5. SECURITY / WORKFLOW
 ───────────────────────────────────────────────────────────── */
 function animateSecurityWorkflow() {
-  // Security section heading
-  scrollReveal("[id='security-title']", { y: 50 });
+  reveal("[id='security-title']", { y: 35 }, { duration: 0.45 });
 
-  // Badge hexes pop in
-  gsap.utils.toArray("[class*='badgeHex']").forEach((el, i) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, scale: 0.5, rotation: -20 },
-      {
-        opacity: 1,
-        scale: 1,
-        rotation: 0,
-        duration: 0.6,
-        delay: i * 0.12,
-        ease: "back.out(2)",
-        scrollTrigger: { trigger: el, start: "top 88%" },
-      }
-    );
-  });
+  // Compliance hex badges — batch
+  batchReveal(
+    "[class*='badgeHex']",
+    { scale: 0.5, y: 0, rotation: -15 },
+    { duration: 0.4, ease: "back.out(2)", stagger: 0.07 }
+  );
 
-  // Stat cards
-  gsap.utils.toArray("[class*='statCard']").forEach((el, i) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, y: 40, scale: 0.95 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.7,
-        delay: i * 0.12,
-        ease: "power3.out",
-        scrollTrigger: { trigger: el, start: "top 90%" },
-      }
-    );
-  });
+  // Stat cards — batch
+  batchReveal(
+    "[class*='statCard']",
+    { y: 30, scale: 0.96 },
+    { duration: 0.4, stagger: 0.07 }
+  );
 
-  // Orbit center box — spin + scale in
-  gsap.utils.toArray("[class*='centerBox']").forEach((el) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, scale: 0.3, rotation: -90 },
-      {
-        opacity: 1,
-        scale: 1,
-        rotation: 0,
-        duration: 1.1,
-        ease: "back.out(1.6)",
-        scrollTrigger: { trigger: el, start: "top 85%" },
-      }
-    );
-  });
+  // Center orbit — spins in
+  reveal(
+    "[class*='centerBox']",
+    { scale: 0.4, rotation: -90 },
+    { duration: 0.55, ease: "back.out(1.8)" }
+  );
 
-  // Orbit nodes stagger pop
-  gsap.utils.toArray("[class*='orbitNode']").forEach((el, i) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, scale: 0 },
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 0.5,
-        delay: 0.3 + i * 0.15,
-        ease: "back.out(2.5)",
-        scrollTrigger: { trigger: el, start: "top 88%" },
-      }
-    );
-  });
+  // Orbit nodes — batch, tight stagger
+  batchReveal(
+    "[class*='orbitNode']",
+    { scale: 0, y: 0 },
+    { duration: 0.35, ease: "back.out(2.5)", stagger: 0.06 }
+  );
 
-  // Workflow heading
-  scrollReveal("[id='workflow-title']", { y: 50 });
+  reveal("[id='workflow-title']", { y: 35 }, { duration: 0.45 });
 }
 
 /* ─────────────────────────────────────────────────────────────
    6. TESTIMONIALS
 ───────────────────────────────────────────────────────────── */
 function animateTestimonials() {
-  scrollReveal("[class*='testimonials'] h2, [class*='testimonials'] [class*='title']", {
-    y: 50,
-  });
+  reveal(
+    "[class*='testimonials'] h2, [class*='testimonials'] [class*='title']",
+    { y: 35 }, { duration: 0.45 }
+  );
 
-  gsap.utils.toArray("[class*='testimonial'], [class*='TestiCard'], [class*='quote']").forEach((el, i) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, y: 50, scale: 0.96 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.7,
-        delay: i * 0.1,
-        ease: "power3.out",
-        scrollTrigger: { trigger: el, start: "top 88%" },
-      }
-    );
-  });
+  batchReveal(
+    "[class*='testimonial'], [class*='TestiCard'], [class*='quote']",
+    { y: 35, scale: 0.97 },
+    { duration: 0.4, stagger: 0.07 }
+  );
 }
 
 /* ─────────────────────────────────────────────────────────────
    7. BLOG / FAQ / FOOTER
 ───────────────────────────────────────────────────────────── */
 function animateOtherSections() {
-  // Blog cards
-  gsap.utils.toArray("[class*='blogCard'], [class*='BlogCard'], [class*='post']").forEach((el, i) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.65,
-        delay: i * 0.09,
-        ease: "power2.out",
-        scrollTrigger: { trigger: el, start: "top 90%" },
-      }
-    );
-  });
+  batchReveal(
+    "[class*='blogCard'], [class*='BlogCard'], [class*='post']",
+    { y: 30 },
+    { duration: 0.4, stagger: 0.07 }
+  );
 
-  // FAQ items
-  gsap.utils.toArray("[class*='faqItem'], [class*='FaqItem'], [class*='accordion']").forEach((el, i) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, x: -30 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.55,
-        delay: i * 0.07,
-        ease: "power2.out",
-        scrollTrigger: { trigger: el, start: "top 90%" },
-      }
-    );
-  });
+  batchReveal(
+    "[class*='faqItem'], [class*='FaqItem'], [class*='accordion']",
+    { x: -25, y: 0 },
+    { duration: 0.35, ease: "power2.out", stagger: 0.05 }
+  );
 
-  // Footer
-  gsap.fromTo(
+  reveal(
     "[class*='footer'], footer",
-    { opacity: 0, y: 30 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out",
-      scrollTrigger: { trigger: "footer", start: "top 95%" },
-    }
+    { y: 25 },
+    { duration: 0.4 }
   );
 }
 
 /* ─────────────────────────────────────────────────────────────
-   8. GLOBAL — section headings reveal
+   8. GLOBAL headings + badges (catch-all)
 ───────────────────────────────────────────────────────────── */
 function animateGlobalHeadings() {
-  // All h2 that don't have a specific handler
-  gsap.utils.toArray("h2:not([id='hero-title']):not([id='automation-title'])").forEach((el) => {
-    if (el._gsapAnimated) return;
-    el._gsapAnimated = true;
+  gsap.utils.toArray(
+    "h2:not([id='hero-title']):not([id='automation-title']):not([id='how-it-works-title']):not([id='security-title']):not([id='features-overview-title']):not([id='workflow-title'])"
+  ).forEach((el) => {
+    if (el._gsapDone) return;
+    el._gsapDone = true;
     gsap.fromTo(
       el,
-      { opacity: 0, y: 40 },
+      { opacity: 0, y: 30 },
       {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        scrollTrigger: { trigger: el, start: "top 88%" },
+        opacity: 1, y: 0, duration: 0.45, ease: "power2.out",
+        scrollTrigger: { trigger: el, start: "top bottom" },
       }
     );
   });
 
-  // General badges / pills
-  gsap.utils.toArray("[class*='badge']:not([class*='badgeHex']), [class*='pill']").forEach((el, i) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, scale: 0.85, y: 15 },
-      {
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        duration: 0.55,
-        delay: 0.1,
-        ease: "back.out(1.5)",
-        scrollTrigger: { trigger: el, start: "top 90%" },
-      }
-    );
-  });
+  batchReveal(
+    "[class*='badge']:not([class*='badgeHex']):not([class*='heroBadge'])",
+    { scale: 0.85, y: 12 },
+    { duration: 0.35, ease: "back.out(1.5)", stagger: 0.05 }
+  );
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -491,23 +318,28 @@ function animateGlobalHeadings() {
 ───────────────────────────────────────────────────────────── */
 export default function PageAnimations() {
   useEffect(() => {
-    // Respect user's motion preferences
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 
     registerPlugins();
 
-    // Run all animation groups
-    animateHero();
-    animateHowItWorks();
-    animateFeaturesAutomation();
-    animateFeaturesOverview();
-    animateSecurityWorkflow();
-    animateTestimonials();
-    animateOtherSections();
-    animateGlobalHeadings();
+    // Small delay to ensure DOM is painted before GSAP measures
+    const raf = requestAnimationFrame(() => {
+      animateHero();
+      animateHowItWorks();
+      animateFeaturesAutomation();
+      animateFeaturesOverview();
+      animateSecurityWorkflow();
+      animateTestimonials();
+      animateOtherSections();
+      animateGlobalHeadings();
+
+      // Refresh once everything is set up
+      ScrollTrigger.refresh();
+    });
 
     return () => {
+      cancelAnimationFrame(raf);
       ScrollTrigger.getAll().forEach((t) => t.kill());
       gsap.killTweensOf("*");
     };

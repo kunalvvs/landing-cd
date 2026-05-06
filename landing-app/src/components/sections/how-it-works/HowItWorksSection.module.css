@@ -88,6 +88,7 @@
   height: auto;
   display: block;
   margin-bottom: 0;
+  margin-left: 110px;
 }
 
 .steps {
@@ -105,14 +106,25 @@
   border: 1px solid #b9d2ff;
   border-radius: 24px;
   background: #f7f8fc;
-  padding: 26px 28px;
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 18px;
+  padding: 0;
+  overflow: hidden;
 }
 
 .stepHighlight {
   background: #edf4ff;
+}
+
+.stepHeader {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 26px 28px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
 }
 
 .stepNumber {
@@ -129,18 +141,61 @@
   align-self: start;
 }
 
-.stepContent h3 {
-  font-size: clamp(24px, 2.2vw, 24px);
+.stepTitle {
+  font-size: clamp(22px, 2.2vw, 24px);
   line-height: 1.15;
   font-weight: 500;
   color: #1c1a3e;
   font-family: 'Funnel Display';
 }
 
+.dropdownIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid #d4d8ef;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #4c4f70;
+  transition: transform 0.2s ease;
+}
 
+.dropdownIcon::before,
+.dropdownIcon::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+.dropdownIcon::after {
+  transform: rotate(90deg);
+}
+
+.dropdownOpen {
+  transform: rotate(180deg);
+}
+
+.stepBody {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease, opacity 0.2s ease;
+}
+
+.stepBodyOpen {
+  max-height: 480px;
+  opacity: 1;
+}
 
 .stepContent p {
-  margin-top: 10px;
+  margin: 0 28px 0 118px;
+  padding-top: 6px;
+  padding-bottom: 8px;
   color: #61647c;
   font-size: clamp(14px, 1.3vw, 14px);
   line-height: 1.45;
@@ -149,7 +204,7 @@
 }
 
 .signPreview {
-  margin-top: 16px;
+  margin: 6px 20px -5px 95px;
   border-radius: 20px;
   width: 100%;
   height: auto;
@@ -174,6 +229,8 @@
   .previewImage {
     width: 85%;
     max-width: min(500px, 100%);
+    margin-top: 40px;
+    
   }
 }
 
@@ -219,9 +276,12 @@
   .step,
   .stepHighlight {
     border-radius: 16px;
-    padding: 16px 14px;
-    grid-template-columns: 48px 1fr;
+  }
+
+  .stepHeader {
+    grid-template-columns: 48px 1fr auto;
     gap: 12px;
+    padding: 16px 14px;
   }
 
   .stepNumber {
@@ -230,18 +290,15 @@
     font-size: 20px;
   }
 
-  .stepContent h3 {
-    font-size: clamp(20px, 5vw, 30px);
-  }
-
   .stepContent p {
-    margin-top: 8px;
+    margin: 0 14px 0 74px;
+    padding-top: 2px;
     font-size: 14px;
     max-width: 100%;
   }
 
   .signPreview {
-    margin-top: 12px;
+    margin: 10px 14px -5px 74px;
     border-radius: 12px;
   }
 }
