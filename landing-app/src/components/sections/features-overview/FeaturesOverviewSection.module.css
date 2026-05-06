@@ -1,6 +1,6 @@
 .section {
   padding: 110px 0 120px;
-  background: #f8f8fb;
+  background: #fff;
 }
 
 .inner {
@@ -17,14 +17,21 @@
   padding: 6px 14px;
   border-radius: 999px;
   border: 1px solid #d9d9df;
-  background: #ffffff;
-  color: #6b6b79;
+  background: #8683830e;
+  color: #0c0c0d;
   font-size: 0.75rem;
   line-height: 1;
+  font-weight: 400;
+  font-family: "Funnel Sans";
+}
+
+.metaIcon{
+  width: 18px;
+  height: 14px;
 }
 
 .badge::before {
-  content: "∞";
+  /* content: "∞"; */
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -32,9 +39,11 @@
   align-items: center;
   justify-content: center;
   background: #f1f4ff;
-  color: #3b68ff;
-  font-weight: 600;
+  /* color: #3b68ff; */
+  
 }
+
+
 
 .title {
   margin-top: 18px;
@@ -42,7 +51,7 @@
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: #1e1945;
-  font-weight: 600;
+  font-weight: 400;
   font-family: "Funnel Display", var(--font-geist-sans), Arial, Helvetica,
     sans-serif;
 }
@@ -64,20 +73,22 @@
 .card,
 .cardTall,
 .wideCard {
-  background: #ffffff;
+  background: #F1F2F4;
   border-radius: 24px;
   padding: 22px;
   border: 1px solid #eef0f6;
-  box-shadow: 0 24px 40px rgba(20, 12, 52, 0.06);
+  /* box-shadow: 0 24px 40px rgba(20, 12, 52, 0.06); */
 }
 
 .cardTall {
   grid-row: span 2;
 }
 
+
+
 .cardContent h3,
 .wideText h3 {
-  color: #1f1a3b;
+  color: #0D062D;
   font-size: 1.125rem;
   font-weight: 400;
   letter-spacing: -0.01em;
@@ -87,9 +98,10 @@
 .cardContent p,
 .wideText p {
   margin-top: 10px;
-  color: #7a7d8d;
+  color: #4E4D53;
   font-size: 0.75rem;
   line-height: 1.6;
+  font-weight: 400;
 }
 
 .cardMedia {
@@ -182,12 +194,12 @@
 }
 
 .avatar {
-  width: 22px;
-  height: 22px;
+  width: 29px;
+  height: 29px;
   border-radius: 999px;
   border: 2px solid #ffffff;
-  background: #cfd4ff;
-  color: #2d2c5c;
+  background: #ebaa05;
+  color: #fafafc;
   display: inline-flex;
   align-items: center;
   justify-content: center;

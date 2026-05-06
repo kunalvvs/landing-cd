@@ -141,7 +141,7 @@ export default function FeaturesAutomationSection() {
               </div>
 
               <h3 className={styles.bigTitle}>
-                Meet Engage AI : The Creator <br /> Focused AI Model Built to <br />Understand
+                Meet Engage AI : The Creator  Focused AI Model Built to Understand
                 Your Audience.
               </h3>
 

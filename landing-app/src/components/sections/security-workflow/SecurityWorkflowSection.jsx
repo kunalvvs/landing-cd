@@ -141,7 +141,7 @@ export default function SecurityWorkflowSection() {
     stroke-linejoin="round"
   />
 </svg>
-            Security
+            SECURITY
           </span>
           <div className={styles.securityGrid}>
             <div className={styles.securityText}>

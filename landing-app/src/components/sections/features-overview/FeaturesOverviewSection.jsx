@@ -20,7 +20,7 @@ const FEATURE_CARDS = [
   },
   {
     id: "audience-management",
-    title: "Audience & Conversation Management",
+    title: `Audience & Conversation Management`,
     description:
       "Track conversations, replies, interested users, and leads so you never miss an opportunity to convert.",
     image: "/images/features card/Background.png",
@@ -33,10 +33,10 @@ export default function FeaturesOverviewSection() {
   return (
     <section className={styles.section} aria-labelledby="features-overview-title">
       <div className={styles.inner}>
-        <div className={styles.badge}>How it works</div>
+        <div className={styles.badge} > <img src="/images/Hero section/metaicon.png" alt="" className={styles.metaIcon} /> How it works</div>
 
         <h2 id="features-overview-title" className={styles.title}>
-          Features that makes your creator journey powerful
+          Features that makes your creator <br /> journey powerful
         </h2>
 
         <p className={styles.subtitle}>
@@ -87,14 +87,15 @@ export default function FeaturesOverviewSection() {
                   <div className={styles.projectRow}>
                     <span>Support</span>
                     <span className={styles.avatarGroup}>
+                      <span className={styles.avatar} ><img className={styles.avatar} src="/images/features card/Vector.png" alt="" /></span>
                       <span className={styles.avatar} aria-hidden="true">
                         P
                       </span>
                       <span className={styles.avatar} aria-hidden="true">
-                        B
+                        <img className={styles.avatar} src="/images/features card/Vector (1).png" alt="" />
                       </span>
                       <span className={styles.avatar} aria-hidden="true">
-                        M
+                        <img className={styles.avatar} src="/images/features card/Vector (2).png" alt="" />
                       </span>
                     </span>
                   </div>
@@ -105,24 +106,30 @@ export default function FeaturesOverviewSection() {
                         Z
                       </span>
                       <span className={styles.avatar} aria-hidden="true">
-                        A
+                       <img className={styles.avatar} src="/images/features card/Vector.png" alt="" />
                       </span>
                       <span className={styles.avatar} aria-hidden="true">
-                        T
+                        <img className={styles.avatar} src="/images/features card/Vector (3).png" alt="" />
+                      </span>
+                      <span className={styles.avatar} aria-hidden="true">
+                        H
                       </span>
                     </span>
                   </div>
                   <div className={styles.projectRow}>
                     <span>Corlax iOS app development</span>
                     <span className={styles.avatarGroup}>
+                       <span className={styles.avatar} aria-hidden="true">
+                       <img className={styles.avatar} src="/images/features card/Vector (1).png" alt="" />
+                      </span>
+                      <span className={styles.avatar} aria-hidden="true">
+                        B
+                      </span>
                       <span className={styles.avatar} aria-hidden="true">
                         M
                       </span>
-                      <span className={styles.avatar} aria-hidden="true">
-                        N
-                      </span>
-                      <span className={styles.avatar} aria-hidden="true">
-                        H
+                       <span className={styles.avatar} aria-hidden="true">
+                       <img className={styles.avatar} src="/images/features card/Vector (4).png" alt="" />
                       </span>
                     </span>
                   </div>
