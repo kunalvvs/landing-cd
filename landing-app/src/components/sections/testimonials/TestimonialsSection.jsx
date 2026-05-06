@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { useEffect, useMemo, useRef } from "react";
 import gsap from "gsap";
 import styles from "./TestimonialsSection.module.css";
 
@@ -8,6 +9,7 @@ const TESTIMONIALS = [
   {
     id: "john-david",
     name: "John David",
+    avatar: "/images/Hero section/avatar1.png",
     date: "August 29, 2024",
     quote:
       "As an active investor, I've struggled to keep track of my diverse portfolio. This platform changed everything. The investment tracking and performance analytics are incredibly detailed, giving me the insights I need to make smarter decisions. I've seen real growth since using this tool.",
@@ -16,6 +18,7 @@ const TESTIMONIALS = [
   {
     id: "john-clayton",
     name: "John Clayton",
+    avatar: "/images/Hero section/avatar3.png",
     date: "",
     quote:
       "Before using [Product Name], managing our financial processes was a constant headache. We struggled with manual data entry, scattered reports, and a lack of real-time visibility into our financial health.",
@@ -23,29 +26,46 @@ const TESTIMONIALS = [
 ];
 
 export default function TestimonialsSection() {
-  const cardsRef = useRef(null);
+  const wrapperRef = useRef(null);
+  const trackRef = useRef(null);
+  const tweenRef = useRef(null);
+
+  const loopedTestimonials = useMemo(
+    () => [...TESTIMONIALS, ...TESTIMONIALS],
+    []
+  );
 
   useEffect(() => {
-    if (!cardsRef.current) return;
+    if (!wrapperRef.current || !trackRef.current) return;
 
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
     if (prefersReduced) return;
 
-    const ctx = gsap.context(() => {
-      gsap.to(cardsRef.current, {
-        y: 22,
-        opacity: 0.92,
-        filter: "drop-shadow(0 24px 40px rgba(125, 120, 255, 0.25))",
-        duration: 3.2,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true,
-      });
+    const track = trackRef.current;
+    const wrapper = wrapperRef.current;
+    const loopDistance = track.scrollHeight / 2;
+    if (!loopDistance) return;
+
+    tweenRef.current = gsap.to(track, {
+      y: -loopDistance,
+      duration: 16,
+      ease: "linear",
+      repeat: -1,
     });
 
-    return () => ctx.revert();
+    const handleEnter = () => tweenRef.current?.pause();
+    const handleLeave = () => tweenRef.current?.resume();
+
+    wrapper.addEventListener("mouseenter", handleEnter);
+    wrapper.addEventListener("mouseleave", handleLeave);
+
+    return () => {
+      wrapper.removeEventListener("mouseenter", handleEnter);
+      wrapper.removeEventListener("mouseleave", handleLeave);
+      tweenRef.current?.kill();
+    };
   }, []);
 
   return (
@@ -67,29 +87,41 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-        <div className={styles.rightColumn} ref={cardsRef}>
-          {TESTIMONIALS.map((item) => (
-            <article
-              key={item.id}
-              className={item.highlight ? styles.card : styles.cardMuted}
-            >
-              <div className={styles.cardHeader}>
-                <div className={styles.avatar} aria-hidden="true" />
-                <div>
-                  <p className={styles.name}>{item.name}</p>
-                  <div className={styles.stars} aria-hidden="true">
-                    {Array.from({ length: 5 }).map((_, index) => (
-                      <span key={`${item.id}-star-${index}`} />
-                    ))}
+        <div className={styles.rightColumn} ref={wrapperRef}>
+          <div className={styles.cardsTrack} ref={trackRef}>
+            {loopedTestimonials.map((item, index) => (
+              <article
+                key={`${item.id}-${index}`}
+                className={item.highlight ? styles.card : styles.cardMuted}
+                aria-hidden={index >= TESTIMONIALS.length}
+              >
+                <div className={styles.cardHeader}>
+                  <div className={styles.avatar} aria-hidden="true">
+                    <Image
+                      src={item.avatar}
+                      alt=""
+                      width={46}
+                      height={46}
+                      className={styles.avatarImage}
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <div>
+                    <p className={styles.name}>{item.name}</p>
+                    <div className={styles.stars} aria-hidden="true">
+                      {Array.from({ length: 5 }).map((_, starIndex) => (
+                        <span key={`${item.id}-star-${index}-${starIndex}`} />
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-              <p className={styles.quote}>{item.quote}</p>
-              {item.date ? (
-                <p className={styles.date}>{item.date}</p>
-              ) : null}
-            </article>
-          ))}
+                <p className={styles.quote}>{item.quote}</p>
+                {item.date ? (
+                  <p className={styles.date}>{item.date}</p>
+                ) : null}
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
