@@ -208,6 +208,11 @@ export default function FeaturesAutomationSection() {
             ))}
           </div>
         </div>
+          
+          <span className={styles.effects2} ><img className={styles.effect3} src="/images/features automation section img/effect3.png" alt="" /></span>
+
+            <span className={styles.effects} ><img className={styles.effect1} src="/images/features automation section img/effect1.png" alt="" /></span>
+
       </div>
     </section>
   );

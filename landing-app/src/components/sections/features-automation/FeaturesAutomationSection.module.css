@@ -34,6 +34,29 @@
   
 }
 
+.effects{
+  position: absolute;
+  z-index: 1;
+  top: 90%;
+  /* border-radius: 50%; */
+}
+
+.effect1{
+  /* border-radius: 50%; */
+  /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.196); */
+}
+
+.effect3{
+  /* border-radius: 50%; */
+  border: none;
+  border-radius: 50%;
+}
+.effects2{
+  position:absolute;
+  z-index: 1;
+  bottom:30%;
+  left: 90%;
+}
 .panel::before {
   content: "";
   position: absolute;
@@ -582,6 +605,11 @@
     padding: 52px 0 52px;
   }
 
+  .effects{
+  position: absolute;
+  z-index: 1;
+  top: 95%;
+}
   .inner {
     width: min(1180px, 100% - 24px);
   }
