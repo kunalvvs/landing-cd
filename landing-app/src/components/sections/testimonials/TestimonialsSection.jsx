@@ -22,7 +22,18 @@ const TESTIMONIALS = [
     date: "",
     quote:
       "Before using [Product Name], managing our financial processes was a constant headache. We struggled with manual data entry, scattered reports, and a lack of real-time visibility into our financial health.",
+     highlight:true,
+    },
+    {
+    id: "john-david",
+    name: "John David",
+    avatar: "/images/Hero section/avatar1.png",
+    date: "August 29, 2024",
+    quote:
+      "As an active investor, I've struggled to keep track of my diverse portfolio. This platform changed everything. The investment tracking and performance analytics are incredibly detailed, giving me the insights I need to make smarter decisions. I've seen real growth since using this tool.",
+    highlight: true,
   },
+
 ];
 
 export default function TestimonialsSection() {
