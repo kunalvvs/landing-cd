@@ -89,11 +89,11 @@
 }
 
 .previewImage {
-  width: 88%;
-  max-width: 500px;
-  height: auto;
+  width: 100%;
+  max-width: 552px;
+  height: 521px;
   display: block;
-  margin-left: 120px;
+  margin-left: 13rem;
 }
 
 /* ── RIGHT: accordion list ── */
@@ -305,7 +305,7 @@
   .previewImage {
     width: 80%;
     margin-left: 70;
-    margin-top: 32px;
+    margin-top: 5rem;
   }
 }
 

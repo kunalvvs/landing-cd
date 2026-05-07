@@ -303,7 +303,7 @@
 
 .title {
   margin-top: 34px;
-  max-width: 980px;
+  max-width: 1120px;
   text-align: center;
   color: #100b2f;
   font-size: clamp(2.25rem, 5vw, 4.5rem);
