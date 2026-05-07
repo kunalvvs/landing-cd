@@ -11,7 +11,7 @@ const MENU_LINKS = [
 ];
 
 const TEMPLATE_LINKS = [
-  { label: "Style Guide", href: "/style-guide" },
+  { label: "How-To Guides", href: "/style-guide" },
   { label: "License", href: "#" },
   { label: "Changelog", href: "#" },
   { label: "404", href: "#" },
