@@ -362,6 +362,9 @@
   .ctaCard {
     padding: 36px 32px;
   }
+  .sectionTitle{
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 768px) {

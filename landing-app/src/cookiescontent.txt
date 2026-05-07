@@ -55,20 +55,37 @@ Content Recommendations: Suggest relevant templates or automation ideas based on
 3. Cookies We Use
 Below is a detailed list of the cookies used by CreatorFlow and our partners:
 
-Cookie Name	Provider	Purpose	Type	Duration
-_ga	Google Analytics	Distinguishes unique users for analytics	Analytics	2 years
-_gid	Google Analytics	Distinguishes unique users for analytics	Analytics	24 hours
-_gat	Google Analytics	Throttles request rate to prevent data overload	Analytics	1 minute
-_fbp	Facebook Pixel	Tracks user behavior for Facebook ad optimization	Marketing	3 months
-cf_session	CreatorFlow	Maintains your login session	Essential	Session
-cf_user	CreatorFlow	Remembers your user ID for authentication	Essential	30 days
-cf_token	CreatorFlow	Stores authentication token securely	Essential	30 days
-cf_lang	CreatorFlow	Remembers your language preference	Functional	1 year
-cf_prefs	CreatorFlow	Stores your dashboard and notification preferences	Functional	1 year
-cf_ab_test	CreatorFlow	Tracks A/B test variants for feature experiments	Analytics	90 days
-_hjSession_*	Hotjar	Maintains the current session state for Hotjar recordings	Analytics	30 minutes
-_hjSessionUser_*	Hotjar	Identifies returning users across sessions for Hotjar	Analytics	1 year
-_hjFirstSeen	Hotjar	Identifies whether this is the user's first session	Analytics	Session
+
+
+COOKIE: _ga
+PROVIDER: Google Analytics
+PURPOSE: Distinguishes unique users for analytics
+TYPE: Analytics
+DURATION: 2 years
+
+----------------------------------------
+
+COOKIE: _gid
+PROVIDER: Google Analytics
+PURPOSE: Distinguishes unique users for analytics
+TYPE: Analytics
+DURATION: 24 hours
+
+----------------------------------------
+
+COOKIE: _gat
+PROVIDER: Google Analytics
+PURPOSE: Throttles request rate to prevent data overload
+TYPE: Analytics
+DURATION: 1 minute
+
+----------------------------------------
+
+COOKIE: _fbp
+PROVIDER: Facebook Pixel
+PURPOSE: Tracks user behavior for Facebook ad optimization
+TYPE: Marketing
+DURATION: 3 months
 4. Third-Party Cookies and Services
 We use the following third-party services that may set cookies on your device:
 
