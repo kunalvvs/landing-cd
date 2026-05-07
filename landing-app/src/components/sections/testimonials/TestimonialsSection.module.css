@@ -76,7 +76,7 @@
   height: min(560px, 70vh);
   overflow: hidden;
   padding: 10px 0;
-  filter: drop-shadow(0 12px 26px rgba(125, 120, 255, 0.18));
+  filter: drop-shadow(0 12px 26px rgba(247, 247, 250, 0.18));
 }
 
 .rightColumn::before,
@@ -107,6 +107,11 @@
     rgba(255, 255, 255, 0)
   );
 }
+
+
+
+
+
 
 .cardsTrack {
   display: grid;
