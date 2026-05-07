@@ -304,8 +304,8 @@
 
   .previewImage {
     width: 80%;
-    margin-left: 70;
-    margin-top: 5rem;
+    margin-left: 0;
+    margin-top: 24px;
   }
 }
 
@@ -340,12 +340,19 @@
   }
 
   .previewFrame {
-    min-height: 260px;
+    min-height: unset;
+    height: auto;
     border-radius: 16px;
+    padding: 18px 0 0;
+    align-items: center;
   }
 
   .previewImage {
-    width: 82%;
+    width: 90%;
+    height: auto;
+    max-height: 420px;
+    margin: 12px 30px 0;
+    margin-left: 7.5rem;
   }
 
   .stepItem {

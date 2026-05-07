@@ -311,7 +311,8 @@
 
 .bigLeft {
   padding: 34px 34px 30px;
-  margin-left: 30px;
+  margin-left: 0px;
+  
 }
 
 .engageRow {
@@ -336,7 +337,7 @@
 .bigTitle {
   margin-top: 18px;
   color: rgba(255, 255, 255, 1);
-  font-size: clamp(1.5rem, 2.6vw, 1.2rem);
+  font-size: clamp(1.5rem, 2.6vw, 1.25rem);
   line-height: 1.15;
   letter-spacing: -0.02em;
   font-weight: 700;
@@ -629,12 +630,26 @@
 
   .bigLeft {
     padding: 24px 18px 20px;
-    margin-right: 30px;
+    margin-right: 0;
   }
 
   .bigRight {
     padding: 18px;
-    margin-right: 50px;
+    margin-right: 0;
+  }
+
+  .bigTitle,
+  .bigDescription,
+  .bigMeta {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .bigMeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    align-items: center;
   }
 
   .productHuntPill {
@@ -658,6 +673,12 @@
 
   .brandText {
     font-size: 1.125rem;
+  }
+
+  .bigImage {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 }
 
