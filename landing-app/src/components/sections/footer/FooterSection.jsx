@@ -11,11 +11,11 @@ const MENU_LINKS = [
 ];
 
 const TEMPLATE_LINKS = [
-  "Style Guide",
-  "License",
-  "Changelog",
-  "404",
-  "Password",
+  { label: "Style Guide", href: "/style-guide" },
+  { label: "License", href: "#" },
+  { label: "Changelog", href: "#" },
+  { label: "404", href: "#" },
+  { label: "Password", href: "#" },
 ];
 
 export default function FooterSection() {
@@ -62,8 +62,8 @@ export default function FooterSection() {
             <h3>Templates</h3>
             <ul>
               {TEMPLATE_LINKS.map((item) => (
-                <li key={item}>
-                  <a href="#">{item}</a>
+                <li key={item.label}>
+                  <Link href={item.href}>{item.label}</Link>
                 </li>
               ))}
             </ul>
