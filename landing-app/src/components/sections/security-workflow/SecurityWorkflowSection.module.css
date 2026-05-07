@@ -3,6 +3,7 @@
 ───────────────────────────────────────────── */
 .wrapper {
   background: #fff;
+  padding-bottom: 70px;
 }
 
 /* ─────────────────────────────────────────────
@@ -120,12 +121,14 @@
   background: #F5F6F9;
   border: 1px solid #D8D8DB;
   border-radius: 15px;
+  margin-bottom: 50px;
 }
 
 .workflowInner {
   width: min(1160px, 100% - 48px);
   margin: 0 auto;
   text-align: center;
+  
 }
 
 .workflowBadge {
@@ -211,24 +214,27 @@
 .centerIconWrap {
   /* width: 96px; */
   /* height: 96px; */
-  border-radius: 22px;
-  /* background: linear-gradient(160deg, #7560ff, #4a35d5); */
+  border-radius: 50px;
+  background: transparent;
   display: grid;
   place-items: center;
-  box-shadow: 0 16px 40px rgba(94, 72, 226, 0.45);
+  /* box-shadow: 0 16px 40px rgba(94, 72, 226, 0.45); */
 }
 
 .statsIcon{
   background-color: #c0a8f856;
-  border-radius: 200px;
-  padding: 4px;
+  border-radius: 50%;
+  /* padding: 4px; */
+  padding-top: 4px;
+  padding-right: 4px;
+  padding-left: 4px;
 }
 
 .centerLogoImg {
   width: 120px;
   height: 120px;
   object-fit: contain;
-  border-radius: 25px;
+  border-radius: 30px;
 }
 
 .centerLabel {
@@ -626,14 +632,14 @@
   }
 
   .centerIconWrap {
-    width: 72px;
-    height: 72px;
-    border-radius: 18px;
+    width: 150px;
+    height: 150px;
+    /* border-radius: 18px; */
   }
 
   .centerLogoImg {
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
   }
 
   .orbitNode {
@@ -661,4 +667,13 @@
   .securityText p {
     font-size: 0.8125rem;
   }
+
+  .centerLabel{
+    margin-top: -15px;
+  }
+
+  .wrapper {
+  /* background: #fff; */
+  padding-bottom: 1px;
+}
 }
