@@ -1,19 +1,11 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import Navbar from "@/components/ui/Navbar";
 import styles from "./HeroSection.module.css";
 
-const NAV_ITEMS = [
-  "Products",
-  "Industries",
-  "Newsroom",
-  "Resources",
-  "Documentation",
-];
-
 export default function HeroSection() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const marqueeRef = useRef(null);
 
   useEffect(() => {
@@ -26,7 +18,7 @@ export default function HeroSection() {
 
     const tween = gsap.to(marqueeRef.current, {
       xPercent: -50,
-      duration: 18,
+      duration: 60,
       ease: "linear",
       repeat: -1,
     });
@@ -48,68 +40,7 @@ export default function HeroSection() {
       </p>
 
       <div className={styles.contentWrap}>
-        <header className={styles.navShell}>
-          {/* Brand */}
-          <div className={styles.brand}>
-            <Image
-              src="/images/icons/logo.png"
-              alt="Creatordesks logo"
-              width={45}
-              height={45}
-              priority
-            />
-            <span className={styles.logoText}>Creatordesks</span>
-          </div>
-
-          {/* Desktop nav */}
-          <nav aria-label="Primary navigation" className={styles.desktopNav}>
-            <ul className={styles.navList}>
-              {NAV_ITEMS.map((item) => (
-                <li key={item}>
-                  <a href="#">{item}</a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Desktop CTA */}
-          <a href="#" className={`${styles.signupButton} ${styles.desktopCta}`}>
-            SIGN UP NOW
-          </a>
-
-          {/* Hamburger */}
-          <button
-            className={styles.hamburger}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((v) => !v)}
-          >
-            <span className={`${styles.bar} ${menuOpen ? styles.barTop : ""}`} />
-            <span className={`${styles.bar} ${menuOpen ? styles.barMid : ""}`} />
-            <span className={`${styles.bar} ${menuOpen ? styles.barBot : ""}`} />
-          </button>
-        </header>
-
-        {/* Mobile dropdown */}
-        <div
-          className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}
-          aria-hidden={!menuOpen}
-        >
-          <nav aria-label="Mobile navigation">
-            <ul className={styles.mobileNavList}>
-              {NAV_ITEMS.map((item) => (
-                <li key={item}>
-                  <a href="#" onClick={() => setMenuOpen(false)}>
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <a href="#" className={styles.mobileCtaButton}>
-            SIGN UP NOW
-          </a>
-        </div>
+        <Navbar />
 
         {/* Hero content */}
         <div className={styles.heroBadge}>

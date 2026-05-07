@@ -1,0 +1,197 @@
+Cookie Policy
+Effective Date:April 27, 2026
+
+Last Updated:April 27, 2026
+
+This Cookie Policy explains how CreatorFlow Labs S.L. ("we," "us," or "our") uses cookies and similar tracking technologies on our website and Instagram DM automation platform ("Service"). This policy complies with the General Data Protection Regulation (GDPR), the Spanish Ley 34/2002 de Servicios de la Sociedad de la Informacion (LSSI-CE, Article 22.2), and the ePrivacy Directive (2002/58/EC). By using our Service, you consent to the use of cookies as described in this policy.
+
+Table of Contents
+1. What Are Cookies?
+2. Why We Use Cookies
+3. Cookies We Use
+4. Third-Party Cookies and Services
+5. Other Tracking Technologies
+6. Your Cookie Choices
+7. Impact of Disabling Cookies
+8. Cookies and GDPR Compliance
+9. Cookies and Children's Privacy
+10. Changes to This Cookie Policy
+11. Contact Us
+1. What Are Cookies?
+Cookies are small text files that are placed on your device (computer, smartphone, or tablet) when you visit a website. Cookies are widely used by website owners to make their websites work efficiently, provide a better user experience, and gather analytics information.
+
+First-Party Cookies: Set by CreatorFlow directly on your device.
+Third-Party Cookies: Set by our partners and service providers (e.g., Google Analytics, Facebook Pixel).
+Session Cookies: Temporary cookies that expire when you close your browser.
+Persistent Cookies: Remain on your device for a set period or until you delete them.
+2. Why We Use Cookies
+We use cookies and similar technologies for several purposes:
+
+2.1 Essential Cookies (Strictly Necessary)
+These cookies are essential for the Service to function properly. Without these cookies, core features would not work.
+
+Authentication: Keep you logged in to your account and remember your session.
+Security: Protect against fraud, abuse, and unauthorized access.
+Load Balancing: Distribute traffic across our servers for optimal performance.
+User Preferences: Remember your language preference and other settings.
+2.2 Analytics Cookies
+These cookies help us understand how visitors use our website and Service so we can improve the user experience.
+
+Google Analytics: Collects anonymous usage data, including pages visited, time spent on site, referral sources, and device information.
+Usage Patterns: Track which features are most used, identify bugs, and understand user behavior.
+Performance Monitoring: Measure page load times and identify technical issues.
+2.3 Marketing and Advertising Cookies
+These cookies are used to deliver relevant ads and track the effectiveness of our marketing campaigns.
+
+Facebook Pixel: Tracks conversions from Facebook ads, builds custom audiences, and optimizes ad delivery.
+Google Ads: Tracks conversions from Google ads and enables remarketing campaigns.
+Retargeting: Shows you relevant ads on third-party websites based on your previous visits to our site.
+2.4 Functional Cookies
+These cookies enhance the functionality of the Service and provide personalized features.
+
+Personalization: Remember your preferences, such as dashboard layout or notification settings.
+Feature Enhancements: Enable advanced features like real-time previews and interactive demos.
+Content Recommendations: Suggest relevant templates or automation ideas based on your usage.
+3. Cookies We Use
+Below is a detailed list of the cookies used by CreatorFlow and our partners:
+
+Cookie Name	Provider	Purpose	Type	Duration
+_ga	Google Analytics	Distinguishes unique users for analytics	Analytics	2 years
+_gid	Google Analytics	Distinguishes unique users for analytics	Analytics	24 hours
+_gat	Google Analytics	Throttles request rate to prevent data overload	Analytics	1 minute
+_fbp	Facebook Pixel	Tracks user behavior for Facebook ad optimization	Marketing	3 months
+cf_session	CreatorFlow	Maintains your login session	Essential	Session
+cf_user	CreatorFlow	Remembers your user ID for authentication	Essential	30 days
+cf_token	CreatorFlow	Stores authentication token securely	Essential	30 days
+cf_lang	CreatorFlow	Remembers your language preference	Functional	1 year
+cf_prefs	CreatorFlow	Stores your dashboard and notification preferences	Functional	1 year
+cf_ab_test	CreatorFlow	Tracks A/B test variants for feature experiments	Analytics	90 days
+_hjSession_*	Hotjar	Maintains the current session state for Hotjar recordings	Analytics	30 minutes
+_hjSessionUser_*	Hotjar	Identifies returning users across sessions for Hotjar	Analytics	1 year
+_hjFirstSeen	Hotjar	Identifies whether this is the user's first session	Analytics	Session
+4. Third-Party Cookies and Services
+We use the following third-party services that may set cookies on your device:
+
+4.1 Google Analytics
+We use Google Analytics to understand how visitors use our website and Service.
+
+Purpose: Anonymous analytics and usage tracking
+Data Collected: Pages viewed, time on site, bounce rate, referral sources, device type, browser type, geographic location (city/country level)
+Privacy Policy: https://policies.google.com/privacy
+Opt-Out: Use Google Analytics Opt-out Browser Add-on: https://tools.google.com/dlpage/gaoptout
+4.2 Facebook Pixel
+We use Facebook Pixel to measure the effectiveness of our Facebook advertising and build custom audiences.
+
+Purpose: Ad conversion tracking and remarketing
+Data Collected: Page views, button clicks, form submissions, user behavior on our site
+Privacy Policy: https://www.facebook.com/privacy/policy
+Opt-Out: Adjust your Facebook Ad Preferences: https://www.facebook.com/settings?tab=ads
+4.3 Stripe
+We use Stripe for secure payment processing. Stripe may set cookies during checkout.
+
+Purpose: Fraud prevention and payment processing
+Data Collected: Payment information, billing address, transaction details
+Privacy Policy: https://stripe.com/privacy
+Note: Stripe cookies are essential for payment processing and cannot be disabled if you subscribe to a paid plan.
+4.4 Hotjar
+We use Hotjar to understand how visitors interact with our website through session recordings and analytics.
+
+Purpose: Session recording, heatmaps, and behavioral analytics to improve the Service
+Data Collected: Mouse movements, clicks, scroll behavior, page interactions, device and browser type
+Privacy Policy: https://www.hotjar.com/legal/policies/privacy/
+Opt-Out: https://www.hotjar.com/legal/compliance/opt-out
+Note: Hotjar respects Do Not Track (DNT) browser signals.
+4.5 Google Fonts
+We use Google Fonts to load the Stack Sans Headline font used throughout the Service.
+
+Purpose: Display custom fonts for improved design
+Data Collected: IP address, font requests
+Privacy Policy: https://policies.google.com/privacy
+Note: Google Fonts are loaded from Google's servers. No cookies are set by Google Fonts.
+5. Other Tracking Technologies
+In addition to cookies, we use other tracking technologies:
+
+5.1 Web Beacons (Pixels)
+Small transparent images embedded in emails or web pages that track whether an email was opened or a page was viewed.
+
+Used in marketing emails to measure open rates and engagement
+Used on landing pages to track conversions from marketing campaigns
+5.2 Local Storage
+Browser local storage allows websites to store data on your device for improved performance and user experience.
+
+Session Data: Temporary data that expires when you close your browser
+Cached Data: Speeds up page loading by storing static resources (images, CSS, JavaScript)
+User Preferences: Dashboard layout, notification settings, and other customization options
+5.3 Server Logs
+Our servers automatically log certain information when you access the Service:
+
+Log Data: IP address, browser type, operating system, referral URLs, pages visited, timestamps
+Purpose: Security monitoring, troubleshooting, and analytics
+Retention: Server logs are typically retained for 12 months
+6. Your Cookie Choices
+You have several options to manage and control cookies:
+
+6.1 Browser Settings
+Most web browsers allow you to control cookies through their settings. You can:
+
+Block All Cookies: Prevent all cookies from being set (may break website functionality)
+Block Third-Party Cookies: Block cookies from external domains while allowing first-party cookies
+Delete Cookies: Clear existing cookies from your browser
+Receive Alerts: Get notifications when websites attempt to set cookies
+Google Chrome: Cookie Settings Guide
+Mozilla Firefox: Cookie Settings Guide
+Safari: Cookie Settings Guide
+Microsoft Edge: Cookie Settings Guide
+6.2 Opt-Out Tools
+You can opt out of certain tracking technologies:
+
+Google Analytics: Install the Google Analytics Opt-out Browser Add-on: https://tools.google.com/dlpage/gaoptout
+Facebook Pixel: Adjust your Facebook Ad Preferences: https://www.facebook.com/settings?tab=ads
+Industry Opt-Out Tools: Visit the Digital Advertising Alliance opt-out page: http://optout.aboutads.info/ or the Network Advertising Initiative opt-out page: http://optout.networkadvertising.org/
+6.3 Do Not Track (DNT)
+Some browsers include a "Do Not Track" (DNT) feature that signals to websites that you do not want to be tracked. However, there is no industry standard for how websites should respond to DNT signals. CreatorFlow currently does not respond to DNT signals, but you can use the opt-out methods described above.
+
+6.4 Mobile Device Settings
+On mobile devices, you can limit tracking through device settings:
+
+iOS: Settings > Privacy > Tracking > Disable "Allow Apps to Request to Track"
+Android: Settings > Google > Ads > Opt out of Ads Personalization
+Reset Advertising ID: Periodically reset your advertising identifier to limit cross-app tracking
+7. Impact of Disabling Cookies
+If you disable or block cookies, some features of the Service may not function properly:
+
+Login Issues: You may not be able to stay logged in or may need to re-enter credentials frequently.
+Lost Preferences: Your dashboard layout, language preference, and other settings may not be saved.
+Reduced Functionality: Some interactive features, real-time previews, and personalized content may not work.
+Payment Problems: You may not be able to complete payment transactions if essential cookies are blocked.
+Essential cookies are required for core functionality. If you block essential cookies, you will not be able to use the Service.
+
+8. Cookies and GDPR Compliance
+For users in the European Economic Area, UK, or Switzerland, our use of cookies complies with the General Data Protection Regulation (GDPR), the ePrivacy Directive (2002/58/EC), and in Spain, the LSSI-CE (Article 22.2):
+
+Consent: We obtain your consent before setting non-essential cookies (analytics, marketing).
+Cookie Banner: On your first visit, we display a cookie consent banner explaining our use of cookies.
+Granular Control: You can accept all cookies, reject non-essential cookies, or customize your preferences.
+Withdraw Consent: You can withdraw your consent at any time through browser settings or by contacting us.
+Data Subject Rights: You have rights to access, correct, delete, and restrict processing of your personal data collected through cookies. See our Privacy Policy for details.
+9. Cookies and Children's Privacy
+The Service is not intended for children under the age of 13 (14 in Spain, or 16 elsewhere in the EEA). We do not knowingly collect information from children through cookies. If you are a parent or guardian and believe your child has provided information through our cookies, please contact us at info@creatorflow.so.
+
+10. Changes to This Cookie Policy
+We may update this Cookie Policy from time to time to reflect changes in our practices, technology, or legal requirements. When we make changes:
+
+Notice: We will post the updated Cookie Policy on this page and update the "Last Updated" date.
+Material Changes: For material changes, we will provide prominent notice on our website or via email.
+Continued Use: Your continued use of the Service after the updated Cookie Policy takes effect constitutes your acceptance of the changes.
+Review Regularly: We encourage you to review this Cookie Policy periodically to stay informed about our cookie practices.
+11. Contact Us
+If you have questions or concerns about this Cookie Policy or our use of cookies, please contact us:
+
+Email:info@creatorflow.so
+
+Support:info@creatorflow.so
+
+Address:
+
+CreatorFlow Labs S.L.
+Madrid, Spain

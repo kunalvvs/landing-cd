@@ -1,0 +1,119 @@
+.page {
+  background: #ffffff;
+  color: #1a1a22;
+}
+
+.container {
+  width: min(920px, 100% - 32px);
+  margin: 0px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.navBar{
+    margin-top: 30px;
+    border: 1px solid rgba(128, 128, 128, 0.404);
+    border-radius: 999px;
+}
+.header {
+  display: grid;
+  gap: 10px;
+  padding-top: 6px;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  line-height: 1.15;
+  font-family: "Funnel Display";
+  color: #15152a;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  color: #6c6f82;
+  font-size: 0.875rem;
+}
+
+.content {
+  display: grid;
+  gap: 16px;
+  padding-bottom: 80px;
+}
+
+.toc {
+  display: grid;
+  gap: 12px;
+  margin: 6px 0 12px;
+}
+
+.toc h2 {
+  font-size: 1.5rem;
+  font-family: "Funnel Display";
+  color: #0d0d16;
+}
+
+.tocList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 28px;
+  padding-left: 18px;
+  font-size: 0.875rem;
+  color: #6a6d7f;
+}
+
+.tocList a {
+  color: inherit;
+}
+
+.tocList a:hover {
+  color: #4b4f64;
+  text-decoration: underline;
+}
+
+.sectionHeading {
+  font-size: 1.5rem;
+  font-family: "Funnel Display";
+  color: #0d0d16;
+  margin-top: 12px;
+}
+
+.subHeading {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #19192b;
+  margin-top: 6px;
+}
+
+.paragraph {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: #585b70;
+}
+
+.pre {
+  padding: 14px 16px;
+  background: #f7f7fb;
+  border-radius: 12px;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #3b3e50;
+  overflow-x: auto;
+  border: 1px solid #ececf2;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: min(920px, 100% - 24px);
+    /* margin-top: 24px; */
+  }
+
+  .tocList {
+    grid-template-columns: 1fr;
+  }
+  .navBar{
+    border-radius: 20px;
+  }
+}

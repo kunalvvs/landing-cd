@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./FooterSection.module.css";
 
 const MENU_LINKS = [
@@ -38,6 +39,11 @@ export default function FooterSection() {
           <div className={styles.socials}>
             <span className={styles.socialIcon}>X</span>
             <span className={styles.socialIcon}>in</span>
+          </div>
+          <div className={styles.legalLinks}>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/terms-of-condition">Terms of Condition</Link>
+            <Link href="/cookie-policy">Cookie Policy</Link>
           </div>
         </div>
 

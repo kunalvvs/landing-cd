@@ -46,6 +46,19 @@
   gap: 10px;
 }
 
+.legalLinks {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  font-size: 0.75rem;
+  color: #8b8c98;
+}
+
+.legalLinks a {
+  color: inherit;
+}
+
 .socialIcon {
   width: 34px;
   height: 34px;
