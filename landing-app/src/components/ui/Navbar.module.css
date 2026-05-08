@@ -134,7 +134,7 @@
   border-top: none;
   box-shadow: 0 16px 40px rgba(20, 12, 52, 0.12);
   display: none;
-  z-index: 20;
+  z-index: 9999;
 }
 
 .mobileMenuOpen {
