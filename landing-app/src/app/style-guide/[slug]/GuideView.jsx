@@ -40,22 +40,21 @@ export default function GuideView({ guide, related }) {
 
   return (
     <main className={styles.page}>
-      <div className={styles.navWrap}>
-        <Navbar />
-      </div>
+      {/* ── Hero wrapper with bg image ── */}
+      <div className={styles.heroWrap}>
+        <div className={styles.navShell}>
+          <Navbar />
+        </div>
 
-      {/* ── Hero ── */}
-      <header className={styles.hero}>
-        <div className={styles.shell}>
+        <header className={styles.hero}>
           <nav className={styles.breadcrumb} aria-label="Breadcrumb">
             <Link href="/">Home</Link>
-            <span aria-hidden="true">/</span>
+            <span aria-hidden="true">&gt;</span>
             <Link href="/style-guide">Resources</Link>
-            <span aria-hidden="true">/</span>
+            <span aria-hidden="true">&gt;</span>
             <span>{guide.title}</span>
           </nav>
 
-          <span className={styles.categoryBadge}>{guide.category}</span>
           <h1 className={styles.heroTitle}>{guide.title}</h1>
           <p className={styles.heroSubtitle}>{guide.description}</p>
 
@@ -67,8 +66,8 @@ export default function GuideView({ guide, related }) {
             <span className={styles.metaDot} aria-hidden="true">·</span>
             <span>{guide.readTime}</span>
           </div>
-        </div>
-      </header>
+        </header>
+      </div>
 
       {/* ── Featured Image ── */}
       <div className={styles.featuredImageWrap}>
@@ -133,7 +132,7 @@ export default function GuideView({ guide, related }) {
                 onClick={() => setTocOpen((v) => !v)}
                 aria-expanded={tocOpen}
               >
-                In This Guide
+                Table of Content
                 <span className={`${styles.tocChevron} ${tocOpen ? styles.tocChevronOpen : ""}`} aria-hidden="true">
                   ›
                 </span>
