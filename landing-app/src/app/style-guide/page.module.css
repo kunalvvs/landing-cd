@@ -6,6 +6,7 @@
 .shell {
   width: min(1180px, 100% - 40px);
   margin: 0px auto 0;
+ 
 }
 
 .navBar{
@@ -20,6 +21,7 @@
   display: grid;
   justify-items: center;
   gap: 16px;
+  
 }
 
 .eyebrow {

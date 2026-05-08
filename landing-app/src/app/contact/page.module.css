@@ -108,7 +108,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #7b6dff;
+  color: #17133a;
   flex-shrink: 0;
 }
 
@@ -129,7 +129,7 @@
 .cardAction {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #7b6dff;
+  color: #17133a;
   margin-top: 4px;
 }
 
