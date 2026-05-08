@@ -50,7 +50,7 @@ export default function GuideView({ guide, related }) {
           <nav className={styles.breadcrumb} aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span aria-hidden="true">/</span>
-            <Link href="/style-guide">How-To Guides</Link>
+            <Link href="/style-guide">Resources</Link>
             <span aria-hidden="true">/</span>
             <span>{guide.title}</span>
           </nav>
@@ -143,7 +143,7 @@ export default function GuideView({ guide, related }) {
                 className={`${styles.tocNav} ${tocOpen ? styles.tocNavOpen : ""}`}
                 aria-label="Article sections"
               >
-                <p className={styles.tocLabel}>In This Guide</p>
+                <p className={styles.tocLabel}>Table of Content</p>
                 <ul className={styles.tocList}>
                   {guide.sections.map((section) => (
                     <li key={section.id}>

@@ -14,7 +14,7 @@
 .navWrap {
   background: #ffffff;
   padding-top: 30px;
-  margin: 0 30px 30px 30px;
+  margin: 0 40px 30px 40px;
   
 }
 
@@ -22,6 +22,8 @@
 .hero {
   background: #060014;
   padding: 48px 0 96px;
+  /* border-radius: 20px; */
+  /* margin: auto 10px auto 10px; */
 }
 
 .breadcrumb {
@@ -127,6 +129,8 @@
   margin-bottom: 0;
   position: relative;
   z-index: 2;
+  /* perspective: 1200px; */
+  
 }
 
 .featuredImageInner {
@@ -142,6 +146,18 @@
   object-fit: cover;
   display: block;
 }
+
+
+/* .featuredImage {
+  transition: transform 0.5s ease;
+  transform-origin: bottom;
+  will-change: transform;
+}
+
+.featuredImageWrap:hover .featuredImage {
+  transform: rotateX(18deg) scale(0.98);
+  border-radius: 20px;
+} */
 
 /* ─── Body ──────────────────────────────────────────────── */
 .body {
