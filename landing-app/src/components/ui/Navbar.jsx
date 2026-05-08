@@ -6,11 +6,11 @@ import { useState } from "react";
 import styles from "./Navbar.module.css";
 
 const NAV_ITEMS = [
-  "Solution",
-  "Pricing",
-  "Resources",
-  "Contact",
-  "About",
+  { label: "Solution", href: "#" },
+  { label: "Pricing", href: "#" },
+  { label: "Resources", href: "/style-guide" },
+  { label: "Contact", href: "/contact" },
+  { label: "About", href: "#" },
 ];
 
 export default function Navbar() {
@@ -32,8 +32,8 @@ export default function Navbar() {
       <nav aria-label="Primary navigation" className={styles.desktopNav}>
         <ul className={styles.navList}>
           {NAV_ITEMS.map((item) => (
-            <li key={item}>
-              <a href="#">{item}</a>
+            <li key={item.label}>
+              <Link href={item.href}>{item.label}</Link>
             </li>
           ))}
         </ul>
@@ -63,10 +63,10 @@ export default function Navbar() {
         <nav aria-label="Mobile navigation">
           <ul className={styles.mobileNavList}>
             {NAV_ITEMS.map((item) => (
-              <li key={item}>
-                <a href="#" onClick={() => setMenuOpen(false)}>
-                  {item}
-                </a>
+              <li key={item.label}>
+                <Link href={item.href} onClick={() => setMenuOpen(false)}>
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>

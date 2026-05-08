@@ -1,0 +1,174 @@
+/* ─── Page ──────────────────────────────────────────────── */
+.page {
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+.shell {
+  width: min(1180px, 100% - 40px);
+  margin: 0 auto;
+}
+
+/* ─── Hero wrapper ───────────────────────────────────────── */
+.heroWrap {
+  background-image: url('/images/Contact%20Us/bg.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  border-radius: 0 0 40px 40px;
+  overflow: hidden;
+  padding-bottom: 80px;
+  /* margin: 0 16px; */
+}
+
+/* ─── Nav shell ─────────────────────────────────────────── */
+.navShell {
+  width: min(1180px, 100% - 40px);
+  margin: 0 auto;
+  padding-top: 28px;
+}
+
+/* ─── Hero content ──────────────────────────────────────── */
+.heroContent {
+  text-align: center;
+  padding: 48px 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.contactBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  color: #1c1838;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(20, 12, 52, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.heroTitle {
+  font-size: clamp(2.2rem, 5vw, 3.25rem);
+  font-family: "Funnel Display", sans-serif;
+  font-weight: 700;
+  color: #17133a;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  max-width: 600px;
+}
+
+.heroSubtitle {
+  font-size: 0.9375rem;
+  color: #5e5c72;
+  line-height: 1.65;
+  max-width: 480px;
+}
+
+/* ─── Contact Cards ─────────────────────────────────────── */
+.cardsSection {
+  padding: 64px 0 80px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 32px 28px 28px;
+  background: #f7f7fb;
+  border: 1px solid #ebebf4;
+  border-radius: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(20, 12, 52, 0.1);
+  border-color: #c5b7ff;
+}
+
+.cardIconWrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #e4e2f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7b6dff;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-family: "Funnel Display", sans-serif;
+  font-weight: 700;
+  color: #17133a;
+}
+
+.cardDescription {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #6b6f82;
+  flex: 1;
+}
+
+.cardAction {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #7b6dff;
+  margin-top: 4px;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 980px) {
+  .heroWrap {
+    margin: 0 10px;
+    border-radius: 0 0 28px 28px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .heroWrap {
+    margin: 0;
+    border-radius: 0 0 24px 24px;
+    padding-bottom: 60px;
+  }
+
+  .heroContent {
+    padding-top: 36px;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .cardsSection {
+    padding: 44px 0 60px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 24px 22px;
+  }
+}
