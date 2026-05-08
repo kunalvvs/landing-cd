@@ -130,7 +130,7 @@ export default function SecurityWorkflowSection() {
     stroke="#6C4CFF" 
     strokeWidth="1.8" 
     strokeLinecap="round" 
-    stroke-linejoin="round"
+    strokeLinejoin="round"
   />
   
   <path 
@@ -138,7 +138,7 @@ export default function SecurityWorkflowSection() {
     stroke="#6C4CFF" 
     strokeWidth="1.5" 
     strokeLinecap="round" 
-    stroke-linejoin="round"
+    strokeLinejoin="round"
   />
 </svg>
             SECURITY
