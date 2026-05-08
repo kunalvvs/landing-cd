@@ -6,11 +6,11 @@ import { useState } from "react";
 import styles from "./Navbar.module.css";
 
 const NAV_ITEMS = [
-  "Products",
-  "Industries",
-  "Newsroom",
+  "Solution",
+  "Pricing",
   "Resources",
-  "Documentation",
+  "Contact",
+  "About",
 ];
 
 export default function Navbar() {

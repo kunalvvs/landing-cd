@@ -1,9 +1,9 @@
 "use client";
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import Navbar from "@/components/ui/Navbar";
 import FooterSection from "@/components/sections/footer/FooterSection";
-
-
+import { GUIDES } from "./guidesData";
 
 import styles from "./page.module.css";
 
@@ -14,90 +14,6 @@ const TABS = [
   "Advanced",
   "How-To",
   "Niche Guides",
-];
-
-const GUIDES = [
-  {
-    id: "01",
-    category: "Getting Started",
-    title: "What is Instagram DM Automation?",
-    description:
-      "Learn the fundamentals of DM automation, how it works through Meta’s official API, and why it’s different from unreliable bots.",
-    readTime: "12 min read",
-    image: "/images/blog-img/resources%20page/instagram-dm-automation-complete-guide.webp",
-  },
-  {
-    id: "02",
-    category: "Strategy",
-    title: "Why DM Automation Works",
-    description:
-      "Discover the 6 data-backed reasons why DM automation converts better than traditional lead capture funnels.",
-    readTime: "10 min read",
-    image: "/images/blog-img/resources%20page/creatorflow-vs-manychat-instagram.png",
-  },
-  {
-    id: "03",
-    category: "Getting Started",
-    title: "How DM Automation Works",
-    description:
-      "Understand the technical workflow: triggers, conditions, actions, and how messages are sent through Meta’s APIs.",
-    readTime: "7 min read",
-    image: "/images/blog-img/resources%20page/Personal%20Broadcasting%20Setup-min.webp",
-  },
-  {
-    id: "04",
-    category: "Strategy",
-    title: "9 Ways Creators Use DM Automation",
-    description:
-      "Real-world use cases: affiliate links, lead magnets, coaching bookings, e-commerce, giveaways, and more.",
-    readTime: "12 min read",
-    image: "/images/blog-img/resources%20page/Focused%20Professional%20(1).png",
-  },
-  {
-    id: "05",
-    category: "Advanced",
-    title: "Manual vs Automated DMs",
-    description:
-      "A detailed comparison of manual messaging vs automation. Plus: 2026 trends shaping the future of Instagram DM automation.",
-    readTime: "9 min read",
-    image: "/images/blog-img/resources%20page/instagram-dm-automation-tool-comparison.png",
-  },
-  {
-    id: "06",
-    category: "Getting Started",
-    title: "Getting Started: Step-by-Step Guide",
-    description:
-      "Everything you need to set up your first automation: free tools, prerequisites, implementation steps, and troubleshooting tips.",
-    readTime: "15 min read",
-    image: "/images/blog-img/resources%20page/instagram-dm-automation-complete-guide%20(1).png",
-  },
-  {
-    id: "07",
-    category: "Getting Started",
-    title: "Is Instagram DM Automation Safe?",
-    description:
-      "Meta API vs unauthorized bots: understand the safety difference. Learn how to automate DMs without risking your account.",
-    readTime: "12 min read",
-    image: "/images/blog-img/resources%20page/avoid-instagram-bans-dm-automation.png",
-  },
-  {
-    id: "08",
-    category: "Advanced",
-    title: "Meta API vs Instagram Bots",
-    description:
-      "Official Meta API automation vs third-party bots. Risks, compliance, and why API method matters for your account safety.",
-    readTime: "8 min read",
-    image: "/images/blog-img/resources%20page/Personal%20Broadcasting%20Setup-min%20(1).png",
-  },
-  {
-    id: "09",
-    category: "Strategy",
-    title: "Instagram DM Marketing Strategy",
-    description:
-      "Build a DM marketing strategy that converts followers into customers. Campaign types, trigger selection, and performance tracking.",
-    readTime: "10 min read",
-    image: "/images/blog-img/resources%20page/creatorflow-vs-manychat-instagram.png",
-  },
 ];
 
 const FAQS = [
@@ -111,7 +27,7 @@ const FAQS = [
     id: "faq-2",
     question: "Is Instagram DM automation safe?",
     answer:
-      "Yes. When you use Meta’s official API, automation is compliant and safe. Avoid third-party bots that violate platform policies.",
+      "Yes. When you use Meta's official API, automation is compliant and safe. Avoid third-party bots that violate platform policies.",
   },
   {
     id: "faq-3",
@@ -133,9 +49,9 @@ const FAQS = [
   },
   {
     id: "faq-6",
-    question: "What’s the best DM automation tool for Instagram?",
+    question: "What's the best DM automation tool for Instagram?",
     answer:
-      "The best tool is one that uses Meta’s official API, offers templates, analytics, and makes setup simple for your workflow.",
+      "The best tool is one that uses Meta's official API, offers templates, analytics, and makes setup simple for your workflow.",
   },
   {
     id: "faq-7",
@@ -151,7 +67,7 @@ const FAQS = [
   },
   {
     id: "faq-9",
-    question: "What’s the difference between comment-to-DM and keyword automation?",
+    question: "What's the difference between comment-to-DM and keyword automation?",
     answer:
       "Comment-to-DM triggers when someone comments on a post. Keyword automation triggers when a specific word is used in comments or DMs.",
   },
@@ -169,12 +85,6 @@ const FAQS = [
   },
 ];
 
-export const metadata = {
-  title: "Instagram DM Automation Guides | Creatordesks",
-  description:
-    "Browse the complete guide collection for Instagram DM automation strategies, tutorials, and best practices.",
-};
-
 export default function StyleGuidePage() {
   const [activeTab, setActiveTab] = useState(TABS[0]);
   const [openFaq, setOpenFaq] = useState(FAQS[0].id);
@@ -187,7 +97,7 @@ export default function StyleGuidePage() {
   return (
     <main className={styles.page}>
       <div className={styles.shell}>
-       <span className={styles.navBar}><Navbar /></span>  
+       <span className={styles.navBar}><Navbar /></span>
         <section className={styles.hero}>
           <p className={styles.eyebrow}>COMPLETE GUIDE COLLECTION</p>
           <h1 className={styles.title}>Instagram DM Automation Guides</h1>
@@ -222,7 +132,7 @@ export default function StyleGuidePage() {
       <section id="guides" className={styles.guidesSection}>
         <div className={styles.guidesGrid}>
           {filteredGuides.map((guide) => (
-            <a key={guide.id} href="#" className={styles.guideCard}>
+            <Link key={guide.id} href={`/style-guide/${guide.slug}`} className={styles.guideCard}>
               <div className={styles.cardTop}>
                 <img
                   src={guide.image}
@@ -239,7 +149,7 @@ export default function StyleGuidePage() {
                   <span className={styles.cardCta}>Read Guide</span>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </section>
