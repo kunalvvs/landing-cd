@@ -301,10 +301,10 @@ export default function StyleGuidePage() {
         <div className={styles.ctaCard}>
           <div className={styles.ctaContent}>
             <h2>
-              Get started with <span>CreatorDesk</span> today
+              Get started with <span>Creatordesks</span> today
             </h2>
             <p>
-              Join 14,000+ creators and brands using CreatorDesk to turn every
+              Join 14,000+ creators and brands using Creatordesks to turn every
               comment into a conversation. Get started in under 5 minutes.
             </p>
             <a href="#" className={styles.ctaButton}>
