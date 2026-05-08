@@ -88,28 +88,80 @@ const FAQS = [
 export default function StyleGuidePage() {
   const [activeTab, setActiveTab] = useState(TABS[0]);
   const [openFaq, setOpenFaq] = useState(FAQS[0].id);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const filteredGuides = useMemo(() => {
-    if (activeTab === "All Guides") return GUIDES;
-    return GUIDES.filter((guide) => guide.category === activeTab);
-  }, [activeTab]);
+    let result = GUIDES;
+    if (activeTab !== "All Guides") {
+      result = result.filter((g) => g.category === activeTab);
+    }
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      result = result.filter(
+        (g) =>
+          g.title.toLowerCase().includes(q) ||
+          g.description.toLowerCase().includes(q)
+      );
+    }
+    return result;
+  }, [activeTab, searchQuery]);
 
   return (
     <main className={styles.page}>
-      <div className={styles.shell}>
-       <span className={styles.navBar}><Navbar /></span>
+      {/* ── Hero with bg.png ── */}
+      <div className={styles.heroWrap}>
+        <div className={styles.shell}>
+          <span className={styles.navBar}>
+            <Navbar />
+          </span>
+        </div>
+
         <section className={styles.hero}>
-          <p className={styles.eyebrow}>COMPLETE GUIDE COLLECTION</p>
-          <h1 className={styles.title}>Instagram DM Automation Guides</h1>
+          <span className={styles.blogsBadge}>Blogs</span>
+          <h1 className={styles.title}>Latest News &amp; Resources</h1>
           <p className={styles.subtitle}>
             Everything you need to master Instagram DM automation. From beginner
             fundamentals to advanced strategies for turning engagement into
             revenue.
           </p>
-          <a href="#guides" className={styles.primaryButton}>
-            Browse Guides
-          </a>
 
+          <div className={styles.searchWrap} role="search">
+            <input
+              type="text"
+              className={styles.searchInput}
+              placeholder="Search for resources"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              aria-label="Search guides"
+            />
+            <button
+              type="button"
+              className={styles.searchButton}
+              aria-label="Search"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+          </div>
+        </section>
+      </div>
+
+      {/* ── Guides ── */}
+      <section id="guides" className={styles.guidesSection}>
+        <div className={styles.guidesInner}>
+          {/* Category tabs */}
           <div className={styles.tabs} role="tablist" aria-label="Guide filters">
             {TABS.map((tab) => (
               <button
@@ -126,34 +178,44 @@ export default function StyleGuidePage() {
               </button>
             ))}
           </div>
-        </section>
-      </div>
 
-      <section id="guides" className={styles.guidesSection}>
-        <div className={styles.guidesGrid}>
-          {filteredGuides.map((guide) => (
-            <Link key={guide.id} href={`/style-guide/${guide.slug}`} className={styles.guideCard}>
-              <div className={styles.cardTop}>
-                <img
-                  src={guide.image}
-                  alt={guide.title}
-                  className={styles.cardImage}
-                />
-              </div>
-              <div className={styles.cardBody}>
-                <span className={styles.cardTag}>{guide.category}</span>
-                <h3 className={styles.cardTitle}>{guide.title}</h3>
-                <p className={styles.cardDescription}>{guide.description}</p>
-                <div className={styles.cardMeta}>
-                  <span>{guide.readTime}</span>
-                  <span className={styles.cardCta}>Read Guide</span>
-                </div>
-              </div>
-            </Link>
-          ))}
+          {/* Grid */}
+          {filteredGuides.length > 0 ? (
+            <div className={styles.guidesGrid}>
+              {filteredGuides.map((guide) => (
+                <Link
+                  key={guide.id}
+                  href={`/style-guide/${guide.slug}`}
+                  className={styles.guideCard}
+                >
+                  <div className={styles.cardTop}>
+                    <img
+                      src={guide.image}
+                      alt={guide.title}
+                      className={styles.cardImage}
+                    />
+                  </div>
+                  <div className={styles.cardBody}>
+                    <span className={styles.cardTag}>{guide.category}</span>
+                    <h3 className={styles.cardTitle}>{guide.title}</h3>
+                    <p className={styles.cardDescription}>{guide.description}</p>
+                    <div className={styles.cardMeta}>
+                      <span>{guide.readTime}</span>
+                      <span className={styles.cardCta}>Read Guide</span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className={styles.noResults}>
+              <p>No guides found for &ldquo;{searchQuery}&rdquo;</p>
+            </div>
+          )}
         </div>
       </section>
 
+      {/* ── FAQ ── */}
       <section className={styles.faqSection}>
         <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
         <div className={styles.faqList}>
@@ -179,10 +241,7 @@ export default function StyleGuidePage() {
                     +
                   </span>
                 </button>
-                <div
-                  className={styles.faqContent}
-                  aria-hidden={!isOpen}
-                >
+                <div className={styles.faqContent} aria-hidden={!isOpen}>
                   <p>{item.answer}</p>
                 </div>
               </div>
