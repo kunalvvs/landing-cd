@@ -124,31 +124,21 @@
 }
 
 .cardTop {
-  background: #060014;
-  padding: 18px 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
 }
 
-.cardNumber {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.04em;
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-.cardIcon {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-size: 0.875rem;
+.guideCard:hover .cardImage {
+  transform: scale(1.04);
 }
 
 .cardBody {
@@ -406,15 +396,7 @@
     padding: 8px 12px;
   }
 
-  .cardTop {
-    padding: 16px 18px;
-  }
-
-  .cardNumber {
-    font-size: 1.5rem;
-  }
-
-  .ctaCard::after {
+.ctaCard::after {
     right: -180px;
     bottom: -260px;
   }

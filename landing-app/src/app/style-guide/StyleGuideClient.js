@@ -2,15 +2,6 @@
 import { useMemo, useState } from "react";
 import Navbar from "@/components/ui/Navbar";
 import FooterSection from "@/components/sections/footer/FooterSection";
-import { IoIosInformationCircleOutline } from "react-icons/io";
-import { FaArrowTrendUp } from "react-icons/fa6";
-import { MdOutlineSettings } from "react-icons/md";
-import { RiLightbulbFill } from "react-icons/ri";
-import { FaArrowRightArrowLeft } from "react-icons/fa6";
-import { IoRocketOutline } from "react-icons/io5";
-import { FaShield } from "react-icons/fa6";
-import { TbApiAppOff } from "react-icons/tb";
-import { FaMapMarkedAlt } from "react-icons/fa";
 
 
 
@@ -31,8 +22,9 @@ const GUIDES = [
     category: "Getting Started",
     title: "What is Instagram DM Automation?",
     description:
-      "Learn the fundamentals of DM automation, how it works through Meta's official API, and why it’s different from unreliable bots.",
+      "Learn the fundamentals of DM automation, how it works through Meta’s official API, and why it’s different from unreliable bots.",
     readTime: "12 min read",
+    image: "/images/blog-img/resources%20page/instagram-dm-automation-complete-guide.webp",
   },
   {
     id: "02",
@@ -41,6 +33,7 @@ const GUIDES = [
     description:
       "Discover the 6 data-backed reasons why DM automation converts better than traditional lead capture funnels.",
     readTime: "10 min read",
+    image: "/images/blog-img/resources%20page/creatorflow-vs-manychat-instagram.png",
   },
   {
     id: "03",
@@ -49,6 +42,7 @@ const GUIDES = [
     description:
       "Understand the technical workflow: triggers, conditions, actions, and how messages are sent through Meta’s APIs.",
     readTime: "7 min read",
+    image: "/images/blog-img/resources%20page/Personal%20Broadcasting%20Setup-min.webp",
   },
   {
     id: "04",
@@ -57,6 +51,7 @@ const GUIDES = [
     description:
       "Real-world use cases: affiliate links, lead magnets, coaching bookings, e-commerce, giveaways, and more.",
     readTime: "12 min read",
+    image: "/images/blog-img/resources%20page/Focused%20Professional%20(1).png",
   },
   {
     id: "05",
@@ -65,6 +60,7 @@ const GUIDES = [
     description:
       "A detailed comparison of manual messaging vs automation. Plus: 2026 trends shaping the future of Instagram DM automation.",
     readTime: "9 min read",
+    image: "/images/blog-img/resources%20page/instagram-dm-automation-tool-comparison.png",
   },
   {
     id: "06",
@@ -73,6 +69,7 @@ const GUIDES = [
     description:
       "Everything you need to set up your first automation: free tools, prerequisites, implementation steps, and troubleshooting tips.",
     readTime: "15 min read",
+    image: "/images/blog-img/resources%20page/instagram-dm-automation-complete-guide%20(1).png",
   },
   {
     id: "07",
@@ -81,6 +78,7 @@ const GUIDES = [
     description:
       "Meta API vs unauthorized bots: understand the safety difference. Learn how to automate DMs without risking your account.",
     readTime: "12 min read",
+    image: "/images/blog-img/resources%20page/avoid-instagram-bans-dm-automation.png",
   },
   {
     id: "08",
@@ -89,6 +87,7 @@ const GUIDES = [
     description:
       "Official Meta API automation vs third-party bots. Risks, compliance, and why API method matters for your account safety.",
     readTime: "8 min read",
+    image: "/images/blog-img/resources%20page/Personal%20Broadcasting%20Setup-min%20(1).png",
   },
   {
     id: "09",
@@ -97,6 +96,7 @@ const GUIDES = [
     description:
       "Build a DM marketing strategy that converts followers into customers. Campaign types, trigger selection, and performance tracking.",
     readTime: "10 min read",
+    image: "/images/blog-img/resources%20page/creatorflow-vs-manychat-instagram.png",
   },
 ];
 
@@ -224,27 +224,11 @@ export default function StyleGuidePage() {
           {filteredGuides.map((guide) => (
             <a key={guide.id} href="#" className={styles.guideCard}>
               <div className={styles.cardTop}>
-                <span className={styles.cardNumber}>{guide.id}</span>
-                <span className={styles.cardIcon} aria-hidden="true">
-                  {guide.id === "01" && <IoIosInformationCircleOutline />
- }
-                  {guide.id === "02" && <FaArrowTrendUp />
- }
-                  {guide.id === "03" && <MdOutlineSettings />
-  }
-                  {guide.id === "04" && <RiLightbulbFill />
- }
-                  {guide.id === "05" && <FaArrowRightArrowLeft />
-}
-                  {guide.id === "06" && <IoRocketOutline />
-}
-                  {guide.id === "07" && <FaShield />
-}
-                  {guide.id === "08" &&<TbApiAppOff />
- }
-                  {guide.id === "09" && <FaMapMarkedAlt />
- }
-                </span>
+                <img
+                  src={guide.image}
+                  alt={guide.title}
+                  className={styles.cardImage}
+                />
               </div>
               <div className={styles.cardBody}>
                 <span className={styles.cardTag}>{guide.category}</span>
