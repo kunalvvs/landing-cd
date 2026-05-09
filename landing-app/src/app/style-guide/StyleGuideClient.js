@@ -3,7 +3,6 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/ui/Navbar";
 import FooterSection from "@/components/sections/footer/FooterSection";
-import { GUIDES } from "./guidesData";
 
 import styles from "./page.module.css";
 
@@ -85,13 +84,13 @@ const FAQS = [
   },
 ];
 
-export default function StyleGuidePage() {
+export default function StyleGuidePage({ initialGuides = [] }) {
   const [activeTab, setActiveTab] = useState(TABS[0]);
   const [openFaq, setOpenFaq] = useState(FAQS[0].id);
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredGuides = useMemo(() => {
-    let result = GUIDES;
+    let result = initialGuides;
     if (activeTab !== "All Guides") {
       result = result.filter((g) => g.category === activeTab);
     }

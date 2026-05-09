@@ -1,10 +1,26 @@
 import Link from "next/link";
 import styles from "./BlogSection.module.css";
+import { connectDB } from "@/lib/mongodb";
+import Guide from "@/lib/models/Guide";
 import { GUIDES } from "@/app/style-guide/guidesData";
 
-const FEATURED = GUIDES.slice(0, 3);
+async function getFeaturedGuides() {
+  try {
+    await connectDB();
+    const guides = await Guide.find({ published: true })
+      .sort({ createdAt: -1 })
+      .limit(3)
+      .lean();
+    if (guides.length > 0) return guides;
+  } catch {
+    // fall through to static data
+  }
+  return GUIDES.slice(0, 3);
+}
 
-export default function BlogSection() {
+export default async function BlogSection() {
+  const featured = await getFeaturedGuides();
+
   return (
     <section className={styles.section} aria-labelledby="blog-title">
       <div className={styles.inner}>
@@ -18,8 +34,8 @@ export default function BlogSection() {
         </p>
 
         <div className={styles.grid}>
-          {FEATURED.map((guide) => (
-            <article key={guide.id} className={styles.card}>
+          {featured.map((guide, i) => (
+            <article key={guide._id?.toString() ?? guide.id ?? i} className={styles.card}>
               <div className={styles.media}>
                 <img
                   src={guide.image}

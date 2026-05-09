@@ -1,0 +1,16 @@
+.page {
+  max-width: 820px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f3f4f6;
+  margin: 0 0 4px;
+}
+
+.slug {
+  font-size: 0.8125rem;
+  color: #6b7280;
+  margin: 0 0 28px;
+}
