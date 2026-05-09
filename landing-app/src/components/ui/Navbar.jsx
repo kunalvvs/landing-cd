@@ -7,7 +7,7 @@ import styles from "./Navbar.module.css";
 
 const NAV_ITEMS = [
   { label: "Solution", href: "#" },
-  { label: "Pricing", href: "#" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Resources", href: "/style-guide" },
   { label: "Contact", href: "/contact" },
   { label: "About", href: "#" },

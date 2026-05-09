@@ -17,7 +17,7 @@
 
 /* ─── Hero Wrapper (bg image) ───────────────────────────── */
 .heroWrap {
-  background-image: url('/images/blog-img/resources%20page/bg.png');
+  background-image: url('/images/blog-img/resources%20page/bg.webp');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
