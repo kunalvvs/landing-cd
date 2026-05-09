@@ -565,15 +565,15 @@
 
   /* Header: image + title side by side */
   .bottomHeader {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: 16px;
     width: 100%;
   }
 
   .bottomMedia {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     flex-shrink: 0;
   }
 

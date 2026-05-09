@@ -475,9 +475,11 @@
 
   .ctaButton {
     margin-top: 20px;
-    min-width: 180px;
-    min-height: 52px;
-    font-size: 1rem;
+    min-width: 0px;
+    min-height: 40px;
+    font-size: .7rem;
+    padding: 10px;
+    
   }
 
   .brandMarquee {
