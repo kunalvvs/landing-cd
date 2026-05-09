@@ -402,3 +402,18 @@
     gap: 10px;
   }
 }
+
+/* ── Mobile performance — remove GPU-heavy effects ── */
+@media (max-width: 768px) {
+  /* blur(80px) and blur(100px) pseudo-elements are extremely expensive on mobile */
+  .stepItemOpen::before,
+  .stepItemOpen::after {
+    display: none;
+  }
+
+  /* backdrop-filter forces a new compositing layer on every painted frame */
+  .stepItemOpen {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}

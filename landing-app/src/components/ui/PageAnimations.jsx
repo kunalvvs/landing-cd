@@ -321,6 +321,10 @@ export default function PageAnimations() {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 
+    // Skip all GSAP on mobile — scroll listeners and infinite tweens
+    // are the #1 cause of jank on low-powered touch devices.
+    if (window.innerWidth <= 768) return;
+
     registerPlugins();
 
     // Small delay to ensure DOM is painted before GSAP measures
