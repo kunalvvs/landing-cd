@@ -174,7 +174,7 @@ export default function GuideView({ guide, related }) {
             <div className={styles.relatedGrid}>
               {related.map((g) => (
                 <Link
-                  key={g.id}
+                  key={g._id ?? g.id ?? g.slug}
                   href={`/style-guide/${g.slug}`}
                   className={styles.relatedCard}
                 >

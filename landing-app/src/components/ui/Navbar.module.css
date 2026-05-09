@@ -7,7 +7,7 @@
   grid-template-columns: auto 1fr auto;
   align-items: center;
   background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(193, 189, 189, 0.722);
+  /* border: 1px solid rgba(193, 189, 189, 0.722); */
   box-shadow: 0 8px 24px rgba(20, 12, 52, 0.08);
   gap: 12px;
   position: relative;

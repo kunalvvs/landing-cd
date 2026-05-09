@@ -79,6 +79,8 @@ function reveal(selector, fromVars = {}, toVars = {}, triggerEl = null) {
    1. HERO — immediate entrance (no scroll trigger needed)
 ───────────────────────────────────────────────────────────── */
 function animateHero() {
+  if (!document.getElementById("hero-title")) return;
+
   const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
 
   tl.fromTo("[class*='announcementBar']", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 })

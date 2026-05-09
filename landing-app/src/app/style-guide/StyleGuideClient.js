@@ -183,7 +183,7 @@ export default function StyleGuidePage({ initialGuides = [] }) {
             <div className={styles.guidesGrid}>
               {filteredGuides.map((guide) => (
                 <Link
-                  key={guide.id}
+                  key={guide._id ?? guide.id ?? guide.slug}
                   href={`/style-guide/${guide.slug}`}
                   className={styles.guideCard}
                 >

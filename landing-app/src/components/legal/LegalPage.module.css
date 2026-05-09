@@ -13,8 +13,8 @@
 
 .navBar{
     margin-top: 30px;
-    /* border: 1px solid rgba(128, 128, 128, 0.404); */
-    /* border-radius: 999px; */
+    border: 1px solid rgba(128, 128, 128, 0.404);
+    border-radius: 999px;
     
 }
 .header {
@@ -114,7 +114,7 @@
   .tocList {
     grid-template-columns: 1fr;
   }
-  /* .navBar{
+  .navBar{
     border-radius: 20px;
-  } */
+  }
 }
