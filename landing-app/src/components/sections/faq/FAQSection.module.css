@@ -21,8 +21,8 @@
 
 .leftColumn h2 {
   font-size: clamp(2.125rem, 4.8vw, 2.9375rem);
-  line-height: 57.6px;
-  letter-spacing: -0.62px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   color: #17133a;
   font-family: "Funnel Display", var(--font-funnel-display), Arial, Helvetica,
     sans-serif;
@@ -124,10 +124,18 @@
 
 @media (max-width: 640px) {
   .section {
-    padding: 86px 0 96px;
+    padding: 44px 0 72px;
   }
 
   .inner {
     width: min(1180px, 100% - 24px);
+  }
+
+  .leftColumn {
+    margin-left: 0;
+  }
+
+  .leftColumn h2 {
+    font-size: clamp(1.75rem, 7vw, 2.125rem);
   }
 }

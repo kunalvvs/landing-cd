@@ -351,8 +351,7 @@
     width: 90%;
     height: auto;
     max-height: 420px;
-    margin: 12px 30px 0;
-    margin-left: 7.5rem;
+    margin: 12px 0 0 auto;
   }
 
   .stepItem {
