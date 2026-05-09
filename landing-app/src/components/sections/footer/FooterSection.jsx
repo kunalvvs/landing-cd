@@ -14,7 +14,7 @@ const TEMPLATE_LINKS = [
   { label: "Resources", href: "/style-guide" },
   { label: "License", href: "#" },
   { label: "Changelog", href: "#" },
-  { label: "404", href: "#" },
+  { label: "404", href: "/404" },
   { label: "Password", href: "#" },
 ];
 

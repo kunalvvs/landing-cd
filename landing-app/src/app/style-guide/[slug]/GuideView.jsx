@@ -8,7 +8,7 @@ import styles from "./guide.module.css";
 
 export default function GuideView({ guide, related }) {
   const [activeId, setActiveId] = useState(guide.sections[0]?.id ?? "");
-  const [tocOpen, setTocOpen] = useState(false);
+  const [tocOpen, setTocOpen] = useState(true);
   const observerRef = useRef(null);
 
   useEffect(() => {
