@@ -1,20 +1,54 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import Link from "next/link";
 import Navbar from "@/components/ui/Navbar";
 import FooterSection from "@/components/sections/footer/FooterSection";
 import styles from "./guide.module.css";
 
+function slugify(str) {
+  return str.toLowerCase().trim()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/[\s_]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+// Parse H2s from body HTML, inject id attributes, return processed HTML + tocItems
+function processBodyHtml(html) {
+  const tocItems = [];
+  const processed = html.replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/gi, (_, attrs, content) => {
+    const text = content.replace(/<[^>]+>/g, "").trim();
+    const id = slugify(text) || `h2-${tocItems.length}`;
+    tocItems.push({ id, text });
+    if (/\bid=/.test(attrs)) return `<h2${attrs}>${content}</h2>`;
+    return `<h2${attrs} id="${id}">${content}</h2>`;
+  });
+  return { processedHtml: processed, tocItems };
+}
+
 export default function GuideView({ guide, related }) {
-  const [activeId, setActiveId] = useState(guide.sections[0]?.id ?? "");
+  // Single-body format: one section with no heading (new admin form output)
+  const isSingleBody = guide.sections.length === 1 && !guide.sections[0].heading;
+
+  const { processedHtml, tocItems } = useMemo(() => {
+    if (isSingleBody) {
+      return processBodyHtml(guide.sections[0].body ?? "");
+    }
+    // Old multi-section format: derive tocItems from section headings
+    return {
+      processedHtml: "",
+      tocItems: guide.sections.map((s) => ({ id: s.id, text: s.heading })),
+    };
+  }, [isSingleBody, guide.sections]);
+
+  const [activeId, setActiveId] = useState(tocItems[0]?.id ?? "");
   const [tocOpen, setTocOpen] = useState(true);
   const observerRef = useRef(null);
 
   useEffect(() => {
-    const headings = guide.sections.map((s) =>
-      document.getElementById(s.id)
-    ).filter(Boolean);
+    const headings = tocItems
+      .map((item) => document.getElementById(item.id))
+      .filter(Boolean);
 
     observerRef.current = new IntersectionObserver(
       (entries) => {
@@ -28,7 +62,7 @@ export default function GuideView({ guide, related }) {
 
     headings.forEach((el) => observerRef.current.observe(el));
     return () => observerRef.current?.disconnect();
-  }, [guide.sections]);
+  }, [tocItems]);
 
   const scrollTo = (id) => {
     const el = document.getElementById(id);
@@ -75,7 +109,7 @@ export default function GuideView({ guide, related }) {
           <div className={styles.featuredImageInner}>
             <img
               src={guide.image}
-              alt={guide.title}
+              alt={guide.imageAlt || guide.title}
               className={styles.featuredImage}
             />
           </div>
@@ -102,17 +136,28 @@ export default function GuideView({ guide, related }) {
               </div>
 
               {/* Sections */}
-              {guide.sections.map((section) => (
-                <section key={section.id} className={styles.section}>
-                  <h2
-                    id={section.id}
-                    className={styles.sectionHeading}
-                  >
-                    {section.heading}
-                  </h2>
-                  <p className={styles.sectionBody}>{section.body}</p>
-                </section>
-              ))}
+              {isSingleBody ? (
+                <div
+                  className={styles.richContent}
+                  dangerouslySetInnerHTML={{ __html: processedHtml }}
+                />
+              ) : (
+                guide.sections.map((section) => (
+                  <section key={section.id} className={styles.section}>
+                    <h2 id={section.id} className={styles.sectionHeading}>
+                      {section.heading}
+                    </h2>
+                    {section.body.startsWith("<") ? (
+                      <div
+                        className={styles.richContent}
+                        dangerouslySetInnerHTML={{ __html: section.body }}
+                      />
+                    ) : (
+                      <p className={styles.sectionBody}>{section.body}</p>
+                    )}
+                  </section>
+                ))
+              )}
 
               {/* CTA block */}
               <div className={styles.inlineCta}>
@@ -144,16 +189,16 @@ export default function GuideView({ guide, related }) {
               >
                 <p className={styles.tocLabel}>Table of Content</p>
                 <ul className={styles.tocList}>
-                  {guide.sections.map((section) => (
-                    <li key={section.id}>
+                  {tocItems.map((item) => (
+                    <li key={item.id}>
                       <button
                         type="button"
                         className={`${styles.tocItem} ${
-                          activeId === section.id ? styles.tocItemActive : ""
+                          activeId === item.id ? styles.tocItemActive : ""
                         }`}
-                        onClick={() => scrollTo(section.id)}
+                        onClick={() => scrollTo(item.id)}
                       >
-                        {section.heading}
+                        {item.text}
                       </button>
                     </li>
                   ))}

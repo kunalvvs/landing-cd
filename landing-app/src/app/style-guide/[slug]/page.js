@@ -24,16 +24,23 @@ export async function generateMetadata({ params }) {
     return {
       title: `${guide.title} | Creatordesks`,
       description: guide.description,
+      keywords: guide.keywords?.join(", ") || undefined,
       openGraph: {
         title: `${guide.title} | Creatordesks`,
         description: guide.description,
-        images: [{ url: guide.image }],
+        images: [{ url: guide.image, alt: guide.imageAlt || guide.title }],
         type: "article",
+        publishedTime: guide.createdAt?.toISOString(),
+        modifiedTime: guide.updatedAt?.toISOString(),
       },
       twitter: {
         card: "summary_large_image",
         title: `${guide.title} | Creatordesks`,
         description: guide.description,
+        images: [guide.image],
+      },
+      alternates: {
+        canonical: `/style-guide/${slug}`,
       },
     };
   } catch {
@@ -71,5 +78,33 @@ export default async function GuidePage({ params }) {
     notFound();
   }
 
-  return <GuideView guide={guide} related={related} />;
+  // JSON-LD structured data for Google
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: guide.title,
+    description: guide.description,
+    image: guide.image,
+    datePublished: guide.createdAt,
+    dateModified: guide.updatedAt,
+    author: {
+      "@type": "Organization",
+      name: "Creatordesks",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Creatordesks",
+    },
+    keywords: guide.keywords?.join(", "),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <GuideView guide={guide} related={related} />
+    </>
+  );
 }

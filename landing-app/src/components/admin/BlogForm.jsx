@@ -1,13 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import ImageUpload from "./ImageUpload";
+import RichTextEditor from "./RichTextEditor";
 import styles from "./BlogForm.module.css";
 
 const CATEGORIES = ["Getting Started", "Strategy", "Advanced", "How-To", "Niche Guides"];
-
-const EMPTY_SECTION = { id: "", heading: "", body: "" };
 
 function slugify(str) {
   return str
@@ -18,50 +17,53 @@ function slugify(str) {
     .replace(/^-+|-+$/g, "");
 }
 
+// Convert existing multi-section data into a single HTML body string
+function sectionsToBody(sections) {
+  if (!sections?.length) return "";
+  if (sections.length === 1 && !sections[0].heading) return sections[0].body ?? "";
+  return sections
+    .map((s) => (s.heading ? `<h2>${s.heading}</h2>` : "") + (s.body || ""))
+    .join("");
+}
+
+// Extract H2 text content from an HTML string for ToC preview
+function extractH2Texts(html) {
+  const items = [];
+  const regex = /<h2[^>]*>([\s\S]*?)<\/h2>/gi;
+  let match;
+  while ((match = regex.exec(html)) !== null) {
+    const text = match[1].replace(/<[^>]+>/g, "").trim();
+    if (text) items.push(text);
+  }
+  return items;
+}
+
 export default function BlogForm({ initialData = null }) {
   const router = useRouter();
   const isEdit = !!initialData;
 
   const [form, setForm] = useState({
-    title: initialData?.title ?? "",
-    slug: initialData?.slug ?? "",
-    category: initialData?.category ?? CATEGORIES[0],
-    description: initialData?.description ?? "",
-    readTime: initialData?.readTime ?? "",
-    date: initialData?.date ?? "",
-    image: initialData?.image ?? "",
-    takeaways: initialData?.takeaways?.join("\n") ?? "",
-    sections: initialData?.sections ?? [{ ...EMPTY_SECTION }],
-    published: initialData?.published ?? true,
+    title:       initialData?.title        ?? "",
+    slug:        initialData?.slug         ?? "",
+    category:    initialData?.category     ?? CATEGORIES[0],
+    description: initialData?.description  ?? "",
+    readTime:    initialData?.readTime     ?? "",
+    date:        initialData?.date         ?? "",
+    image:       initialData?.image        ?? "",
+    imageAlt:    initialData?.imageAlt     ?? "",
+    keywords:    initialData?.keywords?.join(", ") ?? "",
+    takeaways:   initialData?.takeaways?.join("\n") ?? "",
+    body:        sectionsToBody(initialData?.sections),
+    published:   initialData?.published    ?? true,
   });
 
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
 
+  const tocPreview = useMemo(() => extractH2Texts(form.body), [form.body]);
+
   function set(field, value) {
     setForm((prev) => ({ ...prev, [field]: value }));
-  }
-
-  function setSection(index, field, value) {
-    setForm((prev) => {
-      const sections = [...prev.sections];
-      sections[index] = { ...sections[index], [field]: value };
-      return { ...prev, sections };
-    });
-  }
-
-  function addSection() {
-    setForm((prev) => ({
-      ...prev,
-      sections: [...prev.sections, { ...EMPTY_SECTION }],
-    }));
-  }
-
-  function removeSection(index) {
-    setForm((prev) => ({
-      ...prev,
-      sections: prev.sections.filter((_, i) => i !== index),
-    }));
   }
 
   function autoSlug() {
@@ -75,23 +77,22 @@ export default function BlogForm({ initialData = null }) {
 
     const payload = {
       ...form,
+      keywords: form.keywords
+        .split(",")
+        .map((k) => k.trim())
+        .filter(Boolean),
       takeaways: form.takeaways
         .split("\n")
         .map((t) => t.trim())
         .filter(Boolean),
-      sections: form.sections.map((s, i) => ({
-        ...s,
-        id: s.id || slugify(s.heading) || `section-${i}`,
-      })),
+      sections: [{ id: "body", heading: "", body: form.body }],
     };
 
     try {
-      const url = isEdit
-        ? `/api/admin/blogs/${initialData._id}`
-        : "/api/admin/blogs";
+      const url    = isEdit ? `/api/admin/blogs/${initialData._id}` : "/api/admin/blogs";
       const method = isEdit ? "PUT" : "POST";
 
-      const res = await fetch(url, {
+      const res  = await fetch(url, {
         method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -111,6 +112,7 @@ export default function BlogForm({ initialData = null }) {
     <form className={styles.form} onSubmit={handleSubmit}>
       {error && <div className={styles.errorBanner}>{error}</div>}
 
+      {/* ── Core ── */}
       <div className={styles.grid2}>
         <div className={styles.field}>
           <label className={styles.label}>Title *</label>
@@ -180,25 +182,71 @@ export default function BlogForm({ initialData = null }) {
         </div>
       </div>
 
-      <div className={styles.field}>
-        <label className={styles.label}>Description</label>
-        <textarea
-          className={styles.textarea}
-          rows={3}
-          value={form.description}
-          onChange={(e) => set("description", e.target.value)}
-        />
+      {/* ── SEO ── */}
+      <div className={styles.sectionDivider}>
+        <span>SEO</span>
       </div>
 
       <div className={styles.field}>
-        <label className={styles.label}>Cover Image</label>
+        <label className={styles.label}>
+          Meta Description
+          <span className={styles.hint}> (shown in search results — aim for 140–160 chars)</span>
+        </label>
+        <textarea
+          className={styles.textarea}
+          rows={3}
+          maxLength={160}
+          value={form.description}
+          onChange={(e) => set("description", e.target.value)}
+        />
+        <span className={styles.charCount}>{form.description.length} / 160</span>
+      </div>
+
+      <div className={styles.field}>
+        <label className={styles.label}>
+          Keywords
+          <span className={styles.hint}> (comma-separated)</span>
+        </label>
+        <input
+          className={styles.input}
+          placeholder="instagram dm automation, chatbot, manychat alternative"
+          value={form.keywords}
+          onChange={(e) => set("keywords", e.target.value)}
+        />
+      </div>
+
+      {/* ── Cover Image ── */}
+      <div className={styles.sectionDivider}>
+        <span>Cover Image</span>
+      </div>
+
+      <div className={styles.field}>
+        <label className={styles.label}>Image</label>
         <ImageUpload value={form.image} onChange={(url) => set("image", url)} />
       </div>
 
       <div className={styles.field}>
         <label className={styles.label}>
-          Key Takeaways{" "}
-          <span className={styles.hint}>(one per line)</span>
+          Image Alt Text
+          <span className={styles.hint}> (for accessibility &amp; SEO)</span>
+        </label>
+        <input
+          className={styles.input}
+          placeholder="e.g. Instagram DM automation workflow diagram"
+          value={form.imageAlt}
+          onChange={(e) => set("imageAlt", e.target.value)}
+        />
+      </div>
+
+      {/* ── Key Takeaways ── */}
+      <div className={styles.sectionDivider}>
+        <span>Key Takeaways</span>
+      </div>
+
+      <div className={styles.field}>
+        <label className={styles.label}>
+          Takeaways
+          <span className={styles.hint}> (one per line)</span>
         </label>
         <textarea
           className={styles.textarea}
@@ -209,57 +257,43 @@ export default function BlogForm({ initialData = null }) {
         />
       </div>
 
-      <div className={styles.sectionsHeader}>
-        <h3 className={styles.sectionsTitle}>Content Sections</h3>
-        <button type="button" className={styles.addSectionBtn} onClick={addSection}>
-          + Add Section
-        </button>
+      {/* ── Content Body ── */}
+      <div className={styles.sectionDivider}>
+        <span>Content</span>
       </div>
 
-      {form.sections.map((sec, i) => (
-        <div key={i} className={styles.sectionBlock}>
-          <div className={styles.sectionTop}>
-            <span className={styles.sectionNum}>Section {i + 1}</span>
-            {form.sections.length > 1 && (
-              <button
-                type="button"
-                className={styles.removeSectionBtn}
-                onClick={() => removeSection(i)}
-              >
-                Remove
-              </button>
-            )}
-          </div>
-          <div className={styles.grid2}>
-            <div className={styles.field}>
-              <label className={styles.label}>Heading</label>
-              <input
-                className={styles.input}
-                value={sec.heading}
-                onChange={(e) => setSection(i, "heading", e.target.value)}
-              />
-            </div>
-            <div className={styles.field}>
-              <label className={styles.label}>ID (optional)</label>
-              <input
-                className={styles.input}
-                placeholder="Auto-generated from heading"
-                value={sec.id}
-                onChange={(e) => setSection(i, "id", e.target.value)}
-              />
-            </div>
-          </div>
+      <div className={styles.contentLayout}>
+        <div className={styles.editorCol}>
           <div className={styles.field}>
-            <label className={styles.label}>Body</label>
-            <textarea
-              className={styles.textarea}
-              rows={5}
-              value={sec.body}
-              onChange={(e) => setSection(i, "body", e.target.value)}
+            <label className={styles.label}>
+              Body
+              <span className={styles.hint}> — use H2 headings to build the table of contents</span>
+            </label>
+            <RichTextEditor
+              value={form.body}
+              onChange={(html) => set("body", html)}
+              placeholder="Write your blog content… Use H2 for section headings."
             />
           </div>
         </div>
-      ))}
+
+        <div className={styles.tocPreviewCol}>
+          <div className={styles.tocPreview}>
+            <p className={styles.tocPreviewTitle}>Table of Contents</p>
+            {tocPreview.length > 0 ? (
+              <ol className={styles.tocPreviewList}>
+                {tocPreview.map((text, i) => (
+                  <li key={i} className={styles.tocPreviewItem}>{text}</li>
+                ))}
+              </ol>
+            ) : (
+              <p className={styles.tocPreviewEmpty}>
+                Add H2 headings to auto-generate the ToC
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
 
       <div className={styles.actions}>
         <button

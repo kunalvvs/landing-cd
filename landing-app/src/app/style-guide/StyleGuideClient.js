@@ -190,7 +190,7 @@ export default function StyleGuidePage({ initialGuides = [] }) {
                   <div className={styles.cardTop}>
                     <img
                       src={guide.image}
-                      alt={guide.title}
+                      alt={guide.imageAlt || guide.title}
                       className={styles.cardImage}
                     />
                   </div>

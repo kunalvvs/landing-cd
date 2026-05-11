@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 
 const SectionSchema = new mongoose.Schema(
   {
-    id: { type: String, required: true },
-    heading: { type: String, required: true },
-    body: { type: String, required: true },
+    id:      { type: String, default: "" },
+    heading: { type: String, default: "" },
+    body:    { type: String, default: "" },
   },
   { _id: false }
 );
@@ -18,6 +18,8 @@ const GuideSchema = new mongoose.Schema(
     readTime: { type: String, default: "" },
     date: { type: String, default: "" },
     image: { type: String, default: "" },
+    imageAlt: { type: String, default: "" },
+    keywords: { type: [String], default: [] },
     takeaways: { type: [String], default: [] },
     sections: { type: [SectionSchema], default: [] },
     published: { type: Boolean, default: true },

@@ -1,0 +1,148 @@
+.wrap {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  transition: border-color 0.2s;
+}
+
+.wrap:focus-within {
+  border-color: #7c3aed;
+}
+
+/* ── Toolbar ── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.tbBtn {
+  min-width: 30px;
+  height: 28px;
+  border-radius: 5px;
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0 6px;
+  transition: background 0.12s, color 0.12s;
+  line-height: 1;
+  font-family: inherit;
+}
+
+.tbBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e9d5ff;
+}
+
+.tbActive {
+  background: rgba(124, 58, 237, 0.3);
+  color: #c4b5fd;
+}
+
+.sep {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 3px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ── Editor area ── */
+.contentWrap {
+  padding: 14px 16px;
+  min-height: 140px;
+}
+
+.editorArea {
+  outline: none;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #e5e7eb;
+  min-height: 120px;
+}
+
+/* Rich content styles inside editor */
+.editorArea p {
+  margin: 0 0 10px;
+}
+
+.editorArea p:last-child {
+  margin-bottom: 0;
+}
+
+.editorArea h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f3f4f6;
+  margin: 16px 0 8px;
+}
+
+.editorArea h3 {
+  font-size: 0.975rem;
+  font-weight: 700;
+  color: #f3f4f6;
+  margin: 14px 0 6px;
+}
+
+.editorArea strong {
+  font-weight: 700;
+  color: #f3f4f6;
+}
+
+.editorArea em {
+  font-style: italic;
+}
+
+.editorArea u {
+  text-decoration: underline;
+}
+
+.editorArea ul,
+.editorArea ol {
+  padding-left: 20px;
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.editorArea blockquote {
+  border-left: 3px solid #7c3aed;
+  padding-left: 12px;
+  color: #9ca3af;
+  font-style: italic;
+  margin: 10px 0;
+}
+
+.editorArea code {
+  background: rgba(124, 58, 237, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8125rem;
+  font-family: monospace;
+  color: #c4b5fd;
+}
+
+.editorArea a {
+  color: #a78bfa;
+  text-decoration: underline;
+}
+
+/* Placeholder */
+.editorArea .is-editor-empty:first-child::before,
+.editorArea p.is-empty::before {
+  content: attr(data-placeholder);
+  color: #4b5563;
+  pointer-events: none;
+  float: left;
+  height: 0;
+}

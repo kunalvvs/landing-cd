@@ -39,7 +39,7 @@ export default async function BlogSection() {
               <div className={styles.media}>
                 <img
                   src={guide.image}
-                  alt={guide.title}
+                  alt={guide.imageAlt || guide.title}
                   className={styles.mediaImage}
                 />
               </div>
