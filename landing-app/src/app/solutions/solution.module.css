@@ -1,0 +1,459 @@
+/* ── Page shell ── */
+.page {
+  overflow-x: hidden;
+}
+
+/* ── Hero ── */
+.heroWrap {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroBg {
+  object-fit: cover;
+  object-position: top center;
+  z-index: 0;
+}
+
+.heroNav {
+  position: relative;
+  z-index: 10;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 48px 24px 80px;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.heroBadge {
+  display: inline-block;
+  padding: 6px 20px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+  letter-spacing: 0.01em;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.15;
+  margin: 0 0 18px;
+  letter-spacing: -0.02em;
+}
+
+.heroSubtitle {
+  font-size: 1rem;
+  color: #4b4b4b;
+  max-width: 560px;
+  margin: 0 auto 36px;
+  line-height: 1.65;
+}
+
+.heroCta {
+  display: inline-block;
+  padding: 14px 36px;
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.heroCta:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* ── Shared layout ── */
+.inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sectionHead {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 0.01em;
+}
+
+.badgeIcon {
+  font-size: 0.75rem;
+}
+
+.badgeProblem {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.badgeSolution {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.badgeDark {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ── Section titles ── */
+.sectionTitle {
+  font-size: clamp(1.75rem, 3.5vw, 2.625rem);
+  font-weight: 800;
+  color: #0f0f0f;
+  line-height: 1.2;
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+
+.sectionSubtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+.accentRed {
+  color: #dc2626;
+}
+
+.accentPurple {
+  color: #7c3aed;
+}
+
+/* ── Problem section ── */
+.problemSection {
+  background: #ffffff;
+  padding: 88px 0;
+}
+
+.problemGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.problemCard {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 28px 20px 24px;
+  text-align: center;
+  transition: box-shadow 0.22s, transform 0.22s;
+}
+
+.problemCard:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.problemImgWrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  min-height: 140px;
+}
+
+.problemImg {
+  width: 100%;
+  max-width: 170px;
+  height: auto;
+  object-fit: contain;
+}
+
+.cardTitle {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.cardDesc {
+  font-size: 0.8125rem;
+  color: #6b7280;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Solution features section ── */
+.featuresSection {
+  background: #fafafa;
+  padding: 88px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.featureCard {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: box-shadow 0.22s, transform 0.22s;
+}
+
+.featureCard:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.09);
+  transform: translateY(-3px);
+}
+
+.featureImgWrap {
+  background: linear-gradient(135deg, #f5f3ff 0%, #fdf2f8 100%);
+  padding: 36px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.featureImg {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.featureBody {
+  padding: 24px 28px 28px;
+}
+
+.featureTitle {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.featureDesc {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Comparison section ── */
+.comparisonSection {
+  background: #0a0a0a;
+  padding: 88px 0;
+}
+
+.comparisonTitle {
+  font-size: clamp(1.75rem, 3.5vw, 2.625rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+
+.comparisonSubtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+.comparisonCard {
+  max-width: 860px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #161616;
+}
+
+/* Header row */
+.comparisonHeader {
+  display: grid;
+  grid-template-columns: 220px 1fr 1fr;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.comparisonHeaderFeature {
+  padding: 20px 24px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.comparisonHeaderWithout {
+  padding: 20px 24px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.comparisonHeaderWith {
+  padding: 20px 24px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(124, 58, 237, 0.12);
+}
+
+/* Data rows */
+.comparisonRow {
+  display: grid;
+  grid-template-columns: 220px 1fr 1fr;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.15s;
+}
+
+.comparisonRow:last-child {
+  border-bottom: none;
+}
+
+.comparisonRow:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.comparisonRowAlt {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.comparisonFeature {
+  padding: 22px 24px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #e5e7eb;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+}
+
+.comparisonWithout {
+  padding: 22px 24px;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.35);
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comparisonWith {
+  padding: 22px 24px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #a78bfa;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(124, 58, 237, 0.06);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .problemGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparisonHeader,
+  .comparisonRow {
+    grid-template-columns: 140px 1fr 1fr;
+  }
+
+  .comparisonFeature,
+  .comparisonHeaderFeature {
+    padding: 18px 14px;
+    font-size: 0.8125rem;
+  }
+
+  .comparisonWithout,
+  .comparisonWith,
+  .comparisonHeaderWithout,
+  .comparisonHeaderWith {
+    padding: 18px 12px;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .problemGrid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .problemSection,
+  .featuresSection,
+  .comparisonSection {
+    padding: 60px 0;
+  }
+
+  .comparisonHeader,
+  .comparisonRow {
+    grid-template-columns: 120px 1fr 1fr;
+  }
+
+  .heroContent {
+    padding: 32px 20px 60px;
+  }
+
+  .sectionHead {
+    margin-bottom: 36px;
+  }
+}

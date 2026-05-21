@@ -6,7 +6,7 @@ import { useState } from "react";
 import styles from "./Navbar.module.css";
 
 const NAV_ITEMS = [
-  { label: "Solution", href: "#" },
+  { label: "Solution", href: "/solutions" },
   { label: "Pricing", href: "/pricing" },
   { label: "Resources", href: "/style-guide" },
   { label: "Contact", href: "/contact" },
