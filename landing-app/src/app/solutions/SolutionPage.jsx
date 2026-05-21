@@ -29,22 +29,23 @@ const PROBLEMS = [
 
 const FEATURES = [
   {
-    img: "/images/Solution/image1.png",
+    img: "/images/Solution/Background+border+shadow(1).png",
     title: "Replies to Comments Instantly",
     desc: "Streamline your operations through intelligent workflow automation that saves time, reduces errors, and boosts productivity.",
   },
   {
-    img: "/images/Solution/image2.png",
+    img: "/images/Solution/Background+border+shadow(3).png",
     title: "Send Automated DMs",
     desc: "Transform raw engagement into strategic results using advanced automation, dashboards, and predictive messaging.",
   },
   {
-    img: "/images/Solution/image3.png",
+    img: "/images/Solution/Background+border+shadow(5).png",
     title: "Conversation with Followers",
     desc: "We guide your audience through full-scale digital engagement — modernizing how you connect and convert at scale.",
   },
   {
-    img: "/images/Solution/image4.png",
+    img: "/images/Solution/Background+border+shadow(7).png",
+    
     title: "Keep Users Engaged with your Content",
     desc: "Combine data and design to deliver smarter, more personalized digital experiences that connect with your users.",
   },
