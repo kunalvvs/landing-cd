@@ -44,6 +44,7 @@ export default function FooterSection() {
             <Link href="/privacy-policy">Privacy Policy</Link>
             <Link href="/terms-of-condition">Terms of Condition</Link>
             <Link href="/cookie-policy">Cookie Policy</Link>
+            <Link href="/data-deletion">Data Deletion</Link>
           </div>
         </div>
 
