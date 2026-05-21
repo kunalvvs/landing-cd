@@ -10,12 +10,14 @@
   min-height: 520px;
   display: flex;
   flex-direction: column;
+
 }
 
 .heroBg {
   object-fit: cover;
   object-position: top center;
   z-index: 0;
+  
 }
 
 .heroNav {
@@ -24,6 +26,7 @@
   z-index: 10;
   margin: 0 auto;
   padding-top: 28px;
+
 
 }
 
@@ -187,7 +190,15 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   font-family: "Funnel Display";
+  background: #f4f4f4;
+  border-radius: 22px;
+  padding: 15px;
 
+  border: 1px solid rgba(0, 0, 0, 0.04);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.8),
+    0 0 0 1px rgba(255,255,255,0.5);
 }
 
 .problemCard {
