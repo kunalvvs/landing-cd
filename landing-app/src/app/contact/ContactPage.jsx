@@ -16,7 +16,7 @@ const CONTACT_CARDS = [
     description:
       "Account issues, billing questions, technical help, or getting started with Creatordesks.",
     action: "Email Support",
-    href: "mailto:contact@creatordesks.com",
+    href: "mailto:aditya@futuredesks.in",
   },
   {
     id: "chat",
@@ -29,7 +29,7 @@ const CONTACT_CARDS = [
     description:
       "Custom plans, volume pricing, enterprise features, or schedule a product demo.",
     action: "Email Sales",
-    href: "#",
+    href: "mailto:aditya@futuredesks.in",
   },
   {
     id: "docs",
@@ -43,7 +43,7 @@ const CONTACT_CARDS = [
     description:
       "Agency programs, reseller opportunities, integrations, or collaboration requests.",
     action: "Email Partnerships",
-    href: "/style-guide",
+    href: "mailto:aditya@futuredesks.in",
   },
 ];
 
