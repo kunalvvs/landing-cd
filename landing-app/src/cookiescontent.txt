@@ -3,7 +3,7 @@ Effective Date:April 27, 2026
 
 Last Updated:April 27, 2026
 
-This Cookie Policy explains how CreatorFlow Labs S.L. ("we," "us," or "our") uses cookies and similar tracking technologies on our website and Instagram DM automation platform ("Service"). This policy complies with the General Data Protection Regulation (GDPR), the Spanish Ley 34/2002 de Servicios de la Sociedad de la Informacion (LSSI-CE, Article 22.2), and the ePrivacy Directive (2002/58/EC). By using our Service, you consent to the use of cookies as described in this policy.
+This Cookie Policy explains how Creatordesks Labs S.L. ("we," "us," or "our") uses cookies and similar tracking technologies on our website and Instagram DM automation platform ("Service"). This policy complies with the General Data Protection Regulation (GDPR), the Spanish Ley 34/2002 de Servicios de la Sociedad de la Informacion (LSSI-CE, Article 22.2), and the ePrivacy Directive (2002/58/EC). By using our Service, you consent to the use of cookies as described in this policy.
 
 Table of Contents
 1. What Are Cookies?
@@ -20,7 +20,7 @@ Table of Contents
 1. What Are Cookies?
 Cookies are small text files that are placed on your device (computer, smartphone, or tablet) when you visit a website. Cookies are widely used by website owners to make their websites work efficiently, provide a better user experience, and gather analytics information.
 
-First-Party Cookies: Set by CreatorFlow directly on your device.
+First-Party Cookies: Set by Creatordesks directly on your device.
 Third-Party Cookies: Set by our partners and service providers (e.g., Google Analytics, Facebook Pixel).
 Session Cookies: Temporary cookies that expire when you close your browser.
 Persistent Cookies: Remain on your device for a set period or until you delete them.
@@ -53,7 +53,7 @@ Personalization: Remember your preferences, such as dashboard layout or notifica
 Feature Enhancements: Enable advanced features like real-time previews and interactive demos.
 Content Recommendations: Suggest relevant templates or automation ideas based on your usage.
 3. Cookies We Use
-Below is a detailed list of the cookies used by CreatorFlow and our partners:
+Below is a detailed list of the cookies used by Creatordesks and our partners:
 
 
 
@@ -166,7 +166,7 @@ Google Analytics: Install the Google Analytics Opt-out Browser Add-on: https://t
 Facebook Pixel: Adjust your Facebook Ad Preferences: https://www.facebook.com/settings?tab=ads
 Industry Opt-Out Tools: Visit the Digital Advertising Alliance opt-out page: http://optout.aboutads.info/ or the Network Advertising Initiative opt-out page: http://optout.networkadvertising.org/
 6.3 Do Not Track (DNT)
-Some browsers include a "Do Not Track" (DNT) feature that signals to websites that you do not want to be tracked. However, there is no industry standard for how websites should respond to DNT signals. CreatorFlow currently does not respond to DNT signals, but you can use the opt-out methods described above.
+Some browsers include a "Do Not Track" (DNT) feature that signals to websites that you do not want to be tracked. However, there is no industry standard for how websites should respond to DNT signals. Creatordesks currently does not respond to DNT signals, but you can use the opt-out methods described above.
 
 6.4 Mobile Device Settings
 On mobile devices, you can limit tracking through device settings:
@@ -192,7 +192,7 @@ Granular Control: You can accept all cookies, reject non-essential cookies, or c
 Withdraw Consent: You can withdraw your consent at any time through browser settings or by contacting us.
 Data Subject Rights: You have rights to access, correct, delete, and restrict processing of your personal data collected through cookies. See our Privacy Policy for details.
 9. Cookies and Children's Privacy
-The Service is not intended for children under the age of 13 (14 in Spain, or 16 elsewhere in the EEA). We do not knowingly collect information from children through cookies. If you are a parent or guardian and believe your child has provided information through our cookies, please contact us at info@creatorflow.so.
+The Service is not intended for children under the age of 13 (14 in Spain, or 16 elsewhere in the EEA). We do not knowingly collect information from children through cookies. If you are a parent or guardian and believe your child has provided information through our cookies, please contact us at info@Creatordesks.so.
 
 10. Changes to This Cookie Policy
 We may update this Cookie Policy from time to time to reflect changes in our practices, technology, or legal requirements. When we make changes:
@@ -204,11 +204,11 @@ Review Regularly: We encourage you to review this Cookie Policy periodically to 
 11. Contact Us
 If you have questions or concerns about this Cookie Policy or our use of cookies, please contact us:
 
-Email:info@creatorflow.so
+Email: aditya@futuredesks.in
 
-Support:info@creatorflow.so
+Support: aditya@futuredesks.in
 
 Address:
 
-CreatorFlow Labs S.L.
-Madrid, Spain
+Creatordesks .
+23/12A 323, Sector 12, Avas Vikas Colony, Agra, Uttar Pradesh 282002

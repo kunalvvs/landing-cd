@@ -3,7 +3,7 @@ Effective Date:April 27, 2026
 
 Last Updated:April 27, 2026
 
-CreatorFlow ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Instagram DM automation platform ("Service"). Please read this policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access the Service.
+Creatordesks ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Instagram DM automation platform ("Service"). Please read this policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access the Service.
 
 Table of Contents
 1. Information We Collect
@@ -67,7 +67,7 @@ Email Services: We use Loops.so to send transactional and marketing emails.
 AI Support: We use Chatbase to power our AI support assistant. Support queries submitted through the chat interface may be processed by Chatbase.
 Customer Support Tools: We may use third-party tools to manage customer support tickets and communications.
 3.2 Business Transfers
-If CreatorFlow is involved in a merger, acquisition, reorganization, or sale of assets, your information may be transferred as part of that transaction. We will notify you via email and/or a prominent notice on our website before your information is transferred and becomes subject to a different privacy policy.
+If Creatordesks is involved in a merger, acquisition, reorganization, or sale of assets, your information may be transferred as part of that transaction. We will notify you via email and/or a prominent notice on our website before your information is transferred and becomes subject to a different privacy policy.
 
 3.3 Legal Requirements
 We may disclose your information if required to do so by law or in response to valid requests by public authorities (e.g., court orders, subpoenas, or government agencies).
@@ -106,13 +106,13 @@ Right to Delete: Request deletion of your personal information, subject to certa
 Right to Opt-Out: We do not sell personal information and have not sold personal information in the past 12 months.
 Right to Non-Discrimination: We will not discriminate against you for exercising your CCPA rights.
 5.3 Exercising Your Rights
-To exercise any of these rights, please contact us at info@creatorflow.so or through your account settings. We will respond to your request within 30 days (or as required by applicable law). We may need to verify your identity before processing your request.
+To exercise any of these rights, please contact us at info@Creatordesks.so or through your account settings. We will respond to your request within 30 days (or as required by applicable law). We may need to verify your identity before processing your request.
 
 6. Account Settings and Control
 You can manage your information and privacy settings through your account:
 
 Update Profile: Edit your name, email, and profile information in account settings.
-Disconnect Instagram: Revoke CreatorFlow's access to your Instagram account at any time.
+Disconnect Instagram: Revoke Creatordesks's access to your Instagram account at any time.
 Delete Collected Emails: Delete emails collected through our service from your account dashboard.
 Manage Automations: Pause or delete automated message flows at any time.
 Email Preferences: Unsubscribe from marketing emails using the link in any email or through account settings.
@@ -129,7 +129,7 @@ Incident Response: We have procedures in place to detect, respond to, and notify
 However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your personal information, we cannot guarantee absolute security.
 
 8. International Data Transfers
-CreatorFlow Labs S.L. is based in Madrid, Spain (European Union). If you access the Service from outside this region, your information may be transferred to, stored, and processed in countries where our servers are located or where our service providers operate. These countries may have data protection laws that are different from the laws of your country.
+Creatordesks Labs S.L. is based in Madrid, Spain (European Union). If you access the Service from outside this region, your information may be transferred to, stored, and processed in countries where our servers are located or where our service providers operate. These countries may have data protection laws that are different from the laws of your country.
 
 8.1 European Users
 For users in the EEA, UK, or Switzerland, we ensure that any international data transfers comply with GDPR requirements through:
@@ -138,22 +138,22 @@ Standard Contractual Clauses (SCCs) approved by the European Commission
 Adequacy decisions where data is transferred to countries deemed to provide adequate protection
 Other legally approved mechanisms to ensure appropriate safeguards
 9. Children's Privacy
-The Service is not intended for children under the age of 13 (14 in Spain per LOPDGDD Article 7, or 16 elsewhere in the EEA). We do not knowingly collect personal information from children under these ages. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at info@creatorflow.so, and we will delete the information from our systems.
+The Service is not intended for children under the age of 13 (14 in Spain per LOPDGDD Article 7, or 16 elsewhere in the EEA). We do not knowingly collect personal information from children under these ages. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at info@Creatordesks.so, and we will delete the information from our systems.
 
 10. Third-Party Links and Services
-Our Service may contain links to third-party websites, services, or resources that are not owned or controlled by CreatorFlow. This Privacy Policy does not apply to third-party websites or services. We are not responsible for the privacy practices of these third parties. We encourage you to review the privacy policies of any third-party services before providing them with your information.
+Our Service may contain links to third-party websites, services, or resources that are not owned or controlled by Creatordesks. This Privacy Policy does not apply to third-party websites or services. We are not responsible for the privacy practices of these third parties. We encourage you to review the privacy policies of any third-party services before providing them with your information.
 
 Instagram/Meta: Governed by Meta's Privacy Policy at https://www.facebook.com/privacy/policy
 Stripe: Governed by Stripe's Privacy Policy at https://stripe.com/privacy
 Google Analytics: Governed by Google's Privacy Policy at https://policies.google.com/privacy
 11. Meta Partnership and Instagram Integration
-CreatorFlow is a Meta Technology Provider and uses Meta's official Graph API for Instagram integrations. Important information about this partnership:
+Creatordesks is a Meta Technology Provider and uses Meta's official Graph API for Instagram integrations. Important information about this partnership:
 
 OAuth Authentication: We use Meta's OAuth 2.0 for secure authentication. We never ask for or store your Instagram password.
 API Permissions: We only request Instagram permissions necessary for our Service (direct messaging, profile access).
 Meta's Terms: Your use of Instagram through our Service is also governed by Meta's Terms of Service and Community Guidelines.
 Rate Limits: Our Service respects Meta's API rate limits (200 DMs per hour, 24-hour messaging window).
-Revoke Access: You can revoke CreatorFlow's access to your Instagram account at any time through your Instagram settings or Meta account settings.
+Revoke Access: You can revoke Creatordesks's access to your Instagram account at any time through your Instagram settings or Meta account settings.
 12. Email Collection and GDPR Compliance
 When you use our email collection feature to capture emails from Instagram followers:
 
@@ -177,7 +177,7 @@ MongoDB Atlas - Database hosting and management (United States / Europe region)
 Stripe - Payment processing (United States)
 Meta / Instagram - Instagram Graph API integration (United States)
 Google Analytics 4 / Google Tag Manager - Website analytics (United States)
-Hotjar - Session recording and analytics on creatorflow.so (United States / EU infrastructure)
+Hotjar - Session recording and analytics on Creatordesks.so (United States / EU infrastructure)
 Loops.so - Transactional and marketing email delivery (United States)
 Chatbase - AI-powered support assistant (United States)
 We will notify you of any new sub-processors via email or through the Service at least 30 days before they begin processing your data. For a complete and current list, see our Data Processing Agreement.
@@ -192,13 +192,13 @@ Review Regularly: We encourage you to review this Privacy Policy periodically to
 16. Contact Us
 If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
 
-Email:info@creatorflow.so
+Email:aditya@futuredesks.in
 
-Support:info@creatorflow.so
+Support:aditya@futuredesks.in
 
-For GDPR/LOPDGDD-related inquiries, you may contact our privacy contact at info@creatorflow.so. In Spain, you may also file a complaint with the Agencia Espanola de Proteccion de Datos (AEPD) at www.aepd.es.
+For GDPR/LOPDGDD-related inquiries, you may contact our privacy contact at info@Creatordesks.so. In Spain, you may also file a complaint with the Agencia Espanola de Proteccion de Datos (AEPD) at www.aepd.es.
 
 Address:
 
-CreatorFlow Labs S.L.
-Madrid, Spain
+Creatordesks.
+23/12A 323, Sector 12, Avas Vikas Colony, Agra, Uttar Pradesh 282002
