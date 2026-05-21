@@ -438,12 +438,9 @@
 /* ── Comparison section ── */
 .comparisonSection {
   background: #09090b;
-  padding: 88px 20;
+  padding: 88px 0 120px;
   position: relative;
   overflow: hidden;
-
-  margin-bottom: 70px;
-  
 }
 
 /* Soft spotlight glow behind heading */
