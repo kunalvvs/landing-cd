@@ -139,7 +139,7 @@ export default function SolutionPage() {
             </span>
             <h2 id="solution-title" className={styles.sectionTitle}>
               A Smarter Way to{" "}
-              <span className={styles.accentPurple}>Create,<br />Engage, and Convert</span>
+              <span className={styles.accentPurple}>Create,<br />Engage </span> , and <span className={styles.accentPurple} >Convert</span> 
             </h2>
             <p className={styles.sectionSubtitle}>
               Create content faster, automate conversations smarter, and convert

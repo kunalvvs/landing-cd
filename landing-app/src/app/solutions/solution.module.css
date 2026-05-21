@@ -10,7 +10,7 @@
   min-height: 520px;
   display: flex;
   flex-direction: column;
-
+   
 }
 
 .heroBg {
@@ -18,7 +18,10 @@
   object-position: top center;
   z-index: 0;
   
+  
 }
+
+
 
 .heroNav {
   width: min(1180px, 100% - 40px);
@@ -176,7 +179,7 @@
 }
 
 .accentPurple {
-  color: #7c3aed;
+  color: #4627C0;
 }
 
 /* ── Problem section ── */
