@@ -188,9 +188,11 @@ export default function SolutionPage() {
 
       {/* ── Comparison ── */}
       <section className={styles.comparisonSection} aria-labelledby="comparison-title">
+        <div className={styles.comparisonGlow} aria-hidden="true" />
         <div className={styles.inner}>
           <div className={styles.sectionHead}>
-            <span className={`${styles.badge} ${styles.badgeDark}`}>
+            <span className={`${styles.badge} ${styles.badgeWhite}`}>
+              <span className={styles.badgeCheck} aria-hidden="true">✓</span>
               The Solution
             </span>
             <h2 id="comparison-title" className={styles.comparisonTitle}>
@@ -203,40 +205,57 @@ export default function SolutionPage() {
             </p>
           </div>
 
-          <div className={styles.comparisonCard}>
-            {/* Column headers */}
-            <div className={styles.comparisonHeader}>
-              <div className={styles.comparisonHeaderFeature} />
-              <div className={styles.comparisonHeaderWithout}>
+          <div className={styles.comparisonLayout}>
+            {/* Col 1: floating label pills */}
+            <div className={styles.comparisonLabels} aria-hidden="true">
+              <div className={styles.labelSpacer} />
+              {COMPARISON_ROWS.map((row) => (
+                <div key={row.feature} className={styles.labelOuter}>
+                  <div className={styles.labelInner}>{row.feature}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Col 2: Without Creatordesks card */}
+            <div className={styles.comparisonCardWithout}>
+              <div className={styles.comparisonCardHead}>
                 Without Creatordesks
               </div>
-              <div className={styles.comparisonHeaderWith}>
+              {COMPARISON_ROWS.map((row, i) => (
+                <div
+                  key={row.feature}
+                  className={`${styles.comparisonCardRow} ${i < COMPARISON_ROWS.length - 1 ? styles.rowDivider : ""}`}
+                >
+                  {row.without}
+                </div>
+              ))}
+            </div>
+
+            {/* Col 3: Creatordesks card */}
+            <div className={styles.comparisonCardCreator}>
+              <div className={`${styles.comparisonCardHead} ${styles.creatorHead}`}>
                 <Image
                   src="/images/icons/logo.png"
-                  alt="Creatordesks logo"
-                  width={22}
-                  height={22}
+                  alt=""
+                  width={30}
+                  height={30}
                 />
                 Creatordesks
               </div>
+              {COMPARISON_ROWS.map((row, i) => (
+                <div
+                  key={row.feature}
+                  className={`${styles.comparisonCardRow} ${styles.creatorRow} ${i < COMPARISON_ROWS.length - 1 ? styles.rowDivider : ""}`}
+                >
+                  {row.with}
+                </div>
+              ))}
             </div>
-
-            {/* Rows */}
-            {COMPARISON_ROWS.map((row, i) => (
-              <div
-                key={row.feature}
-                className={`${styles.comparisonRow} ${i % 2 === 0 ? styles.comparisonRowAlt : ""}`}
-              >
-                <div className={styles.comparisonFeature}>{row.feature}</div>
-                <div className={styles.comparisonWithout}>{row.without}</div>
-                <div className={styles.comparisonWith}>{row.with}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
-      <FAQSection />
+     <span className={styles.faqsec} ><FAQSection /></span> 
       <FooterSection />
     </main>
   );
