@@ -1,7 +1,7 @@
 /* ── Page shell ── */
 .page {
   overflow-x: hidden;
-
+  background: #ffffff;
 }
 
 /* ── Hero ── */
@@ -11,7 +11,8 @@
   min-height: 520px;
   display: flex;
   flex-direction: column;
-   
+  border-radius: 0 0 40px 40px;
+  overflow: hidden;
 }
 
 .heroBg {
@@ -197,7 +198,7 @@
 /* ── Problem section ── */
 .problemSection {
   background: #ffffff;
-  padding: 88px 0;
+  padding: 32px 0 88px;
 }
 
 .problemGrid {
@@ -266,8 +267,7 @@
 /* ── Solution features section ── */
 .featuresSection {
   background: #fff;
-  padding: 0px 0;
-  padding-bottom: 88px;
+  padding: 0 0 32px;
   /* border-top: 1px solid #f0f0f0; */
 }
 
@@ -441,6 +441,8 @@
   padding: 88px 0 120px;
   position: relative;
   overflow: hidden;
+  border-radius: 40px;
+  margin: 0 18px;
 }
 
 /* Soft spotlight glow behind heading */
