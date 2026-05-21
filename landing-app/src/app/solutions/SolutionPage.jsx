@@ -72,14 +72,17 @@ export default function SolutionPage() {
 
       {/* ── Hero ── */}
       <div className={styles.heroWrap}>
-        <Image
-          src="/images/Solution/solu-bg.webp"
-          alt=""
-          fill
-          priority
-          className={styles.heroBg}
-          sizes="100vw"
-        />
+        {/* Background clipped separately so navbar dropdown is NOT clipped */}
+        <div className={styles.heroBgWrap} aria-hidden="true">
+          <Image
+            src="/images/Solution/solu-bg.webp"
+            alt=""
+            fill
+            priority
+            className={styles.heroBg}
+            sizes="100vw"
+          />
+        </div>
         <div className={styles.heroNav}>
           <Navbar />
         </div>
