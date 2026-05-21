@@ -29,23 +29,30 @@ const PROBLEMS = [
 
 const FEATURES = [
   {
-    img: "/images/Solution/Background+border+shadow(1).png",
+    back:  "/images/Solution/Background+Border+Shadow.png",
+    front: "/images/Solution/Background+Border+Shadow(1).png",
     title: "Replies to Comments Instantly",
     desc: "Streamline your operations through intelligent workflow automation that saves time, reduces errors, and boosts productivity.",
   },
   {
-    img: "/images/Solution/Background+border+shadow(3).png",
+    back:  "/images/Solution/Background+Border+Shadow(2).png",
+    front: "/images/Solution/Background+Border+Shadow(3).png",
     title: "Send Automated DMs",
     desc: "Transform raw engagement into strategic results using advanced automation, dashboards, and predictive messaging.",
   },
   {
-    img: "/images/Solution/Background+border+shadow(5).png",
+    back:  "/images/Solution/Background+Border+Shadow(4).png",
+    front: "/images/Solution/Background+Border+Shadow(5).png",
     title: "Conversation with Followers",
     desc: "We guide your audience through full-scale digital engagement — modernizing how you connect and convert at scale.",
   },
   {
-    img: "/images/Solution/Background+border+shadow(7).png",
-    
+    circles: "/images/Solution/CircleBorder.png",
+    chips: [
+      "/images/Solution/Background+Border+Shadow(8).png",
+      "/images/Solution/Background+Border+Shadow(7).png",
+      "/images/Solution/Background+Border+Shadow(6).png",
+    ],
     title: "Keep Users Engaged with your Content",
     desc: "Combine data and design to deliver smarter, more personalized digital experiences that connect with your users.",
   },
@@ -150,16 +157,24 @@ export default function SolutionPage() {
           </div>
 
           <div className={styles.featuresGrid}>
-            {FEATURES.map((f) => (
+            {FEATURES.map((f, i) => (
               <article key={f.title} className={styles.featureCard}>
                 <div className={styles.featureImgWrap}>
-                  <Image
-                    src={f.img}
-                    alt={f.title}
-                    width={220}
-                    height={180}
-                    className={styles.featureImg}
-                  />
+                  {f.circles ? (
+                    /* Card 4 — circles + floating chips */
+                    <>
+                      <Image src={f.circles} alt="" width={280} height={280} className={styles.img4Circles} />
+                      <Image src={f.chips[0]} alt="Lindsey Press" width={180} height={48} className={styles.img4Chip1} />
+                      <Image src={f.chips[1]} alt="Ann Stanton"   width={170} height={48} className={styles.img4Chip2} />
+                      <Image src={f.chips[2]} alt="Livia Curtis"  width={160} height={48} className={styles.img4Chip3} />
+                    </>
+                  ) : (
+                    /* Cards 1–3 — two overlapping UI images */
+                    <>
+                      <Image src={f.back}  alt=""      width={220} height={200} className={`${styles.featureImgBack}  ${styles[`imgBack${i + 1}`]}`}  />
+                      <Image src={f.front} alt={f.title} width={260} height={220} className={`${styles.featureImgFront} ${styles[`imgFront${i + 1}`]}`} />
+                    </>
+                  )}
                 </div>
                 <div className={styles.featureBody}>
                   <h3 className={styles.featureTitle}>{f.title}</h3>
