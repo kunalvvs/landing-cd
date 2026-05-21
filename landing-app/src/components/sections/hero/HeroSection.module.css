@@ -10,7 +10,8 @@
 
 /* ── Announcement Bar ── */
 .announcementBar {
-  background: #030116;
+  /* background: #030116; */
+  background: transparent;
   color: #ffffff;
   text-align: center;
   font-size: 0.8125rem;
@@ -26,7 +27,7 @@
 /* ── Outer wrapper ── */
 .contentWrap {
   width: min(1200px, 100% - 32px);
-  margin: 24px auto 0;
+  margin: 0px auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,7 +48,10 @@
   gap: 12px;
   position: relative;
   z-index: 100;
+
 }
+
+
 
 /* ── Logo / Brand ── */
 .logoText {

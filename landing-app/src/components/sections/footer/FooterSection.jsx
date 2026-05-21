@@ -3,11 +3,11 @@ import Link from "next/link";
 import styles from "./FooterSection.module.css";
 
 const MENU_LINKS = [
-  "Home",
-  "Features",
-  "Why Choose",
-  "Pricing",
-  "Testimonial",
+  { label: "Solution", href: "/solutions" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Resources", href: "/style-guide" },
+  { label: "Contact", href: "/contact" },
+  { label: "About", href: "/about" },
 ];
 
 const TEMPLATE_LINKS = [
@@ -53,8 +53,8 @@ export default function FooterSection() {
             <h3>Menus</h3>
             <ul>
               {MENU_LINKS.map((item) => (
-                <li key={item}>
-                  <a href="#">{item}</a>
+                <li key={item.label}>
+                  <Link href={item.href}>{item.label}</Link>
                 </li>
               ))}
             </ul>
@@ -72,9 +72,9 @@ export default function FooterSection() {
           <div>
             <h3>Contact</h3>
             <ul className={styles.contactList}>
-              <li>contact@taskgo.com</li>
-              <li>+1 (800) 123-4567</li>
-              <li>4140 Parker Rd. Allentown, New Mexico 31134</li>
+              <li>aditya@futuredesks.in</li>
+              <li>+91 89236 12313</li>
+              <li>23/12A 323, Sector 12, Avas Vikas Colony, Agra, Uttar Pradesh 282002</li>
             </ul>
           </div>
         </div>

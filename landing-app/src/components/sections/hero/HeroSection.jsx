@@ -29,14 +29,14 @@ export default function HeroSection() {
   return (
     <section className={styles.heroSection} aria-labelledby="hero-title">
       <p className={styles.announcementBar}>
-        Creatordesks raised{" "}
+        {/* Creatordesks raised{" "}
         <a href="#" aria-label="Read funding announcement">
           $27M in seed funding
         </a>{" "}
         &bull;{" "}
         <a href="#" aria-label="Read Forbes mention">
           Featured on Forbes
-        </a>
+        </a> */}
       </p>
 
       <div className={styles.contentWrap}>
