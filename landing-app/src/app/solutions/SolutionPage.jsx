@@ -64,6 +64,7 @@ const COMPARISON_ROWS = [
   { feature: "Community Scaling",   without: "Hard to Manage",  with: "Scalable Engagement" },
   { feature: "Reply Management",    without: "Manual Replies",  with: "Smart Reply Setup" },
   { feature: "Comment-to-DM Funnels", without: "Manual Process", with: "Automated" },
+  
 ];
 
 export default function SolutionPage() {
