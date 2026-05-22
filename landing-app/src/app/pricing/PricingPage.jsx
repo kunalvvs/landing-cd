@@ -226,11 +226,16 @@ export default function PricingPage() {
         }
       />
 
+
+
+        
+
+
       {/* ── Pricing Section ── */}
-      <section className={styles.pricingSection} aria-label="Pricing plans">
+      {/* <section className={styles.pricingSection} aria-label="Pricing plans">
         <div className={styles.shell}>
 
-          {/* Toggle */}
+          
           <div className={styles.toggleWrap} role="group" aria-label="Billing period">
             <button
               type="button"
@@ -251,7 +256,7 @@ export default function PricingPage() {
             </button>
           </div>
 
-          {/* Cards */}
+          //Card
           <div className={styles.cardsGrid}>
             {PLANS.map((plan) => {
               const price = isYearly ? plan.yearlyPrice : plan.monthlyPrice;
@@ -264,7 +269,7 @@ export default function PricingPage() {
                   key={plan.id}
                   className={`${styles.card} ${plan.dark ? styles.cardDark : ""} ${plan.greenBorder ? styles.cardGreen : ""}`}
                 >
-                  {/* Badge */}
+                  // Badge 
                   {plan.badge && (
                     <span className={`${styles.badge} ${plan.dark ? styles.badgeDark : styles.badgeLight}`}>
                       {plan.badge}
@@ -278,7 +283,7 @@ export default function PricingPage() {
 
                   <hr className={`${styles.divider} ${plan.dark ? styles.dividerDark : ""}`} />
 
-                  {/* Price */}
+                  //Price
                   <div className={styles.priceRow}>
                     <span className={styles.currency}>$</span>
                     <span className={styles.priceNum}>{price}</span>
@@ -297,7 +302,7 @@ export default function PricingPage() {
                     </p>
                   )}
 
-                  {/* CTA */}
+                 //CTA
                   <a
                     href="#"
                     className={`${styles.ctaBtn} ${plan.dark ? styles.ctaBtnLime : styles.ctaBtnDark}`}
@@ -308,7 +313,7 @@ export default function PricingPage() {
 
                   <hr className={`${styles.divider} ${plan.dark ? styles.dividerDark : ""}`} />
 
-                  {/* Features */}
+                 //Features
                   <p className={styles.featuresLabel}>{plan.featuresLabel}</p>
                   <ul className={styles.featuresList}>
                     {plan.features.map((f) => (
@@ -323,7 +328,7 @@ export default function PricingPage() {
             })}
           </div>
 
-          {/* Agency Row */}
+          //Agency Row
           <div className={styles.agencyRow}>
             <div className={styles.agencyLeft}>
               <h3 className={styles.agencyTitle}>Agency</h3>
@@ -345,7 +350,7 @@ export default function PricingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── Pricing FAQ ── */}
       <section className={styles.faqSection} aria-labelledby="pricing-faq-title">
