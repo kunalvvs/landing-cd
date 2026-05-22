@@ -4,6 +4,7 @@ import { useState } from "react";
 import Navbar from "@/components/ui/Navbar";
 import FooterSection from "@/components/sections/footer/FooterSection";
 import styles from "./pricing.module.css";
+import FeaturesOverviewSection from "@/components/sections/features-overview/FeaturesOverviewSection";
 
 const PLANS = [
   {
@@ -208,6 +209,22 @@ export default function PricingPage() {
           No Credit Card Required
         </p>
       </div>
+
+      <FeaturesOverviewSection
+        badgeIcon={
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2.5 7l3 3 6-6" stroke="#6d4fc7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        }
+        badgeLabel="The Solution"
+        title="All Features. All Free"
+        subtitle={
+          <>
+            Everything you need to automate, engage and grow &mdash;{" "}
+            <span style={{color:"#8267ec"}}>absolutely free till 2026</span>
+          </>
+        }
+      />
 
       {/* ── Pricing Section ── */}
       <section className={styles.pricingSection} aria-label="Pricing plans">

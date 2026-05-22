@@ -29,18 +29,30 @@ const FEATURE_CARDS = [
   },
 ];
 
-export default function FeaturesOverviewSection() {
+const DEFAULT_BADGE_ICON = (
+  <img src="/images/Hero section/metaicon.png" alt="" style={{width:18,height:14,flexShrink:0}} />
+);
+
+export default function FeaturesOverviewSection({
+  badgeIcon = DEFAULT_BADGE_ICON,
+  badgeLabel = "How it works",
+  title = <>Features that makes your creator <br /> journey powerful</>,
+  subtitle = <>Connect your Instagram, pick a keyword, write one message. That&apos;s it.</>,
+}) {
   return (
     <section className={styles.section} aria-labelledby="features-overview-title">
       <div className={styles.inner}>
-        <div className={styles.badge} > <img src="/images/Hero section/metaicon.png" alt="" className={styles.metaIcon} /> How it works</div>
+        <div className={styles.badge}>
+          {badgeIcon}
+          {badgeLabel}
+        </div>
 
         <h2 id="features-overview-title" className={styles.title}>
-          Features that makes your creator <br /> journey powerful
+          {title}
         </h2>
 
         <p className={styles.subtitle}>
-          Connect your Instagram, pick a keyword, write one message. That&apos;s it.
+          {subtitle}
         </p>
 
         <div className={styles.grid}>
