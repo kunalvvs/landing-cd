@@ -107,7 +107,7 @@ export default function SolutionPage() {
         <div className={styles.inner}>
           <div className={styles.sectionHead}>
             <span className={`${styles.badge} ${styles.badgeProblem}`}>
-              <span className={styles.badgeIcon} aria-hidden="true"><img src="/images/solution/problemicon.png" alt="" /></span>
+              <span className={styles.badgeIcon} aria-hidden="true"><img src="/images/Solution/problemicon.png" alt="" /></span>
               The Problem
             </span>
             <h2 id="problem-title" className={styles.sectionTitle}>
@@ -146,7 +146,7 @@ export default function SolutionPage() {
         <div className={styles.inner}>
           <div className={styles.sectionHead}>
             <span className={`${styles.badge} ${styles.badgeSolution}`}>
-              <span className={styles.badgeIcon} aria-hidden="true"> <img src="/images/solution/soluicon.png" alt="" /> </span>
+              <span className={styles.badgeIcon} aria-hidden="true"> <img src="/images/Solution/soluicon.png" alt="" /> </span>
               The Solution
             </span>
             <h2 id="solution-title" className={styles.sectionTitle}>
@@ -196,7 +196,7 @@ export default function SolutionPage() {
         <div className={styles.inner}>
           <div className={styles.sectionHead}>
             <span className={`${styles.badge} ${styles.badgeWhite}`}>
-              <span className={styles.badgeIcon} aria-hidden="true"> <img src="/images/solution/soluicon.png" alt="" /> </span>
+              <span className={styles.badgeIcon} aria-hidden="true"> <img src="/images/Solution/soluicon.png" alt="" /> </span>
               The Solution
             </span>
             <h2 id="comparison-title" className={styles.comparisonTitle}>
