@@ -76,6 +76,16 @@ const PLANS = [
   },
 ];
 
+const WHY_FEATURES = [
+  { feature: "Unlimited Automation", otherPrice: "$29 - $99 /mo." },
+  { feature: "Unlimited DMs",        otherPrice: "$29 - $99 /mo." },
+  { feature: "Follow-up Messages",   otherPrice: "$29 - $99 /mo." },
+  { feature: "AI Conversations",     otherPrice: "$29 - $99 /mo." },
+  { feature: "Reverse DM Feature",   otherPrice: "$29 - $99 /mo." },
+  { feature: "Lead Generation",      otherPrice: "$29 - $99 /mo." },
+  { feature: "Pricing", isPrice: true },
+];
+
 const AGENCY_FEATURES = [
   "Multiple workspaces",
   "Custom DM limits",
@@ -226,10 +236,80 @@ export default function PricingPage() {
         }
       />
 
+      {/* ── Why Free Section ── */}
+      <section className={styles.whySection}>
+        <div className={styles.shell}>
+          <div className={styles.whyCard}>
 
+            {/* Left dark panel */}
+            <div className={styles.whyLeft}>
+              <div className={styles.whyLeftTop}>
+                <h2 className={styles.whyTitle}>
+                  Why Creatordesks is<br />
+                  <span className={styles.whyTitleAccent}>Free Till 2026?</span>
+                </h2>
+                <ul className={styles.whyReasons}>
+                  <li>
+                    <img src="/images/Pricing/heart.png" alt="" className={styles.whyIcon} />
+                    <span>We Believe in empowering creators with the best tools to grow faster.</span>
+                  </li>
+                  <li>
+                    <img src="/images/Pricing/rocket.png" alt="" className={styles.whyIcon} />
+                    <span>Our mission is to support every creator and business, no matter the size.</span>
+                  </li>
+                  <li>
+                    <img src="/images/Pricing/shield.png" alt="" className={styles.whyIcon} />
+                    <span>That&apos;s why we&apos;re giving full access to all premium features - for free.</span>
+                  </li>
+                </ul>
+              </div>
+              <img src="/images/Pricing/gift.webp" alt="" className={styles.whyGift} />
+            </div>
 
-        
+            {/* Right comparison table */}
+            <div className={styles.whyRight}>
+              <div className={styles.compTable}>
 
+                {/* Header row */}
+                <div className={styles.compHeader}>
+                  <div className={styles.compColFeature}>Features</div>
+                  <div className={styles.compColCreator}>
+                    <span className={styles.creatorName}>Creatordesks</span>
+                    <span className={styles.creatorDate}>Till Dec 31, 2026</span>
+                    <span className={styles.creatorFreeBadge}>FREE</span>
+                  </div>
+                  <div className={styles.compColOther}>
+                    <span className={styles.otherName}>Other Tools</span>
+                    <span className={styles.otherSub}>Paid Plans</span>
+                  </div>
+                </div>
+
+                {/* Data rows */}
+                {WHY_FEATURES.map((row, i) => {
+                  const isLast = i === WHY_FEATURES.length - 1;
+                  return (
+                    <div key={row.feature} className={styles.compRow}>
+                      <div className={styles.compCellFeature}>{row.feature}</div>
+                      <div className={`${styles.compCellCreator} ${isLast ? styles.compCellCreatorLast : ""}`}>
+                        {row.isPrice ? (
+                          <span className={styles.priceZero}>$0 <small>(Till 31 Dec,2026)</small></span>
+                        ) : (
+                          <img src="/images/Pricing/righttick.png" alt="included" className={styles.tickIcon} />
+                        )}
+                      </div>
+                      <div className={styles.compCellOther}>
+                        {row.isPrice ? <strong className={styles.expensiveText}>Expensive</strong> : row.otherPrice}
+                      </div>
+                    </div>
+                  );
+                })}
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       {/* ── Pricing Section ── */}
       {/* <section className={styles.pricingSection} aria-label="Pricing plans">
