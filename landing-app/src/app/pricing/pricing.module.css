@@ -280,8 +280,7 @@
   min-width: 0;
   display: flex;
   align-items: stretch;
-  padding: 0 12px 0 0;
-  
+  padding: 0 20px 20px;
 }
 
 .compTable {
@@ -293,16 +292,18 @@
 /* Header */
 .compHeader {
   display: grid;
-  grid-template-columns: 1fr 1.1fr 1fr;
+  grid-template-columns: 1fr 1.4fr 1fr;
   padding: 24px 0 0;
-  align-items: end;
+  align-items: stretch;
 }
 
 .compColFeature {
   font-size: 1rem;
   font-weight: 700;
   color: #17133a;
-  padding: 0 16px 16px 20px;
+  padding: 0 16px 0 20px;
+  display: flex;
+  align-items: center;
 }
 
 .compColCreator {
@@ -345,9 +346,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 3px;
-  padding: 0 16px 16px;
+  padding: 0 16px;
 }
 
 .otherName {
@@ -365,24 +366,25 @@
 /* Data rows */
 .compRow {
   display: grid;
-  grid-template-columns: 1fr 1.1fr 1fr;
+  grid-template-columns: 1fr 1.4fr 1fr;
   border-top: 1px solid #edeaf5;
 }
 
 .compCellFeature {
   display: flex;
   align-items: center;
-  padding: 16px 16px 16px 20px;
+  padding: 18px 16px 18px 20px;
   font-size: 0.9375rem;
   font-weight: 500;
   color: #17133a;
+  min-height: 60px;
 }
 
 .compCellCreator {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 8px;
+  padding: 14px 8px;
   border-left: 1.5px solid #c5b8f5;
   border-right: 1.5px solid #c5b8f5;
   background: #f3f0ff;
@@ -397,7 +399,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 16px;
+  padding: 14px 16px;
   font-size: 0.875rem;
   color: #5e5c72;
 }
