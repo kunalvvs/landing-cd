@@ -43,7 +43,7 @@
   color: #17133a;
   font-size: 0.8125rem;
   font-weight: 600;
-  padding: 6px 20px;
+  padding: 6px 28px;
   border-radius: 999px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 2px 8px rgba(20, 12, 52, 0.08);
@@ -74,7 +74,7 @@
   background: #f6f5ff;
   border-radius: 28px;
   padding: 32px 40px 28px;
-  max-width: 600px;
+  max-width: 50rem;
   width: calc(100% - 40px);
   margin: -80px auto 0;
   text-align: center;
@@ -93,8 +93,8 @@
   gap: 6px;
   background: #ede9ff;
   color: #6d4fc7;
-  font-size: 0.625rem;
-  font-weight: 700;
+  font-size: 0.725rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
   padding: 6px 14px;
   border-radius: 999px;
@@ -102,64 +102,71 @@
   margin-bottom: 4px;
   text-transform: uppercase;
   white-space: nowrap;
+  font-family: "Funnel Sans";
+  
 }
 
 .freeTitle {
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
-  font-family: "Funnel Display", sans-serif;
-  font-weight: 700;
-  color: #17133a;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-family: "Funnel Sans", sans-serif;
+  font-weight: 600;
+  color: #060014;
   line-height: 1.15;
   margin: 0;
 }
 
 .freeDate {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #17133a;
+  font-size: 2.125rem;
+  font-weight: 600;
+  color: #060014;
   margin: 0;
+  font-family: "Funnel Sans";
 }
 
 .freeDesc {
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.6;
-  color: #5e5c72;
+  color: #262626;
   max-width: 340px;
   margin: 4px 0 0;
+  font-family: "Funnel Sans";
+  font-weight: 500;
 }
 
 .freeHighlight {
-  color: #8267ec;
+  color: #6B46FF;
 }
 
 .freePrice {
-  font-size: 2.75rem;
-  font-family: "Funnel Display", sans-serif;
-  font-weight: 700;
-  color: #8267ec;
-  line-height: 1;
+  font-size: 2.95rem;
+  font-family: "Funnel Display";
+  font-weight: 600;
+  color: #8267EC;
+  line-height: 1.3;
   margin: 8px 0 0;
 }
 
 .freeCaption {
-  font-size: 0.8125rem;
-  color: #9b9ab5;
+  font-size: 1rem;
+  color: #262626;
   margin: 0;
+  font-family: "Funnel Sans";
+  font-weight: 400;
 }
 
 .freeBtn {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #7c5fe6;
+  background-image: linear-gradient(to right, #8267EC,#5333CF);
   color: #ffffff;
   font-size: 0.9375rem;
   font-weight: 600;
   padding: 14px 32px;
-  border-radius: 12px;
+  border-radius: 16px;
   text-decoration: none;
   transition: background 0.2s, transform 0.2s;
-  width: 100%;
+  width: 38%;
   margin-top: 10px;
 }
 
@@ -170,27 +177,31 @@
 
 .freeNote {
   display: inline-flex;
+  font-family: "Funnel Sans";
+  font-weight: 500;
   align-items: center;
   gap: 6px;
-  font-size: 0.8125rem;
-  color: #5e5c72;
+  font-size: 0.9rem;
+  color: #262626;
   margin-top: 4px;
 }
 
 .heroTitle {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2rem, 5vw, 3.9rem);
   font-family: "Funnel Display", sans-serif;
-  font-weight: 700;
-  color: #17133a;
+  font-weight: 600;
+  color: #060014;
   line-height: 1.15;
   letter-spacing: -0.025em;
 }
 
 .heroSubtitle {
   font-size: 0.9375rem;
-  line-height: 1.65;
-  color: #5e5c72;
+  line-height: 1.9;
+  color: #5B4966;
   max-width: 560px;
+  font-weight: 400;
+  font-family: "Funnel Sans";
 }
 
 .desktopBr {
@@ -201,28 +212,31 @@
 .whySection {
   padding: 72px 0 80px;
   background: #ffffff;
+  margin-top: -100px;
 }
 
 .whyCard {
   display: flex;
   border-radius: 24px;
-  border: 1.5px solid #d6d0f0;
+  border: 1.5px solid #17105c;
   overflow: hidden;
   min-height: 560px;
   align-items: stretch;
+  background-image: url('/images/Pricing/Rectanglebg.webp');
+  background-size: cover;
+  background-position: center;
 }
 
 /* Left dark panel */
 .whyLeft {
   width: 33%;
   flex-shrink: 0;
-  background-image: url('/images/Pricing/Rectanglebg.webp');
-  background-size: cover;
-  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .whyLeftTop {
@@ -232,7 +246,7 @@
 .whyTitle {
   font-family: "Funnel Display", sans-serif;
   font-size: clamp(1.375rem, 2.2vw, 1.75rem);
-  font-weight: 700;
+  font-weight: 500;
   color: #ffffff;
   line-height: 1.3;
 }
@@ -247,13 +261,15 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  font-family: "Funnel Sans";
+  font-weight: 400;
 }
 
 .whyReasons li {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  color: #c5c0dc;
+  gap: 19px;
+  color: #E3E3E3;
   font-size: 0.8125rem;
   line-height: 1.55;
 }
@@ -280,7 +296,12 @@
   min-width: 0;
   display: flex;
   align-items: stretch;
-  padding: 0 20px 20px;
+  padding: 0 16px 16px;
+  margin: 10px 10px 10px -40px;
+  background: #ffffff;
+  border-radius: 18px;
+  position: relative;
+  z-index: 2;
 }
 
 .compTable {
@@ -295,11 +316,14 @@
   grid-template-columns: 1fr 1.4fr 1fr;
   padding: 24px 0 0;
   align-items: stretch;
+  font-family: "Funnel Display";
+  font-weight: 500;
+  color: #000;
 }
 
 .compColFeature {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 500;
   color: #17133a;
   padding: 0 16px 0 20px;
   display: flex;
@@ -312,34 +336,34 @@
   align-items: center;
   gap: 5px;
   padding: 18px 8px 14px;
-  border-left: 1.5px solid #c5b8f5;
-  border-right: 1.5px solid #c5b8f5;
-  border-top: 1.5px solid #c5b8f5;
+  border-left: 1.5px solid #8267EC;
+  border-right: 1.5px solid #8267EC;
+  border-top: 1.5px solid #8267EC;
   border-radius: 14px 14px 0 0;
-  background: #f3f0ff;
+  background: #8267EC0D;
 }
 
 .creatorName {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 500;
   color: #17133a;
 }
 
 .creatorDate {
-  font-size: 0.8125rem;
-  color: #8267ec;
+  font-size: 1.5rem;
+  color: #6147C8;
   font-weight: 500;
 }
 
 .creatorFreeBadge {
   margin-top: 6px;
-  background: #8267ec;
+  background: #8267EC;
   color: #fff;
-  font-size: 0.6875rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 500;
   letter-spacing: 0.1em;
-  padding: 5px 22px;
-  border-radius: 999px;
+  padding: 5px 20px;
+  border-radius: 8px;
 }
 
 .compColOther {
@@ -352,14 +376,14 @@
 }
 
 .otherName {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 500;
   color: #17133a;
 }
 
 .otherSub {
-  font-size: 0.8125rem;
-  color: #8267ec;
+  font-size: 1.5rem;
+  color: #6147C8;
   font-weight: 500;
 }
 
@@ -373,10 +397,10 @@
 .compCellFeature {
   display: flex;
   align-items: center;
-  padding: 18px 16px 18px 20px;
-  font-size: 0.9375rem;
+  padding: 13px 16px 13px 20px;
+  font-size: 1rem;
   font-weight: 500;
-  color: #17133a;
+  color: #090808;
   min-height: 60px;
 }
 
@@ -385,23 +409,25 @@
   align-items: center;
   justify-content: center;
   padding: 14px 8px;
-  border-left: 1.5px solid #c5b8f5;
-  border-right: 1.5px solid #c5b8f5;
-  background: #f3f0ff;
+  border-left: 1.5px solid #8267EC;
+  border-right: 1.5px solid #8267EC;
+  background: #8267EC0D;
 }
 
 .compCellCreatorLast {
-  border-bottom: 1.5px solid #c5b8f5;
+  border-bottom: 1.5px solid #8267EC;
   border-radius: 0 0 14px 14px;
 }
 
 .compCellOther {
   display: flex;
+  font-family: "Funnel Sans";
   align-items: center;
   justify-content: center;
   padding: 14px 16px;
-  font-size: 0.875rem;
-  color: #5e5c72;
+  font-size: 1rem;
+  color: #0D062DC4;
+  font-weight: 500;
 }
 
 .tickIcon {
@@ -410,10 +436,10 @@
 }
 
 .priceZero {
-  color: #8267ec;
-  font-family: "Funnel Display", sans-serif;
-  font-weight: 700;
-  font-size: 1.375rem;
+  color: #593CCD;
+  font-family: "Funnel Sans";
+  font-weight: 500;
+  font-size: 1.9rem;
   display: flex;
   align-items: baseline;
   gap: 4px;
@@ -448,6 +474,8 @@
   }
 
   .whyRight {
+    margin: 0 12px 12px;
+    border-radius: 14px;
     padding: 0;
     overflow-x: auto;
   }

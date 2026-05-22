@@ -292,7 +292,7 @@ export default function PricingPage() {
                       <div className={styles.compCellFeature}>{row.feature}</div>
                       <div className={`${styles.compCellCreator} ${isLast ? styles.compCellCreatorLast : ""}`}>
                         {row.isPrice ? (
-                          <span className={styles.priceZero}>$0 <small>(Till 31 Dec,2026)</small></span>
+                          <span className={styles.priceZero}>$0 <strong> <small className={styles.priceZero} >(Till 31 Dec,2026)</small></strong></span>
                         ) : (
                           <img src="/images/Pricing/righttick.png" alt="included" className={styles.tickIcon} />
                         )}
