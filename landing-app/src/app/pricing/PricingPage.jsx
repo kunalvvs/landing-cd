@@ -171,7 +171,8 @@ export default function PricingPage() {
         <section className={styles.hero}>
           <p className={styles.eyebrow}>SIMPLE, TRANSPARENT PRICING</p>
           <h1 className={styles.heroTitle}>
-            One flat price.<br />Unlimited automations.
+            All Features, All Power. <br />
+Absolutely Free Till 2026
           </h1>
           <p className={styles.heroSubtitle}>
             Start free with 500 DMs/month. Scale to thousands —<br className={styles.desktopBr} />
