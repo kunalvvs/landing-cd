@@ -71,7 +71,7 @@
 
 /* ─── Free Plan Card ────────────────────────────────────── */
 .freePlanCard {
-  background: #f6f5ff;
+  background: #F9F8FD;
   border-radius: 28px;
   padding: 32px 40px 28px;
   max-width: 50rem;
@@ -160,14 +160,15 @@
   justify-content: center;
   background-image: linear-gradient(to right, #8267EC,#5333CF);
   color: #ffffff;
-  font-size: 0.9375rem;
+  font-size: 1.1rem;
   font-weight: 600;
   padding: 14px 32px;
   border-radius: 16px;
   text-decoration: none;
   transition: background 0.2s, transform 0.2s;
-  width: 38%;
+  width: 31%;
   margin-top: 10px;
+  font-family: "Funnel Sans";
 }
 
 .freeBtn:hover {
@@ -481,13 +482,41 @@
   }
 
   .compTable {
-    min-width: 480px;
+    min-width: 400px;
+  }
+
+  .compColFeature {
+    font-size: 0.9375rem;
+  }
+
+  .creatorName,
+  .otherName {
+    font-size: 0.9375rem;
+  }
+
+  .creatorDate,
+  .otherSub {
+    font-size: 0.8125rem;
+  }
+
+  .priceZero {
+    font-size: 1.25rem;
+  }
+
+  .compCellFeature {
+    font-size: 0.875rem;
+    min-height: 48px;
+  }
+
+  .compCellOther {
+    font-size: 0.875rem;
   }
 }
 
 @media (max-width: 640px) {
   .whySection {
     padding: 48px 0 56px;
+    margin-top: 0;
   }
 
   .whyLeftTop {
@@ -496,6 +525,54 @@
 
   .whyTitle {
     font-size: 1.375rem;
+  }
+
+  .compTable {
+    min-width: 340px;
+  }
+
+  .compColFeature {
+    font-size: 0.8125rem;
+    padding: 0 10px 0 14px;
+  }
+
+  .creatorName,
+  .otherName {
+    font-size: 0.8125rem;
+  }
+
+  .creatorDate,
+  .otherSub {
+    font-size: 0.6875rem;
+  }
+
+  .compCellFeature {
+    padding: 10px 10px 10px 14px;
+    font-size: 0.8125rem;
+    min-height: 40px;
+  }
+
+  .compCellCreator,
+  .compCellOther {
+    padding: 10px 6px;
+  }
+
+  .compCellOther {
+    font-size: 0.75rem;
+  }
+
+  .priceZero {
+    font-size: 1rem;
+  }
+
+  .tickIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .creatorFreeBadge {
+    font-size: 0.65rem;
+    padding: 4px 12px;
   }
 }
 
@@ -1081,7 +1158,7 @@
 @media (max-width: 640px) {
   .heroWrap {
     border-radius: 0 0 20px 20px;
-    padding-bottom: 52px;
+    padding-bottom: 72px;
   }
 
   .hero {
@@ -1090,14 +1167,39 @@
   }
 
   .freePlanCard {
-    padding: 28px 24px 24px;
+    padding: 24px 20px 22px;
     border-radius: 22px;
-    margin-top: -60px;
+    margin-top: -48px;
+    gap: 6px;
   }
 
   .freeBadge {
     font-size: 0.5625rem;
     padding: 5px 12px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .freeTitle {
+    font-size: 1.75rem;
+  }
+
+  .freeDate {
+    font-size: 1.5rem;
+  }
+
+  .freeDesc {
+    font-size: 0.875rem;
+  }
+
+  .freePrice {
+    font-size: 2.25rem;
+    margin: 4px 0 0;
+  }
+
+  .freeBtn {
+    width: 80%;
   }
 
   .desktopBr {
