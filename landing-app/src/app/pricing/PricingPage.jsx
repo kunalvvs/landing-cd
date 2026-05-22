@@ -5,6 +5,7 @@ import Navbar from "@/components/ui/Navbar";
 import FooterSection from "@/components/sections/footer/FooterSection";
 import styles from "./pricing.module.css";
 import FeaturesOverviewSection from "@/components/sections/features-overview/FeaturesOverviewSection";
+import FAQSection from "@/components/sections/faq/FAQSection";
 
 const PLANS = [
   {
@@ -433,7 +434,10 @@ export default function PricingPage() {
       </section> */}
 
       {/* ── Pricing FAQ ── */}
-      <section className={styles.faqSection} aria-labelledby="pricing-faq-title">
+
+      <FAQSection/>
+
+      {/* <section className={styles.faqSection} aria-labelledby="pricing-faq-title">
         <div className={styles.shell}>
           <h2 id="pricing-faq-title" className={styles.faqTitle}>Pricing FAQ</h2>
           <p className={styles.faqSubtitle}>
@@ -464,10 +468,10 @@ export default function PricingPage() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── CTA ── */}
-      <section className={styles.ctaSection}>
+      {/* <section className={styles.ctaSection}>
         <div className={styles.shell}>
           <div className={styles.ctaCard}>
             <div className={styles.ctaContent}>
@@ -484,7 +488,7 @@ export default function PricingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <FooterSection />
     </main>
