@@ -17,7 +17,6 @@
   background-position: center top;
   background-repeat: no-repeat;
   border-radius: 0 0 40px 40px;
-  padding-bottom: 72px;
 }
 
 .navShell {
@@ -28,20 +27,45 @@
 
 /* ─── Hero ──────────────────────────────────────────────── */
 .hero {
-  padding: 48px 20px 0;
+  padding: 48px 20px 72px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 
-.eyebrow {
-  font-size: 0.7rem;
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  color: #17133a;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 6px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(20, 12, 52, 0.08);
+}
+
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #030116;
+  color: #ffffff;
+  font-size: 0.875rem;
   font-weight: 700;
-  letter-spacing: 0.15em;
-  color: #8267ec;
-  text-transform: uppercase;
+  padding: 14px 36px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  margin-top: 8px;
+}
+
+.heroCta:hover {
+  opacity: 0.85;
 }
 
 .heroTitle {
@@ -646,11 +670,11 @@
 @media (max-width: 640px) {
   .heroWrap {
     border-radius: 0 0 20px 20px;
-    padding-bottom: 52px;
   }
 
   .hero {
-    padding: 32px 16px 0;
+    padding: 32px 16px 56px;
+    gap: 14px;
   }
 
   .desktopBr {

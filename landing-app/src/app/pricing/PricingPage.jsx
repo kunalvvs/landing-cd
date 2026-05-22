@@ -169,15 +169,16 @@ export default function PricingPage() {
           <Navbar />
         </div>
         <section className={styles.hero}>
-          <p className={styles.eyebrow}>SIMPLE, TRANSPARENT PRICING</p>
+          <span className={styles.heroBadge}>Pricing</span>
           <h1 className={styles.heroTitle}>
-            All Features, All Power. <br />
-Absolutely Free Till 2026
+            All Features, All Power.<br />
+            Absolutely Free Till 2026
           </h1>
           <p className={styles.heroSubtitle}>
-            Start free with 500 DMs/month. Scale to thousands —<br className={styles.desktopBr} />
-            no per-contact fees, no hidden costs.
+            We believe in empowering creators. That&apos;s why Creatordesks is
+            100% free till the end of 2026.
           </p>
+          <a href="#" className={styles.heroCta}>TRY FOR FREE</a>
         </section>
       </div>
 
