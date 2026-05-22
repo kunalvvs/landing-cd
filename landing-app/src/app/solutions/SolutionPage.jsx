@@ -239,7 +239,7 @@ export default function SolutionPage() {
             <div className={styles.comparisonCardCreator}>
               <div className={`${styles.comparisonCardHead} ${styles.creatorHead}`}>
                 <Image
-                  src="/images/icons/logo.png"
+                  src="/images/icons/icon.png"
                   alt=""
                   width={30}
                   height={30}

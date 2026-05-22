@@ -20,7 +20,7 @@ export default function Navbar() {
     <header className={styles.navShell}>
       <Link href="/" className={styles.brand} aria-label="Creatordesks home">
         <Image
-          src="/images/icons/logo.png"
+          src="/images/icons/icon.png"
           alt="Creatordesks logo"
           width={45}
           height={45}

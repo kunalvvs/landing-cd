@@ -17,7 +17,7 @@ export default function NotFound() {
         {/* Logo */}
         <Link href="/" className={styles.brand} aria-label="Back to Creatordesks home">
           <Image
-            src="/images/icons/logo.png"
+            src="/images/icons/icon.png"
             alt="Creatordesks logo"
             width={40}
             height={40}

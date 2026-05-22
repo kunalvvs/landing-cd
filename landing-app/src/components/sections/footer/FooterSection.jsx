@@ -25,7 +25,7 @@ export default function FooterSection() {
         <div className={styles.brandBlock}>
           <div className={styles.brandRow}>
             <Image
-              src="/images/icons/logo.png"
+              src="/images/icons/icon.png"
               alt="Creatordesks logo"
               width={40}
               height={40}
