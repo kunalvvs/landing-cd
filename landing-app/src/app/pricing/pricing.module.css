@@ -276,8 +276,8 @@
 }
 
 .whyIcon {
-  width: 34px;
-  height: 34px;
+  width: 37px;
+  height: 37px;
   flex-shrink: 0;
   margin-top: 1px;
 }
@@ -548,8 +548,9 @@
 
   .compCellFeature {
     padding: 10px 10px 10px 14px;
-    font-size: 0.8125rem;
+    font-size: 0.8rem;
     min-height: 40px;
+    word-break: break-all;
   }
 
   .compCellCreator,
