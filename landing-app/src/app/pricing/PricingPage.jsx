@@ -180,32 +180,33 @@ export default function PricingPage() {
           <a href="#" className={styles.heroCta}>TRY FOR FREE</a>
         </section>
 
-        {/* ── Free Plan Card ── */}
-        <div className={styles.freePlanCard}>
-          <span className={styles.freeBadge}>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{flexShrink:0}}>
-              <path d="M20 12v10H4V12M22 7H2v5h20V7zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" stroke="#7c5fe6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            100% FREE TILL THE END OF 2026
-          </span>
-          <h2 className={styles.freeTitle}>Absolutely Free</h2>
-          <p className={styles.freeDate}>Till 31st December 2026</p>
-          <p className={styles.freeDesc}>
-            We are providing all our features and services{" "}
-            <span className={styles.freeHighlight}>absolutely free</span>{" "}
-            till the end of 2026.
-          </p>
-          <p className={styles.freePrice}>Rs.0</p>
-          <p className={styles.freeCaption}>Free Till 2026</p>
-          <a href="#" className={styles.freeBtn}>Get Started for Free</a>
-          <p className={styles.freeNote}>
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-              <circle cx="9" cy="9" r="9" fill="#22c55e"/>
-              <path d="M5 9l3 3 5-5" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            No Credit Card Required
-          </p>
-        </div>
+      </div>
+
+      {/* ── Free Plan Card (overlaps hero bottom) ── */}
+      <div className={styles.freePlanCard}>
+        <span className={styles.freeBadge}>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{flexShrink:0}}>
+            <path d="M20 12v10H4V12M22 7H2v5h20V7zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" stroke="#7c5fe6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          100% FREE TILL THE END OF 2026
+        </span>
+        <h2 className={styles.freeTitle}>Absolutely Free</h2>
+        <p className={styles.freeDate}>Till 31st December 2026</p>
+        <p className={styles.freeDesc}>
+          We are providing all our features and services{" "}
+          <span className={styles.freeHighlight}>absolutely free</span>{" "}
+          till the end of 2026.
+        </p>
+        <p className={styles.freePrice}>Rs.0</p>
+        <p className={styles.freeCaption}>Free Till 2026</p>
+        <a href="#" className={styles.freeBtn}>Get Started for Free</a>
+        <p className={styles.freeNote}>
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="9" fill="#22c55e"/>
+            <path d="M5 9l3 3 5-5" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          No Credit Card Required
+        </p>
       </div>
 
       {/* ── Pricing Section ── */}
