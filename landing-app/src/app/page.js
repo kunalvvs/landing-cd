@@ -11,7 +11,7 @@ import FooterSection from "@/components/sections/footer/FooterSection";
 
 export default function Home() {
   return (
-    <SmoothScroll>
+    
       <main>
         <HeroSection />
         <HowItWorksSection />
@@ -23,6 +23,6 @@ export default function Home() {
         <FAQSection />
         <FooterSection />
       </main>
-    </SmoothScroll>
+    
   );
 }
