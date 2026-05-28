@@ -18,6 +18,7 @@ export default function SmoothScroll({ children }) {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       smoothTouch: false,
+      autoRaf: false,
     });
 
     lenis.on("scroll", ScrollTrigger.update);
@@ -26,8 +27,13 @@ export default function SmoothScroll({ children }) {
     gsap.ticker.add(onTick);
     gsap.ticker.lagSmoothing(0);
 
+    // Recalculate scroll height when content changes (images load, etc.)
+    const ro = new ResizeObserver(() => lenis.resize());
+    ro.observe(document.documentElement);
+
     return () => {
       gsap.ticker.remove(onTick);
+      ro.disconnect();
       lenis.destroy();
     };
   }, []);
