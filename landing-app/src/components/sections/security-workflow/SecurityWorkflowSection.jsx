@@ -310,7 +310,7 @@ export default function SecurityWorkflowSection() {
               <div className={styles.centerBox}>
                 <div className={styles.centerIconWrap}>
                   <Image
-                    src="/images/icons/icon.png"
+                    src="/images/icons/icon1.png"
                     alt="Creatordesks"
                     width={52}
                     height={52}

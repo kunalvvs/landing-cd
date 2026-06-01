@@ -4,9 +4,9 @@ import styles from "./FeaturesAutomationSection.module.css";
 const TOP_FEATURES = [
   {
     id: "creator-agent",
-    label: "CREATOR AGENT",
-    title: "Use our 24/7 intelligent Instagram AI assistant.",
-    image: "/images/features automation section img/auto-img1.png",
+    label: "CREATOR STUDIO+",
+    title: "Studio+ for Creators to Create the Tomorrow",
+    image: "/images/features automation section img/auto-img.png",
     imageAlt: "Creator agent chat preview",
     comingSoon: true,
   },
@@ -45,11 +45,11 @@ const BOTTOM_FEATURES = [
   },
   {
     id: "powered",
-    image: "/images/features automation section img/other mask.png",
+    image: "/images/features automation section img/othermask.png",
     imageAlt: "Powered by Engage AI",
-    title: "Powered by Engage AI",
+    title: "Powered by Studio+",
     description:
-      "Our upcoming AI model designed to create smarter replies, detect intent, and personalize conversations.",
+      "Create scroll-stopping thumbnails, scripts, captions, hooks, and content ideas in one intelligent workspace built for creators.",
   },
 ];
 
@@ -123,7 +123,7 @@ export default function FeaturesAutomationSection() {
           </div>
 
           {/* Big card — Engage AI */}
-          <article
+          {/* <article
             className={styles.bigCard}
             aria-label="Engage AI overview"
             data-gsap="fade-up"
@@ -178,7 +178,7 @@ export default function FeaturesAutomationSection() {
                 <span className={styles.phText}>#1 Product of the Week</span>
               </div>
             </div>
-          </article>
+          </article> */}
 
           {/* Bottom 3 feature items — FIXED structure for mobile */}
           <div className={styles.bottomGrid}>
