@@ -10,7 +10,7 @@ const STEPS = [
     title: "Connect Instagram",
     description:
       "One-click Meta login. No passwords, no browser extensions. Works with Business and Creator accounts.",
-    image: "/images/dashboard preview/sign-image.webp.png",
+    image: "/images/dashboard preview/stepimg1.png",
     imageAlt: "Instagram login setup preview",
     imageWidth: 617,
     imageHeight: 193,
@@ -20,7 +20,7 @@ const STEPS = [
     title: "Pick a Keyword & write a DM",
     description:
       'Choose a trigger word like "LINK." Write the message your followers get. Add your link, freebie, or discount code.',
-    image: "/images/dashboard preview/sign-image.webp.png",
+    image: "/images/dashboard preview/stepimg2.png",
     imageAlt: "Keyword DM setup preview",
     imageWidth: 617,
     imageHeight: 193,
@@ -30,7 +30,7 @@ const STEPS = [
     title: "Every comment becomes a conversation",
     description:
       "Someone comments your keyword? Creatordesks sends your DM in seconds. Works on Reels, Stories, and feed posts. Runs 24/7.",
-    image: "/images/dashboard preview/sign-image.webp.png",
+    image: "/images/dashboard preview/stepimg3.png",
     imageAlt: "Comment to DM automation preview",
     imageWidth: 617,
     imageHeight: 193,
@@ -69,13 +69,13 @@ export default function HowItWorksSection() {
         {/* 2-column grid: left dashboard preview | right accordion steps */}
         <div className={styles.contentGrid}>
 
-          {/* LEFT — dashboard screenshot in purple gradient card */}
+          {/* LEFT — dashboard screenshot in purple bg card */}
           <figure className={styles.previewFrame}>
             <Image
-              src="/images/dashboard preview/section.webp.png"
+              src="/images/Hero section/dash.webp"
               alt="Creatordesks dashboard preview"
-              width={553}
-              height={522}
+              width={1087}
+              height={765}
               className={styles.previewImage}
               priority
             />
