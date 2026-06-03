@@ -23,10 +23,10 @@
 
 .subtitle {
   margin-top: 14px;
-  color: #8b8c98;
+  color: #6B7280;
   font-size: 1rem;
   font-family: "Funnel Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* ── Grid ── */
@@ -34,8 +34,10 @@
   margin-top: 52px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  gap: 10px;
   text-align: left;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 /* ── Card with gradient border ── */
@@ -127,17 +129,18 @@
 
 /* ── Thumbnail ── */
 .thumbnail {
-  margin: 0 16px;
-  border-radius: 14px;
+  margin: 0 24px;
+  border-radius: 23px;
   overflow: hidden;
   border: 1px solid #ede9ff;
   background: #f5f3ff;
   flex: 1;
+  box-shadow: 0 0 21.6px 4px rgba(135, 82, 254, 0.40);
 }
 
 .thumbnailImage {
   width: 100%;
-  height: 220px;
+  height: 195px;
   object-fit: cover;
   display: block;
 }
