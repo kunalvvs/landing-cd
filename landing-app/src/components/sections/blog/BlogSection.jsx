@@ -24,46 +24,57 @@ export default async function BlogSection() {
   return (
     <section className={styles.section} aria-labelledby="blog-title">
       <div className={styles.inner}>
-        <span className={styles.badge}>Blog</span>
         <h2 id="blog-title" className={styles.title}>
-          Master Instagram DM <span>Automation</span>
+          Master Instagram DM Automation
         </h2>
         <p className={styles.subtitle}>
-          Practical guides, strategies, and tutorials to turn every comment into
-          a conversation.
+          Connect your Instagram, pick a keyword, write one message. That&apos;s it.
         </p>
 
         <div className={styles.grid}>
-          {featured.map((guide, i) => (
-            <article key={guide._id?.toString() ?? guide.id ?? i} className={styles.card}>
-              <div className={styles.media}>
-                <img
-                  src={guide.image}
-                  alt={guide.imageAlt || guide.title}
-                  className={styles.mediaImage}
-                />
-              </div>
+          {featured.map((guide, i) => {
+            const tags = [guide.category ?? "Financial", "DM Automation", guide.category ?? "Financial"];
+            const desc = guide.description ?? "";
+            const shortDesc = desc.length > 90 ? desc.slice(0, 90) + "...." : desc;
 
-              <div className={styles.tags}>
-                <span className={styles.tag}>{guide.category}</span>
-              </div>
+            return (
+              <article key={guide._id?.toString() ?? guide.id ?? i} className={styles.card}>
+                {/* Top: date, title, description, tags */}
+                <div className={styles.cardBody}>
+                  <p className={styles.date}>{guide.date ?? "03rd June, 2026"}</p>
+                  <h3 className={styles.cardTitle}>{guide.title}</h3>
+                  <p className={styles.cardDesc}>
+                    {shortDesc}
+                    <Link href={`/style-guide/${guide.slug}`} className={styles.readMoreInline}>
+                      Read More
+                    </Link>
+                  </p>
+                  <div className={styles.tags}>
+                    {tags.map((tag, ti) => (
+                      <span key={ti} className={styles.tag}>{tag}</span>
+                    ))}
+                  </div>
+                </div>
 
-              <h3>{guide.title}</h3>
-              <p>{guide.description}</p>
+                {/* Thumbnail */}
+                <div className={styles.thumbnail}>
+                  <img
+                    src={guide.image}
+                    alt={guide.imageAlt || guide.title}
+                    className={styles.thumbnailImage}
+                  />
+                </div>
 
-              <Link
-                href={`/style-guide/${guide.slug}`}
-                className={styles.readMore}
-              >
-                Read More
-              </Link>
-            </article>
-          ))}
+                {/* Bottom CTA */}
+                <div className={styles.cardFooter}>
+                  <Link href={`/style-guide/${guide.slug}`} className={styles.readMoreBtn}>
+                    Read More
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
-
-        <Link href="/style-guide" className={styles.learnMore}>
-          View all guides
-        </Link>
       </div>
     </section>
   );
