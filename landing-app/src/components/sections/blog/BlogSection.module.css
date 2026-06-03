@@ -114,12 +114,15 @@
 .tag {
   padding: 6px 16px;
   border-radius: 999px;
-  background: #7c3aed;
+  background: #7D16F3;
   color: #ffffff;
   font-size: 0.75rem;
   font-weight: 600;
   font-family: "Funnel Sans", sans-serif;
   letter-spacing: 0.01em;
+  box-shadow:
+    inset 3.56px 3.56px 3.56px 0px rgba(255, 255, 255, 0.25),
+    0 0 0.89px 0.89px rgba(0, 0, 0, 0.08);
 }
 
 /* ── Thumbnail ── */
