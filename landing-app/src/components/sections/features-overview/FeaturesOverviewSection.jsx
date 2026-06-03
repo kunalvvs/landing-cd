@@ -6,24 +6,24 @@ const FEATURE_CARDS = [
     id: "comment-to-dm",
     title: "Comment-to-DM Automation",
     description:
-      "Trigger automatic DM replies when someone comments specific keywords on your posts, reels, or campaigns.",
-    image: "/images/features card/feature-card1.png",
+      "Send automatic DMs when people comment keywords on your reels, posts, or campaigns.",
+    image: "/images/features card/featurecard1.png",
     imageAlt: "Task progress automation preview",
   },
   {
     id: "smart-workflows",
     title: "Smart Automation Workflows",
     description:
-      "Set up simple automation rules for comments, DMs, lead capture, product links, and follow-up messages.",
-    image: "/images/features card/feature-card2.png",
+      "Create rules for keywords, instant replies, links, freebies, and lead capture.",
+    image: "/images/features card/featurecard2.png",
     imageAlt: "Assignments workflow preview",
   },
   {
     id: "audience-management",
-    title: `Audience & Conversation Management`,
+    title: `Real-Time Growth Tracking`,
     description:
-      "Track conversations, replies, interested users, and leads so you never miss an opportunity to convert.",
-    image: "/images/features card/Background.png",
+      "Monitor DMs sent, link clicks, followers gained, and automation performance in real time.",
+    image: "/images/features card/background.png",
     imageAlt: "Audience conversation inbox preview",
     tall: true,
   },
@@ -42,10 +42,10 @@ export default function FeaturesOverviewSection({
   return (
     <section className={styles.section} aria-labelledby="features-overview-title">
       <div className={styles.inner}>
-        <div className={styles.badge}>
+        {/* <div className={styles.badge}>
           {badgeIcon}
           {badgeLabel}
-        </div>
+        </div> */}
 
         <h2 id="features-overview-title" className={styles.title}>
           {title}
@@ -79,15 +79,15 @@ export default function FeaturesOverviewSection({
 
           <article className={styles.wideCard}>
             <div className={styles.wideText}>
-              <h3>Real-Time Growth Tracking</h3>
+              <h3>Lead Capture</h3>
               <p>
-                Monitor leads captured, automated replies, campaign performance,
-                and audience engagement in real time.
+                Add buttons to your DMs, collect user details automatically, and turn every interested comment into a lead-ready conversation.
               </p>
             </div>
 
             <div className={styles.wideMedia}>
-              <div className={styles.projectCard}>
+              <img className={styles.projectCard} src='/images/features card/featurecard3.png' />
+              {/* <div className={styles.projectCard}>
                 <div className={styles.projectHeader}>
                   <h4>Project Overview</h4>
                 </div>
@@ -146,7 +146,7 @@ export default function FeaturesOverviewSection({
                     </span>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </article>
         </div>

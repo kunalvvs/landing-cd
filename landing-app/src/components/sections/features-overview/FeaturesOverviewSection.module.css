@@ -46,20 +46,21 @@
 
 
 .title {
-  margin-top: 18px;
+
   font-size: clamp(2rem, 4.5vw, 2.75rem);
   line-height: 1.1;
   letter-spacing: -0.03em;
-  color: #1e1945;
-  font-weight: 400;
+  color: #0D062D;
+  font-weight:bold;
   font-family: "Funnel Display", var(--font-geist-sans), Arial, Helvetica,
     sans-serif;
 }
 
 .subtitle {
   margin-top: 14px;
-  color: #6c6f7f;
-  font-size: 0.875rem;
+  color: #6B7280;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .subtitleAccent {
@@ -93,8 +94,8 @@
 .cardContent h3,
 .wideText h3 {
   color: #0D062D;
-  font-size: 1.125rem;
-  font-weight: 400;
+  font-size: 1.3rem;
+  font-weight: bold;
   letter-spacing: -0.01em;
   font-family: var(--font-funnel-display);
 }
@@ -108,11 +109,16 @@
   font-weight: 400;
 }
 
+.wideText p{
+  width: 280px;
+  font-size: .8rem;
+}
+
 .cardMedia {
   margin-top: 18px;
   border-radius: 18px;
   background: #f6f7fb;
-  padding: 14px;
+  
 }
 
 .cardImage {
@@ -129,7 +135,7 @@
   gap: 24px;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(400px 260px at 10% 10%, rgba(127, 144, 255, 0.18), rgba(255, 255, 255, 0) 70%),
+  background: radial-gradient(400px 260px at 60% 30%, rgba(127, 144, 255, 0.18), rgba(255, 255, 255, 0) 90%),
     #ffffff;
 }
 
@@ -162,7 +168,7 @@
   width: 100%;
   background: #ffffff;
   border-radius: 16px;
-  padding: 16px;
+
   box-shadow: 0 16px 30px rgba(20, 12, 52, 0.08);
 }
 

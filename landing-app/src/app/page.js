@@ -17,7 +17,7 @@ export default function Home() {
         <HowItWorksSection />
         <FeaturesAutomationSection />
         <FeaturesOverviewSection />
-        <SecurityWorkflowSection />
+        {/* <SecurityWorkflowSection /> */}
         <TestimonialsSection />
         <BlogSection />
         <FAQSection />
