@@ -47,7 +47,7 @@
   font-family: "Funnel Display", sans-serif;
   line-height: 1.35;
   margin: 0;
-  max-width: 22ch;
+  max-width: 28ch;
 }
 
 .brandDesc {
@@ -56,7 +56,7 @@
   line-height: 1.7;
   font-family: "Funnel Sans", sans-serif;
   margin: 0;
-  max-width: 34ch;
+  max-width: 39ch;
 }
 
 .socials {
@@ -142,9 +142,8 @@
   color: #9b9baa;
   line-height: 1.68;
   font-family: "Funnel Sans", sans-serif;
-  margin: 0;
+  margin-top: -182px;
   padding-bottom: 52px;
-  align-self: end;
 }
 
 /* ── Bottom image section ── */
