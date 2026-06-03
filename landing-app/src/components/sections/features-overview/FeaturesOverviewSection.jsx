@@ -23,7 +23,7 @@ const FEATURE_CARDS = [
     title: `Real-Time Growth Tracking`,
     description:
       "Monitor DMs sent, link clicks, followers gained, and automation performance in real time.",
-    image: "/images/features card/background.png",
+    image: "/images/features card/Background.png",
     imageAlt: "Audience conversation inbox preview",
     tall: true,
   },
