@@ -1,8 +1,8 @@
 /* ── Section shell ── */
 .section {
-  background: #f8f8fb;
-  border-top: 8px solid #d8d8f9;
-  padding: 106px 0 96px;
+  background: #fff;
+
+  padding: 96px 0 96px;
   height: auto;
 }
 
@@ -18,20 +18,21 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 135px;
+  width: 175px;
   min-height: 35px;
   border-radius: 999px;
-  border: 1px solid #d9d9df;
-  background: #f2f2f7;
-  color: #232238;
-  padding: 8px 16px;
-  font-size: 0.8125rem;
+  border: 1px solid #C4C4C473;
+  background: #FAFAFA;
+  color: #000;
+  padding: 13px 20px;
+  font-size: 1rem;
   line-height: 1;
+  font-weight: 600;
 }
 
 .metabadge {
-  width: 15px;
-  height: 11px;
+  width: 18px;
+  height: 14px;
 }
 
 /* ── Heading ── */
@@ -42,23 +43,24 @@
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.1;
-  color: #15133b;
+  color: #0D062D;
   font-family: "Funnel Display";
+  font-weight: bold;
 }
 
 .title span {
-  color: #7f6ef6;
+  color: #7D16F3;
 }
 
 .subtitle {
   margin-top: 16px;
   text-align: center;
   font-size: clamp(0.9375rem, 1.6vw, 1rem);
-  color: #75788a;
+  color: #6B7280;
   line-height: 1.35;
   font-family: "Funnel Sans";
   padding: 0 8px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* ─────────────────────────────────────────────────────
@@ -313,7 +315,7 @@
 @media (max-width: 768px) {
   .section {
     border-top-width: 4px;
-    padding: 66px 0 62px;
+    padding: 62px 0 62px;
   }
 
   .inner {

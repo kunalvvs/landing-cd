@@ -10,7 +10,7 @@ const NAV_ITEMS = [
   { label: "Pricing", href: "/pricing" },
   { label: "Resources", href: "/style-guide" },
   { label: "Contact", href: "/contact" },
-  { label: "About", href: "#" },
+  // { label: "About", href: "#" },
 ];
 
 export default function Navbar() {
@@ -20,10 +20,10 @@ export default function Navbar() {
     <header className={styles.navShell}>
       <Link href="/" className={styles.brand} aria-label="Creatordesks home">
         <Image
-          src="/images/icons/icon.png"
+          src="/images/icons/cdlogo.png"
           alt="Creatordesks logo"
-          width={45}
-          height={45}
+          width={43}
+          height={32}
           priority
         />
         <span className={styles.logoText}>Creatordesks</span>
