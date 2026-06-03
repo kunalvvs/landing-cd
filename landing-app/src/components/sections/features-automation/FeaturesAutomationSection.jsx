@@ -70,7 +70,7 @@ export default function FeaturesAutomationSection() {
 
         <div className={styles.inner}>
           {/* Brand row */}
-          <div className={styles.brandRow} data-gsap="fade-up">
+          {/* <div className={styles.brandRow} data-gsap="fade-up">
             <Image
               src="/images/features automation section img/ClickUp Brain icon.png"
               alt="Creatordesks AI"
@@ -80,7 +80,7 @@ export default function FeaturesAutomationSection() {
               priority
             />
             <p className={styles.brandText}>Creatordesks AI</p>
-          </div>
+          </div> */}
 
           <h2
             id="automation-title"

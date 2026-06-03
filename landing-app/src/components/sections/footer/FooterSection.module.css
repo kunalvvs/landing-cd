@@ -79,11 +79,12 @@
 }
 
 .copyright {
-  font-size: 0.8125rem;
-  color: #8b8c98;
+  font-size: 0.9rem;
+  color: #4E4D53;
   font-family: "Funnel Sans", sans-serif;
   margin: 0;
   margin-top: 4px;
+  font-weight: 400;
 }
 
 /* ── Nav columns ── */
@@ -94,9 +95,9 @@
 }
 
 .colHeading {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #0d062d;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0D062D;
   font-family: "Funnel Display", sans-serif;
   margin: 0 0 22px;
 }
@@ -112,10 +113,11 @@
 
 .colList a {
   font-size: 0.9375rem;
-  color: #5e6070;
+  color: #4E4D53;
   text-decoration: none;
   font-family: "Funnel Sans", sans-serif;
   transition: color 0.15s;
+  font-weight: 400;
 }
 
 .colList a:hover {
@@ -139,7 +141,7 @@
 .disclaimer {
   grid-column: 2 / -1;
   font-size: 0.8125rem;
-  color: #9b9baa;
+  color: #4E4D53;
   line-height: 1.68;
   font-family: "Funnel Sans", sans-serif;
   margin-top: -182px;
@@ -152,27 +154,62 @@
   width: 100%;
   height: 420px;
   overflow: hidden;
+  margin-top: -40px;
 }
 
 .bgImage {
+  
   object-fit: cover;
   object-position: center top;
 }
 
+/* ── Glass watermark ── */
 .watermark {
   position: absolute;
-  bottom: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: clamp(4.5rem, 13vw, 10rem);
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.22);
-  font-family: "Funnel Display", sans-serif;
-  white-space: nowrap;
+  inset: 0;
   pointer-events: none;
-  line-height: 1;
   user-select: none;
+  
+}
+
+/* Hidden SVG that owns the clipPath definition */
+.clipSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* Shared font class used by BOTH the clipPath text and the visual SVG text */
+.wmClipText,
+.wmText {
+  font-family: "Funnel Display", sans-serif;
+  font-weight: 800;
+  font-size: 12.44vw;
+  letter-spacing: 0.02em;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+/* Frosted glass layer — fills the text shape via clip-path */
+.glassFrost {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(10px) brightness(1.06) saturate(1.25);
+  -webkit-backdrop-filter: blur(10px) brightness(1.06) saturate(1.25);
+  clip-path: url(#footer-wm-clip);
+}
+
+/* Visual SVG that renders the gradient/stroke layers */
+.textSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
 }
 
 /* ── Responsive ── */
@@ -215,7 +252,8 @@
     height: 220px;
   }
 
-  .watermark {
-    font-size: clamp(2.5rem, 12vw, 4.5rem);
+  .wmClipText,
+  .wmText {
+    font-size: 12vw;
   }
 }
