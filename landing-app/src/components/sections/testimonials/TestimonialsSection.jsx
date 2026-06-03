@@ -1,139 +1,163 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import styles from "./TestimonialsSection.module.css";
 
 const TESTIMONIALS = [
   {
-    id: "john-david",
-    name: "John David",
-    avatar: "/images/Hero section/avatar1.png",
-    date: "August 29, 2024",
+    id: "t1",
+    name: "Paritosh Anand",
+    followers: "1.3M+",
     quote:
-      "As an active investor, I've struggled to keep track of my diverse portfolio. This platform changed everything. The investment tracking and performance analytics are incredibly detailed, giving me the insights I need to make smarter decisions. I've seen real growth since using this tool.",
-    highlight: true,
+      "Before using creatordesks, managing our processes was a constant headache. We struggled with manual data entry and a lack of real-time visibility.",
   },
   {
-    id: "john-clayton",
-    name: "John Clayton",
-    avatar: "/images/Hero section/avatar3.png",
-    date: "",
+    id: "t2",
+    name: "Paritosh Anand",
+    followers: "1.3M+",
     quote:
-      "Before using [Product Name], managing our financial processes was a constant headache. We struggled with manual data entry, scattered reports, and a lack of real-time visibility into our financial health.",
-     highlight:true,
-    },
-    {
-    id: "john-david",
-    name: "John David",
-    avatar: "/images/Hero section/avatar1.png",
-    date: "August 29, 2024",
-    quote:
-      "As an active investor, I've struggled to keep track of my diverse portfolio. This platform changed everything. The investment tracking and performance analytics are incredibly detailed, giving me the insights I need to make smarter decisions. I've seen real growth since using this tool.",
-    highlight: true,
+      "Creatordesks completely changed how I engage with my audience. The comment-to-DM automation alone saved me hours every single week.",
   },
-
+  {
+    id: "t3",
+    name: "Paritosh Anand",
+    followers: "1.3M+",
+    quote:
+      "I was skeptical at first, but after the first campaign I was blown away. My DM conversion rate jumped by 3x in just two weeks.",
+  },
+  {
+    id: "t4",
+    name: "Paritosh Anand",
+    followers: "1.3M+",
+    quote:
+      "The keyword triggers are a game changer. My followers get instant replies and I get leads — all without me lifting a finger.",
+  },
+  {
+    id: "t5",
+    name: "Paritosh Anand",
+    followers: "1.3M+",
+    quote:
+      "Setup took under 5 minutes. Within 24 hours I had over 200 automated DMs sent. The ROI is unbelievable for a free tool.",
+  },
+  {
+    id: "t6",
+    name: "Paritosh Anand",
+    followers: "1.3M+",
+    quote:
+      "Every creator needs this. The follow gate feature helped me grow my Instagram by 4,000 followers in a single month of using it.",
+  },
 ];
 
-export default function TestimonialsSection() {
-  const wrapperRef = useRef(null);
-  const trackRef = useRef(null);
-  const tweenRef = useRef(null);
-
-  const loopedTestimonials = useMemo(
-    () => [...TESTIMONIALS, ...TESTIMONIALS],
-    []
+function TestimonialCard({ item }) {
+  return (
+    <article className={styles.card}>
+      <div className={styles.cardHeader}>
+        <div className={styles.avatarWrap}>
+          <Image
+            src="/images/testimonials/avatar.svg.png"
+            alt={item.name}
+            width={48}
+            height={48}
+            className={styles.avatar}
+          />
+        </div>
+        <div className={styles.cardMeta}>
+          <div className={styles.nameRow}>
+            <span className={styles.name}>{item.name}</span>
+            <Image
+              src="/images/testimonials/tick.png"
+              alt="Verified"
+              width={16}
+              height={16}
+              className={styles.tick}
+            />
+          </div>
+          <div className={styles.followRow}>
+            <Image
+              src="/images/testimonials/insta.png"
+              alt="Instagram"
+              width={14}
+              height={14}
+              className={styles.instaIcon}
+            />
+            <span className={styles.followers}>
+              <strong>{item.followers}</strong> Followers
+            </span>
+          </div>
+        </div>
+      </div>
+      <p className={styles.quote}>{item.quote}</p>
+    </article>
   );
+}
+
+function MarqueeRow({ items, reverse = false }) {
+  const trackRef = useRef(null);
 
   useEffect(() => {
-    if (!wrapperRef.current || !trackRef.current) return;
+    const track = trackRef.current;
+    if (!track) return;
 
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
     if (prefersReduced) return;
 
-    const track = trackRef.current;
-    const wrapper = wrapperRef.current;
-    const loopDistance = track.scrollHeight / 2;
-    if (!loopDistance) return;
+    const totalWidth = track.scrollWidth / 2;
 
-    tweenRef.current = gsap.to(track, {
-      y: -loopDistance,
-      duration: 16,
-      ease: "linear",
-      repeat: -1,
-    });
+    const tween = gsap.fromTo(
+      track,
+      { x: reverse ? -totalWidth : 0 },
+      {
+        x: reverse ? 0 : -totalWidth,
+        duration: 28,
+        ease: "linear",
+        repeat: -1,
+      }
+    );
 
-    const handleEnter = () => tweenRef.current?.pause();
-    const handleLeave = () => tweenRef.current?.resume();
-
-    wrapper.addEventListener("mouseenter", handleEnter);
-    wrapper.addEventListener("mouseleave", handleLeave);
+    const pause = () => tween.pause();
+    const resume = () => tween.resume();
+    track.addEventListener("mouseenter", pause);
+    track.addEventListener("mouseleave", resume);
 
     return () => {
-      wrapper.removeEventListener("mouseenter", handleEnter);
-      wrapper.removeEventListener("mouseleave", handleLeave);
-      tweenRef.current?.kill();
+      tween.kill();
+      track.removeEventListener("mouseenter", pause);
+      track.removeEventListener("mouseleave", resume);
     };
-  }, []);
+  }, [reverse]);
+
+  const doubled = [...items, ...items];
 
   return (
-    <section className={styles.section} aria-labelledby="testimonials-title">
-      <div className={styles.inner}>
-        <div className={styles.leftColumn}>
-          <span className={styles.badge}>Testimonials</span>
-          <h2 id="testimonials-title" className={styles.title}>
-            What our clients are <span>saying</span>
-          </h2>
-          <p className={styles.subtitle}>
-            Our financial management platform is transforming the way people
-            manage their money. Here&apos;s what some of our users have to say
-            about their experience
-          </p>
-          <div className={styles.trusted}>
-            <strong>2k+</strong>
-            <span>Trusted by users</span>
-          </div>
-        </div>
+    <div className={styles.rowOuter}>
+      <div className={styles.track} ref={trackRef}>
+        {doubled.map((item, i) => (
+          <TestimonialCard key={`${item.id}-${i}`} item={item} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
-        <div className={styles.rightColumn} ref={wrapperRef}>
-          <div className={styles.cardsTrack} ref={trackRef}>
-            {loopedTestimonials.map((item, index) => (
-              <article
-                key={`${item.id}-${index}`}
-                className={item.highlight ? styles.card : styles.cardMuted}
-                aria-hidden={index >= TESTIMONIALS.length}
-              >
-                <div className={styles.cardHeader}>
-                  <div className={styles.avatar} aria-hidden="true">
-                    <Image
-                      src={item.avatar}
-                      alt=""
-                      width={46}
-                      height={46}
-                      className={styles.avatarImage}
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <div>
-                    <p className={styles.name}>{item.name}</p>
-                    <div className={styles.stars} aria-hidden="true">
-                      {Array.from({ length: 5 }).map((_, starIndex) => (
-                        <span key={`${item.id}-star-${index}-${starIndex}`} />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <p className={styles.quote}>{item.quote}</p>
-                {item.date ? (
-                  <p className={styles.date}>{item.date}</p>
-                ) : null}
-              </article>
-            ))}
-          </div>
-        </div>
+export default function TestimonialsSection() {
+  return (
+    <section className={styles.section} aria-label="Testimonials">
+      <div className={styles.sectionHead}>
+        <h2 className={styles.sectionTitle}>
+          Features that makes your creator<br />journey powerful
+        </h2>
+        <p className={styles.sectionSubtitle}>
+          Connect your Instagram, pick a keyword, write one message. That&apos;s it.
+        </p>
+      </div>
+
+      <div className={styles.rows}>
+        <MarqueeRow items={TESTIMONIALS} reverse={false} />
+        <MarqueeRow items={[...TESTIMONIALS].reverse()} reverse={true} />
       </div>
     </section>
   );
