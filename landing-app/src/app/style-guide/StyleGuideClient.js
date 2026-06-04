@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/ui/Navbar";
 import FooterSection from "@/components/sections/footer/FooterSection";
+import FAQSection from "@/components/sections/faq/FAQSection";
 
 import styles from "./page.module.css";
 
@@ -15,78 +16,9 @@ const TABS = [
   "Niche Guides",
 ];
 
-const FAQS = [
-  {
-    id: "faq-1",
-    question: "What is Instagram DM automation?",
-    answer:
-      "Instagram DM automation allows you to automatically send messages based on triggers like comments, story replies, or keywords using Meta-approved APIs.",
-  },
-  {
-    id: "faq-2",
-    question: "Is Instagram DM automation safe?",
-    answer:
-      "Yes. When you use Meta's official API, automation is compliant and safe. Avoid third-party bots that violate platform policies.",
-  },
-  {
-    id: "faq-3",
-    question: "How is DM automation different from spam bots?",
-    answer:
-      "Legit automation follows opt-in, approved messaging windows, and platform policies. Spam bots bypass rules and put accounts at risk.",
-  },
-  {
-    id: "faq-4",
-    question: "What can I automate with Instagram DMs?",
-    answer:
-      "You can automate replies for comments, story interactions, keyword triggers, lead capture, and follow-up sequences.",
-  },
-  {
-    id: "faq-5",
-    question: "Do I need technical skills to set up DM automation?",
-    answer:
-      "No. Modern tools provide templates and guided steps so you can launch automations without code.",
-  },
-  {
-    id: "faq-6",
-    question: "What's the best DM automation tool for Instagram?",
-    answer:
-      "The best tool is one that uses Meta's official API, offers templates, analytics, and makes setup simple for your workflow.",
-  },
-  {
-    id: "faq-7",
-    question: "How much does Instagram DM automation cost?",
-    answer:
-      "Costs vary by provider and message volume, but most plans start with affordable monthly tiers and scale with usage.",
-  },
-  {
-    id: "faq-8",
-    question: "Can DM automation collect emails?",
-    answer:
-      "Yes. Many tools can collect emails with consent and pass them into your CRM or email platform.",
-  },
-  {
-    id: "faq-9",
-    question: "What's the difference between comment-to-DM and keyword automation?",
-    answer:
-      "Comment-to-DM triggers when someone comments on a post. Keyword automation triggers when a specific word is used in comments or DMs.",
-  },
-  {
-    id: "faq-10",
-    question: "Do I need a business or creator account for DM automation?",
-    answer:
-      "Yes. Meta requires a Business or Creator account to access the official messaging API.",
-  },
-  {
-    id: "faq-11",
-    question: "How do I get started with DM automation?",
-    answer:
-      "Pick a goal, connect your account, choose a trigger, write your DM message, and launch your automation in minutes.",
-  },
-];
 
 export default function StyleGuidePage({ initialGuides = [] }) {
   const [activeTab, setActiveTab] = useState(TABS[0]);
-  const [openFaq, setOpenFaq] = useState(FAQS[0].id);
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredGuides = useMemo(() => {
@@ -229,39 +161,7 @@ export default function StyleGuidePage({ initialGuides = [] }) {
       </section>
 
       {/* ── FAQ ── */}
-      <section className={styles.faqSection}>
-        <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
-        <div className={styles.faqList}>
-          {FAQS.map((item) => {
-            const isOpen = openFaq === item.id;
-            return (
-              <div
-                key={item.id}
-                className={`${styles.faqItem} ${isOpen ? styles.faqOpen : ""}`}
-              >
-                <button
-                  type="button"
-                  className={styles.faqButton}
-                  onClick={() =>
-                    setOpenFaq((current) =>
-                      current === item.id ? "" : item.id
-                    )
-                  }
-                  aria-expanded={isOpen}
-                >
-                  <span>{item.question}</span>
-                  <span className={styles.faqIcon} aria-hidden="true">
-                    +
-                  </span>
-                </button>
-                <div className={styles.faqContent} aria-hidden={!isOpen}>
-                  <p>{item.answer}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+      <FAQSection />
 
       <section className={styles.ctaSection}>
         <div className={styles.ctaCard}>
