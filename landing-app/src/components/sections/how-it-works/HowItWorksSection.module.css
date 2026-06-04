@@ -303,6 +303,8 @@
 @media (max-width: 1100px) {
   .contentGrid {
     grid-template-columns: 1fr;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .previewFrame {
@@ -315,12 +317,15 @@
   .previewImage {
     width: 110%;
   }
+
+  .steps {
+    height: auto;
+  }
 }
 
 @media (max-width: 768px) {
   .section {
-    border-top-width: 4px;
-    padding: 62px 0 62px;
+    padding: 56px 0;
   }
 
   .inner {
@@ -330,12 +335,12 @@
   .badge {
     font-size: 0.875rem;
     min-height: 30px;
-    padding: 6px 12px;
+    padding: 6px 14px;
   }
 
   .title {
     margin-top: 20px;
-    font-size: clamp(2.125rem, 9vw, 3.25rem);
+    font-size: clamp(2rem, 8.5vw, 3rem);
   }
 
   .subtitle {
@@ -345,21 +350,32 @@
 
   .contentGrid {
     margin-top: 28px;
+    margin-left: 0;
+    margin-right: 0;
+    gap: 20px;
   }
 
   .previewFrame {
-    height: 300px;
+    height: 280px;
     border-radius: 16px;
-    padding: 16px 0 0 16px;
-    align-items: flex-end;
+    padding: 18px 0 0 18px;
+    align-items: flex-start;
     justify-content: flex-start;
+    position: static;
   }
 
   .previewImage {
-    width: 120%;
+    width: 115%;
     height: auto;
     max-height: none;
     margin: 0;
+    margin-top: 1rem;
+    margin-left: 2rem;
+  }
+
+  .steps {
+    height: auto;
+    gap: 12px;
   }
 
   .stepItem {
@@ -375,6 +391,7 @@
     width: 44px;
     height: 44px;
     font-size: 0.95rem;
+    flex-shrink: 0;
   }
 
   .stepText {
@@ -383,22 +400,40 @@
   }
 
   .stepTitle {
-    font-size: clamp(1rem, 4.5vw, 1.2rem);
+    font-size: clamp(1rem, 4.5vw, 1.15rem);
   }
 
   .stepDesc {
-    font-size: 0.85rem;
+    font-size: 0.8375rem;
+    line-height: 1.5;
+  }
+
+  .stepImagePanel {
+    padding-bottom: 4px;
   }
 
   .stepImageWrap {
-    margin: 0 12px 0px;
+    margin: 0 12px 12px;
     border-radius: 12px;
-    padding: 20px 14px 0;
-    min-height: 130px;
+    padding: 16px 12px 0;
+    min-height: 120px;
   }
 }
 
 @media (max-width: 480px) {
+  .section {
+    padding: 48px 0;
+  }
+
+  .previewFrame {
+    height: 240px;
+    padding: 14px 0 0 14px;
+  }
+
+  .previewImage {
+    width: 120%;
+  }
+
   .stepNumber {
     width: 40px;
     height: 40px;
@@ -408,6 +443,14 @@
   .stepHeader {
     padding: 14px 12px;
     gap: 10px;
+  }
+
+  .stepTitle {
+    font-size: 0.9375rem;
+  }
+
+  .stepDesc {
+    font-size: 0.8125rem;
   }
 }
 
