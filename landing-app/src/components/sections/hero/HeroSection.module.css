@@ -486,6 +486,7 @@
   .contentWrap {
     width: min(1200px, 100% - 24px);
     margin-top: 16px;
+    padding-top: 16px;
   }
 
   .brand {
@@ -493,16 +494,17 @@
   }
 
   .heroBadge {
-    margin-top: 40px;
+    margin-top: 36px;
     font-size: 0.6875rem;
     gap: 8px;
     padding: 6px 12px;
   }
 
   .title {
-    margin-top: 24px;
+    margin-top: 20px;
     font-size: clamp(1.875rem, 8.5vw, 3.25rem);
     padding: 0 4px;
+    line-height: 1.1;
   }
 
   .subtitle {
@@ -511,12 +513,11 @@
   }
 
   .ctaButton {
-    margin-top: 20px;
-    min-width: 0px;
-    min-height: 40px;
-    font-size: .7rem;
-    padding: 10px;
-    
+    margin-top: 24px;
+    min-width: 180px;
+    min-height: 48px;
+    font-size: 0.875rem;
+    padding: 0 28px;
   }
 
   .brandMarquee {
@@ -524,15 +525,23 @@
   }
 
   .heroPreview {
-    margin-top: 48px;
+    margin-top: 40px;
     margin-bottom: 0;
     border-radius: 16px;
     width: calc(100% - 24px);
-    opacity: 0;
+  }
+
+  .previewImage {
+    width: 100%;
+    height: auto;
   }
 
   .heroStrip {
     margin-top: 32px;
+  }
+
+  .stripImage {
+    width: 100%;
   }
 }
 
@@ -543,6 +552,17 @@
   /* Disable shimmer animation — saves continuous repaint on CTA button */
   .ctaButton::after {
     animation: none;
+  }
+
+  /* Extend bg image coverage on mobile — content is taller relative to viewport */
+  .heroSection {
+    background:
+      linear-gradient(
+        to bottom,
+        transparent 55%,
+        rgba(255, 255, 255, 1) 100%
+      ),
+      #fff url("/images/Hero section/hero-bg.webp") center top / 100% auto no-repeat;
   }
 
   /* Remove backdrop-filter — forces GPU layer creation on every scroll frame */
@@ -577,13 +597,29 @@
     height: 36px;
   }
 
+  .heroBadge {
+    margin-top: 28px;
+    font-size: 0.625rem;
+    gap: 6px;
+    padding: 5px 10px;
+    flex-wrap: wrap;
+    max-width: calc(100vw - 48px);
+  }
+
   .title {
     font-size: clamp(1.75rem, 9vw, 2.5rem);
   }
 
-  .heroBadge {
-    font-size: 0.625rem;
-    gap: 6px;
-    padding: 5px 10px;
+  .ctaButton {
+    min-width: 160px;
+    min-height: 44px;
+    font-size: 0.8125rem;
+    padding: 0 22px;
+  }
+
+  .heroPreview {
+    margin-top: 32px;
+    width: calc(100% - 16px);
+    border-radius: 12px;
   }
 }
