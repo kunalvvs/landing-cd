@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import Navbar from "@/components/ui/Navbar";
 import FooterSection from "@/components/sections/footer/FooterSection";
 import styles from "./pricing.module.css";
@@ -170,8 +171,51 @@ function CheckIcon({ dark }) {
 export default function PricingPage() {
   const [billing, setBilling] = useState("monthly");
   const [openFaq, setOpenFaq] = useState(null);
+  const freePlanRef = useRef(null);
 
   const isYearly = billing === "yearly";
+
+  // rotateX reveal on scroll — same motion as the hero dashboard image
+  useEffect(() => {
+    const el = freePlanRef.current;
+    if (!el) return;
+
+    let observer;
+
+    import("gsap").then(({ default: gsap }) => {
+      gsap.set(el, {
+        opacity: 0,
+        rotateX: -72,
+        y: 80,
+        scale: 0.92,
+        transformPerspective: 1400,
+        transformOrigin: "center bottom",
+      });
+
+      observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              gsap.to(el, {
+                opacity: 1,
+                rotateX: 0,
+                y: 0,
+                scale: 1,
+                duration: 1.4,
+                ease: "power3.out",
+              });
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.25 }
+      );
+
+      observer.observe(el);
+    });
+
+    return () => observer?.disconnect();
+  }, []);
 
   return (
     <main className={styles.page}>
@@ -189,13 +233,16 @@ export default function PricingPage() {
           <p className={styles.heroSubtitle}>
             We believe in empowering creators. That&apos;s why Creatordesks is&nbsp;100% free till the end of 2026.
           </p>
-          <a href="#" className={styles.heroCta}>TRY FOR FREE</a>
+          <a href="#" className={styles.heroCta}>
+            <Image src="/images/Hero section/stars.png" className={styles.starIcon} width={25} height={25} alt="" />
+            TRY FOR FREE
+          </a>
         </section>
 
       </div>
 
       {/* ── Free Plan Card (overlaps hero bottom) ── */}
-      <div className={styles.freePlanCard}>
+      <div ref={freePlanRef} className={styles.freePlanCard}>
         <span className={styles.freeBadge}>
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{flexShrink:0}}>
             <path d="M20 12v10H4V12M22 7H2v5h20V7zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" stroke="#7c5fe6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

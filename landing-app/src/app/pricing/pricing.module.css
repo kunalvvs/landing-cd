@@ -69,6 +69,10 @@
   opacity: 0.85;
 }
 
+.starIcon {
+  margin-right: 10px;
+}
+
 /* ─── Free Plan Card ────────────────────────────────────── */
 .freePlanCard {
   background: #F9F8FD;

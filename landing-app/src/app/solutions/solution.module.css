@@ -28,7 +28,9 @@
   object-position: top center;
 }
 
-
+.starIcon{
+  margin-right: 10px;
+}
 
 .heroNav {
   width: min(1180px, 100% - 40px);
@@ -87,7 +89,9 @@
 }
 
 .heroCta {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px 36px;
   background: #1a1a1a;
   color: #fff;

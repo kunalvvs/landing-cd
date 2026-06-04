@@ -98,7 +98,8 @@ export default function SolutionPage() {
             views. Start building engagement, conversations, leads, and revenue
             with CreatorDesk.
           </p>
-          <a href="#" className={styles.heroCta}>TRY FOR FREE</a>
+          <a href="#" className={styles.heroCta}> 
+             <Image src="/images/Hero section/stars.png" className={styles.starIcon} width={25} height={25} alt="" /> TRY FOR FREE</a>
         </div>
       </div>
 
