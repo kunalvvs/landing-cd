@@ -11,6 +11,8 @@ export default function HeroSection() {
     const el = previewRef.current;
     if (!el) return;
 
+    let observer;
+
     import("gsap").then(({ default: gsap }) => {
       gsap.set(el, {
         opacity: 0,
@@ -21,18 +23,29 @@ export default function HeroSection() {
         transformOrigin: "center bottom",
       });
 
-      gsap.to(el, {
-        opacity: 1,
-        rotateX: 0,
-        y: 0,
-        scale: 1,
-        duration: 2.4,
-        ease: "power3.out",
-        delay: 0.3,
-      });
+      observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              gsap.to(el, {
+                opacity: 1,
+                rotateX: 0,
+                y: 0,
+                scale: 1,
+                duration: 1.4,
+                ease: "power3.out",
+              });
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      observer.observe(el);
     });
 
-    return () => {};
+    return () => observer?.disconnect();
   }, []);
 
   return (
