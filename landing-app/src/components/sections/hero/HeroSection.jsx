@@ -1,9 +1,66 @@
 "use client";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Navbar from "@/components/ui/Navbar";
 import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
+  const previewRef = useRef(null);
+
+  useEffect(() => {
+    const el = previewRef.current;
+    if (!el) return;
+
+    let cleanup = () => {};
+
+    import("gsap").then(({ default: gsap }) => {
+      import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Set initial hidden state
+        gsap.set(el, {
+          opacity: 0,
+          rotateX: -32,
+          y: 80,
+          scale: 0.92,
+          transformPerspective: 1400,
+          transformOrigin: "center bottom",
+        });
+
+        const playAnim = () => {
+          gsap.to(el, {
+            opacity: 1,
+            rotateX: 0,
+            y: 0,
+            scale: 1,
+            duration: 6.4,
+            ease: "power3.out",
+          });
+        };
+
+        // Use native scroll listener so trigger point is always relative
+        // to actual scroll position, not element position in viewport
+        const onScroll = () => {
+          const scrolled = window.scrollY;
+          const threshold = el.offsetTop - window.innerHeight * 0.75;
+          if (scrolled >= threshold) {
+            playAnim();
+            window.removeEventListener("scroll", onScroll);
+          }
+        };
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+
+        cleanup = () => {
+          window.removeEventListener("scroll", onScroll);
+          gsap.set(el, { clearProps: "all" });
+        };
+      });
+    });
+
+    return () => cleanup();
+  }, []);
+
   return (
     <section className={styles.heroSection} aria-labelledby="hero-title">
       <div className={styles.contentWrap}>
@@ -69,7 +126,7 @@ export default function HeroSection() {
       </div>
 
       {/* Dashboard preview — outside contentWrap so it overflows below hero bg */}
-      <div className={styles.heroPreview}>
+      <div ref={previewRef} className={styles.heroPreview}>
         <Image
           src="/images/Hero section/dash.webp"
           alt="Creatordesks dashboard preview"
