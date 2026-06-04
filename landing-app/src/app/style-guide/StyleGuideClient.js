@@ -182,7 +182,7 @@ export default function StyleGuidePage({ initialGuides = [] }) {
           {filteredGuides.length > 0 ? (
             <div className={styles.guidesGrid}>
               {filteredGuides.map((guide) => {
-                const tags = [guide.category ?? "Financial", "DM Automation", guide.category ?? "Financial"];
+                const tags = [guide.category, ...(guide.keywords ?? [])].filter(Boolean).slice(0, 3);
                 const desc = guide.description ?? "";
                 const shortDesc = desc.length > 90 ? desc.slice(0, 90) + "...." : desc;
                 return (
