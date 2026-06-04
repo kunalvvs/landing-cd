@@ -163,7 +163,7 @@ export default function StyleGuidePage({ initialGuides = [] }) {
       {/* ── FAQ ── */}
       <FAQSection />
 
-      <section className={styles.ctaSection}>
+      {/* <section className={styles.ctaSection}>
         <div className={styles.ctaCard}>
           <div className={styles.ctaContent}>
             <h2>
@@ -179,7 +179,7 @@ export default function StyleGuidePage({ initialGuides = [] }) {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <FooterSection />
     </main>

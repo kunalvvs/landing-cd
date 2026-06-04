@@ -215,7 +215,7 @@
 /* ── Responsive ── */
 @media (max-width: 980px) {
   .inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 40px 32px;
   }
 
@@ -226,6 +226,8 @@
 
   .disclaimer {
     grid-column: 1 / -1;
+    margin-top: 0;
+    padding-bottom: 36px;
   }
 
   .imageSection {
@@ -235,25 +237,43 @@
 
 @media (max-width: 640px) {
   .topSection {
-    padding: 56px 0 0;
+    padding: 48px 0 0;
   }
 
   .inner {
     width: min(1180px, 100% - 24px);
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 20px;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+    padding-bottom: 0;
+  }
+
+  /* Contact column (4th child of .inner) spans full width on mobile */
+  .inner > div:nth-child(4) {
+    grid-column: 1 / -1;
   }
 
   .col {
     padding-bottom: 0;
   }
 
+  .disclaimer {
+    grid-column: 1 / -1;
+    margin-top: 0;
+    padding-bottom: 32px;
+    font-size: 0.75rem;
+  }
+
   .imageSection {
-    height: 220px;
+    height: 200px;
+    margin-top: -20px;
   }
 
   .wmClipText,
   .wmText {
-    font-size: 9.2vw;
+    font-size: 12.5vw;
   }
 }

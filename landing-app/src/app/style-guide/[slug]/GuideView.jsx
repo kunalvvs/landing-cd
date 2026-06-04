@@ -275,6 +275,11 @@ export default function GuideView({ guide, related }) {
                   href={`/style-guide/${g.slug}`}
                   className={styles.relatedCard}
                 >
+                  <div className={styles.relatedBody}>
+                    <span className={styles.relatedTag}>{g.category}</span>
+                    <h3 className={styles.relatedTitle}>{g.title}</h3>
+                    <span className={styles.relatedMeta}>{g.readTime}</span>
+                  </div>
                   <div className={styles.relatedImageWrap}>
                     <img
                       src={g.image}
@@ -282,10 +287,8 @@ export default function GuideView({ guide, related }) {
                       className={styles.relatedImage}
                     />
                   </div>
-                  <div className={styles.relatedBody}>
-                    <span className={styles.relatedTag}>{g.category}</span>
-                    <h3 className={styles.relatedTitle}>{g.title}</h3>
-                    <span className={styles.relatedMeta}>{g.readTime}</span>
+                  <div className={styles.relatedFooter}>
+                    <span className={styles.relatedReadMore}>Read Article →</span>
                   </div>
                 </Link>
               ))}
@@ -295,7 +298,7 @@ export default function GuideView({ guide, related }) {
       )}
 
       {/* ── CTA ── */}
-      <section className={styles.ctaSection}>
+      {/* <section className={styles.ctaSection}>
         <div className={styles.shell}>
           <div className={styles.ctaCard}>
             <div className={styles.ctaContent}>
@@ -312,7 +315,7 @@ export default function GuideView({ guide, related }) {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <FooterSection />
     </main>
