@@ -64,7 +64,7 @@ export default function FooterSection() {
             <h4 className={styles.colHeading}>Legal</h4>
             <ul className={styles.colList}>
               <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-              <li><Link href="/terms-of-service">Terms of Service</Link></li>
+              <li><Link href="/terms-of-condition">Terms of Service</Link></li>
               <li><Link href="/refund-policy">Refund Policy</Link></li>
             </ul>
           </div>
