@@ -188,7 +188,7 @@ export default function StyleGuidePage({ initialGuides = [] }) {
                 return (
                   <article key={guide._id ?? guide.id ?? guide.slug} className={styles.guideCard}>
                     <div className={styles.cardBody}>
-                      <p className={styles.cardDate}>{guide.date ?? "03rd June, 2026"}</p>
+                      {guide.date && <p className={styles.cardDate}>{guide.date}</p>}
                       <h3 className={styles.cardTitle}>{guide.title}</h3>
                       <p className={styles.cardDesc}>
                         {shortDesc}
