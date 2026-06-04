@@ -11,54 +11,28 @@ export default function HeroSection() {
     const el = previewRef.current;
     if (!el) return;
 
-    let cleanup = () => {};
-
     import("gsap").then(({ default: gsap }) => {
-      import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
-        gsap.registerPlugin(ScrollTrigger);
+      gsap.set(el, {
+        opacity: 0,
+        rotateX: -72,
+        y: 80,
+        scale: 0.92,
+        transformPerspective: 1400,
+        transformOrigin: "center bottom",
+      });
 
-        // Set initial hidden state
-        gsap.set(el, {
-          opacity: 0,
-          rotateX: -32,
-          y: 80,
-          scale: 0.92,
-          transformPerspective: 1400,
-          transformOrigin: "center bottom",
-        });
-
-        const playAnim = () => {
-          gsap.to(el, {
-            opacity: 1,
-            rotateX: 0,
-            y: 0,
-            scale: 1,
-            duration: 2.4,
-            ease: "power3.out",
-          });
-        };
-
-        // Use native scroll listener so trigger point is always relative
-        // to actual scroll position, not element position in viewport
-        const onScroll = () => {
-          const scrolled = window.scrollY;
-          const threshold = el.offsetTop - window.innerHeight * 0.75;
-          if (scrolled >= threshold) {
-            playAnim();
-            window.removeEventListener("scroll", onScroll);
-          }
-        };
-
-        window.addEventListener("scroll", onScroll, { passive: true });
-
-        cleanup = () => {
-          window.removeEventListener("scroll", onScroll);
-          gsap.set(el, { clearProps: "all" });
-        };
+      gsap.to(el, {
+        opacity: 1,
+        rotateX: 0,
+        y: 0,
+        scale: 1,
+        duration: 2.4,
+        ease: "power3.out",
+        delay: 0.3,
       });
     });
 
-    return () => cleanup();
+    return () => {};
   }, []);
 
   return (
