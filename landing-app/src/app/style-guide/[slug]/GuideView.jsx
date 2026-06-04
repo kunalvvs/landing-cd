@@ -81,39 +81,62 @@ export default function GuideView({ guide, related }) {
         </div>
 
         <header className={styles.hero}>
-          <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-            <Link href="/">Home</Link>
-            <span aria-hidden="true">&gt;</span>
-            <Link href="/style-guide">Resources</Link>
-            <span aria-hidden="true">&gt;</span>
-            <span>{guide.title}</span>
-          </nav>
+          {/* Left: meta + title + author */}
+          <div className={styles.heroLeft}>
+            <div className={styles.heroTags}>
+              {guide.category && (
+                <span className={styles.heroTag}>{guide.category}</span>
+              )}
+              {guide.keywords?.slice(0, 1).map((kw, i) => (
+                <span key={i} className={styles.heroTag}>{kw}</span>
+              ))}
+            </div>
 
-          <h1 className={styles.heroTitle}>{guide.title}</h1>
-          <p className={styles.heroSubtitle}>{guide.description}</p>
+            <h1 className={styles.heroTitle}>{guide.title}</h1>
+            <p className={styles.heroSubtitle}>{guide.description}</p>
 
-          <div className={styles.heroMeta}>
-            <div className={styles.authorAvatar} aria-hidden="true">CD</div>
-            <span className={styles.authorName}>Creatordesks Team</span>
-            <span className={styles.metaDot} aria-hidden="true">·</span>
-            <span>{guide.date}</span>
-            <span className={styles.metaDot} aria-hidden="true">·</span>
-            <span>{guide.readTime}</span>
+            <div className={styles.heroFooter}>
+              <div className={styles.heroAuthor}>
+                <div className={styles.authorAvatarWrap}>
+                  <img
+                    src="/images/icons/cdlogo.png"
+                    alt="Creatordesks"
+                    width={48}
+                    height={48}
+                    className={styles.authorAvatarImg}
+                  />
+                </div>
+                <div>
+                  <span className={styles.authorLabel}>Written By</span>
+                  <span className={styles.authorName}>Creatodesks Creative Team</span>
+                </div>
+              </div>
+
+              <div className={styles.heroSocials}>
+                <a href="#" aria-label="Instagram" className={styles.socialIcon}>
+                  <img src="/images/footer/i.png" width={32} height={32} alt="Instagram" />
+                </a>
+                <a href="#" aria-label="X" className={styles.socialIcon}>
+                  <img src="/images/footer/x.png" width={32} height={32} alt="X" />
+                </a>
+                <a href="#" aria-label="LinkedIn" className={styles.socialIcon}>
+                  <img src="/images/footer/l.png" width={32} height={32} alt="LinkedIn" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: image card */}
+          <div className={styles.heroRight}>
+            <div className={styles.heroImageCard}>
+              <img
+                src={guide.image}
+                alt={guide.imageAlt || guide.title}
+                className={styles.heroImage}
+              />
+            </div>
           </div>
         </header>
-      </div>
-
-      {/* ── Featured Image ── */}
-      <div className={styles.featuredImageWrap}>
-        <div className={styles.shell}>
-          <div className={styles.featuredImageInner}>
-            <img
-              src={guide.image}
-              alt={guide.imageAlt || guide.title}
-              className={styles.featuredImage}
-            />
-          </div>
-        </div>
       </div>
 
       {/* ── Body ── */}
