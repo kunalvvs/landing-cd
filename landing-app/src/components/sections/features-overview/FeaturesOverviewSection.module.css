@@ -82,7 +82,12 @@
   border-radius: 24px;
   padding: 22px;
   border: 1px solid #eef0f6;
-  /* box-shadow: 0 24px 40px rgba(20, 12, 52, 0.06); */
+}
+
+.card,
+.cardTall {
+  display: flex;
+  flex-direction: column;
 }
 
 .cardTall {
@@ -118,13 +123,18 @@
   margin-top: 18px;
   border-radius: 18px;
   background: #f6f7fb;
-  
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
 }
 
 .cardImage {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
+  object-position: top;
 }
 
 .wideCard {
