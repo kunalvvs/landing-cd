@@ -178,7 +178,7 @@
 
 .bodyGrid {
   display: grid;
-  grid-template-columns: 1fr 270px;
+  grid-template-columns: 270px 1fr;
   gap: 54px;
   align-items: start;
 }
@@ -401,15 +401,16 @@
   display: none;
   width: 100%;
   padding: 14px 18px;
-  background: #f7f7f9;
+  background: #ffffff;
   border: 1px solid #e2e4ee;
-  border-radius: 12px;
+  border-radius: 16px;
   font-size: 0.9rem;
   font-weight: 700;
   color: #060014;
   cursor: pointer;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 4px 16px rgba(20, 12, 52, 0.06);
 }
 
 .tocChevron {
@@ -424,53 +425,93 @@
 }
 
 .tocNav {
-  background: #f7f7f9;
-  border: 1px solid #e2e4ee;
-  border-radius: 16px;
-  padding: 22px 20px;
+  background: #ffffff;
+  border: 1px solid #f0f0f5;
+  border-radius: 20px;
+  padding: 24px 20px;
+  box-shadow: 0 4px 20px rgba(20, 12, 52, 0.07);
 }
 
 .tocLabel {
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #8b8f9e;
-  margin-bottom: 14px;
+  color: #0d062d;
+  font-family: "Funnel Display", sans-serif;
+  margin-bottom: 16px;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .tocList {
   list-style: none;
   display: grid;
-  gap: 4px;
+  gap: 6px;
 }
 
 .tocItem {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   width: 100%;
   text-align: left;
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
   border: none;
   background: transparent;
-  font-size: 0.845rem;
+  font-size: 0.875rem;
   line-height: 1.4;
-  color: #5b6070;
+  color: #4e4d53;
+  font-family: "Funnel Sans", sans-serif;
   cursor: pointer;
-  transition: background 0.15s, color 0.15s;
+  transition: background 0.18s, color 0.18s;
 }
 
 .tocItem:hover {
-  background: #eeecfc;
-  color: #060014;
+  background: #f3eeff;
+  color: #0d062d;
 }
 
 .tocItemActive {
-  background: #eeecfc;
-  color: #8267ec;
+  background: #7D16F3;
+  color: #ffffff;
   font-weight: 600;
-  border-left: 3px solid #8267ec;
-  padding-left: 9px;
+}
+
+.tocItemActive:hover {
+  background: #6b12d4;
+  color: #ffffff;
+}
+
+.tocNumber {
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  opacity: 0.55;
+}
+
+.tocItemActive .tocNumber {
+  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.tocText {
+  flex: 1;
+  text-align: left;
+}
+
+/* ─── Decorative mid image ──────────────────────────────── */
+.midImageWrap {
+  width: min(1180px, 100% - 40px);
+  margin: 0 auto 0;
+  padding: 60px 0 0;
+}
+
+.midImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 24px;
+  object-fit: cover;
 }
 
 /* ─── Related Guides ────────────────────────────────────── */
@@ -667,7 +708,6 @@
 
   .tocSidebar {
     position: static;
-    order: -1;
   }
 
   .tocToggle {

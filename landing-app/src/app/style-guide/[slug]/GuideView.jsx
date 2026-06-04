@@ -13,16 +13,31 @@ function slugify(str) {
     .replace(/^-+|-+$/g, "");
 }
 
+const DECORATIVE_IMG = "/images/blog-img/bg.webp";
+
+// Inject decorative image after the 2nd paragraph
+function injectDecorativeImage(html) {
+  let pCount = 0;
+  return html.replace(/<\/p>/gi, () => {
+    pCount++;
+    if (pCount === 2) {
+      return `</p><figure style="margin:2rem 0;border-radius:1.25rem;overflow:hidden;"><img src="${DECORATIVE_IMG}" alt="" style="width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover;" /></figure>`;
+    }
+    return "</p>";
+  });
+}
+
 // Parse H2s from body HTML, inject id attributes, return processed HTML + tocItems
 function processBodyHtml(html) {
   const tocItems = [];
-  const processed = html.replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/gi, (_, attrs, content) => {
+  let processed = html.replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/gi, (_, attrs, content) => {
     const text = content.replace(/<[^>]+>/g, "").trim();
     const id = slugify(text) || `h2-${tocItems.length}`;
     tocItems.push({ id, text });
     if (/\bid=/.test(attrs)) return `<h2${attrs}>${content}</h2>`;
     return `<h2${attrs} id="${id}">${content}</h2>`;
   });
+  processed = injectDecorativeImage(processed);
   return { processedHtml: processed, tocItems };
 }
 
@@ -143,7 +158,46 @@ export default function GuideView({ guide, related }) {
       <div className={styles.body}>
         <div className={styles.shell}>
           <div className={styles.bodyGrid}>
-            {/* ── Article ── */}
+            {/* ── TOC Sidebar — LEFT ── */}
+            <aside className={styles.tocSidebar} aria-label="Table of contents">
+              <button
+                className={styles.tocToggle}
+                onClick={() => setTocOpen((v) => !v)}
+                aria-expanded={tocOpen}
+              >
+                Table of Content
+                <span className={`${styles.tocChevron} ${tocOpen ? styles.tocChevronOpen : ""}`} aria-hidden="true">
+                  ›
+                </span>
+              </button>
+
+              <nav
+                className={`${styles.tocNav} ${tocOpen ? styles.tocNavOpen : ""}`}
+                aria-label="Article sections"
+              >
+                <p className={styles.tocLabel}>Table of Content</p>
+                <ul className={styles.tocList}>
+                  {tocItems.map((item, index) => (
+                    <li key={item.id}>
+                      <button
+                        type="button"
+                        className={`${styles.tocItem} ${
+                          activeId === item.id ? styles.tocItemActive : ""
+                        }`}
+                        onClick={() => scrollTo(item.id)}
+                      >
+                        <span className={styles.tocNumber}>
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <span className={styles.tocText}>{item.text}</span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </aside>
+
+            {/* ── Article — RIGHT ── */}
             <article className={styles.article}>
               {/* Key Takeaways */}
               <div className={styles.takeaways} aria-label="Key takeaways">
@@ -193,43 +247,18 @@ export default function GuideView({ guide, related }) {
               </div>
             </article>
 
-            {/* ── TOC Sidebar ── */}
-            <aside className={styles.tocSidebar} aria-label="Table of contents">
-              <button
-                className={styles.tocToggle}
-                onClick={() => setTocOpen((v) => !v)}
-                aria-expanded={tocOpen}
-              >
-                Table of Content
-                <span className={`${styles.tocChevron} ${tocOpen ? styles.tocChevronOpen : ""}`} aria-hidden="true">
-                  ›
-                </span>
-              </button>
-
-              <nav
-                className={`${styles.tocNav} ${tocOpen ? styles.tocNavOpen : ""}`}
-                aria-label="Article sections"
-              >
-                <p className={styles.tocLabel}>Table of Content</p>
-                <ul className={styles.tocList}>
-                  {tocItems.map((item) => (
-                    <li key={item.id}>
-                      <button
-                        type="button"
-                        className={`${styles.tocItem} ${
-                          activeId === item.id ? styles.tocItemActive : ""
-                        }`}
-                        onClick={() => scrollTo(item.id)}
-                      >
-                        {item.text}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </aside>
           </div>
         </div>
+      </div>
+
+      {/* ── Decorative mid image ── */}
+      <div className={styles.midImageWrap}>
+        <img
+          src="/images/blog-img/bg.webp"
+          alt=""
+          aria-hidden="true"
+          className={styles.midImage}
+        />
       </div>
 
       {/* ── Related Guides ── */}
