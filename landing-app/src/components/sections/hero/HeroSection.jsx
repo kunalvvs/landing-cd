@@ -33,7 +33,7 @@ export default function HeroSection() {
             rotateX: 0,
             y: 0,
             scale: 1,
-            duration: 6.4,
+            duration: 2.4,
             ease: "power3.out",
           });
         };

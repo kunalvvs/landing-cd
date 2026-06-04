@@ -76,7 +76,7 @@ export default function SolutionPage() {
         {/* Background clipped separately so navbar dropdown is NOT clipped */}
         <div className={styles.heroBgWrap} aria-hidden="true">
           <Image
-            src="/images/Solution/solu-bg.webp"
+            src="/images/Solution/bg.webp"
             alt=""
             fill
             priority
