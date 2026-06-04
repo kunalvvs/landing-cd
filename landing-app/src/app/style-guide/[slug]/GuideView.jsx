@@ -252,14 +252,14 @@ export default function GuideView({ guide, related }) {
       </div>
 
       {/* ── Decorative mid image ── */}
-      <div className={styles.midImageWrap}>
+      {/* <div className={styles.midImageWrap}>
         <img
           src="/images/blog-img/bg.webp"
           alt=""
           aria-hidden="true"
           className={styles.midImage}
         />
-      </div>
+      </div> */}
 
       {/* ── Related Guides ── */}
       {related.length > 0 && (
