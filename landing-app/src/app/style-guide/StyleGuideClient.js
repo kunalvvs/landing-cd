@@ -181,30 +181,44 @@ export default function StyleGuidePage({ initialGuides = [] }) {
           {/* Grid */}
           {filteredGuides.length > 0 ? (
             <div className={styles.guidesGrid}>
-              {filteredGuides.map((guide) => (
-                <Link
-                  key={guide._id ?? guide.id ?? guide.slug}
-                  href={`/style-guide/${guide.slug}`}
-                  className={styles.guideCard}
-                >
-                  <div className={styles.cardTop}>
-                    <img
-                      src={guide.image}
-                      alt={guide.imageAlt || guide.title}
-                      className={styles.cardImage}
-                    />
-                  </div>
-                  <div className={styles.cardBody}>
-                    <span className={styles.cardTag}>{guide.category}</span>
-                    <h3 className={styles.cardTitle}>{guide.title}</h3>
-                    <p className={styles.cardDescription}>{guide.description}</p>
-                    <div className={styles.cardMeta}>
-                      <span>{guide.readTime}</span>
-                      <span className={styles.cardCta}>Read Guide</span>
+              {filteredGuides.map((guide) => {
+                const tags = [guide.category ?? "Financial", "DM Automation", guide.category ?? "Financial"];
+                const desc = guide.description ?? "";
+                const shortDesc = desc.length > 90 ? desc.slice(0, 90) + "...." : desc;
+                return (
+                  <article key={guide._id ?? guide.id ?? guide.slug} className={styles.guideCard}>
+                    <div className={styles.cardBody}>
+                      <p className={styles.cardDate}>{guide.date ?? "03rd June, 2026"}</p>
+                      <h3 className={styles.cardTitle}>{guide.title}</h3>
+                      <p className={styles.cardDesc}>
+                        {shortDesc}
+                        <Link href={`/style-guide/${guide.slug}`} className={styles.readMoreInline}>
+                          Read More
+                        </Link>
+                      </p>
+                      <div className={styles.tags}>
+                        {tags.map((tag, ti) => (
+                          <span key={ti} className={styles.tag}>{tag}</span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
+
+                    <div className={styles.thumbnail}>
+                      <img
+                        src={guide.image}
+                        alt={guide.imageAlt || guide.title}
+                        className={styles.thumbnailImage}
+                      />
+                    </div>
+
+                    <div className={styles.cardFooter}>
+                      <Link href={`/style-guide/${guide.slug}`} className={styles.readMoreBtn}>
+                        Read More
+                      </Link>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           ) : (
             <div className={styles.noResults}>
