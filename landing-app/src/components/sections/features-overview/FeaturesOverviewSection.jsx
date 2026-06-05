@@ -40,7 +40,7 @@ export default function FeaturesOverviewSection({
   subtitle = <>Connect your Instagram, pick a keyword, write one message. That&apos;s it.</>,
 }) {
   return (
-    <section className={styles.section} aria-labelledby="features-overview-title">
+    <section className={styles.section} aria-labelledby="features-overview-title" data-gsap-section="features-overview">
       <div className={styles.inner}>
         {/* <div className={styles.badge}>
           {badgeIcon}
@@ -60,6 +60,7 @@ export default function FeaturesOverviewSection({
             <article
               key={card.id}
               className={card.tall ? styles.cardTall : styles.card}
+              data-gsap="fo-card"
             >
               <div className={styles.cardContent}>
                 <h3>{card.title}</h3>
@@ -77,7 +78,7 @@ export default function FeaturesOverviewSection({
             </article>
           ))}
 
-          <article className={styles.wideCard}>
+          <article className={styles.wideCard} data-gsap="fo-card">
             <div className={styles.wideText}>
               <h3>Lead Capture</h3>
               <p>

@@ -206,11 +206,32 @@ function animateFeaturesAutomation() {
 function animateFeaturesOverview() {
   reveal("[id='features-overview-title']", { y: 35 }, { duration: 0.45 });
 
-  batchReveal(
-    "[class*='FeaturesOverview'] article, [class*='featuresOverview'] article, [class*='grid'] article",
-    { y: 40, scale: 0.96 },
-    { duration: 0.45, ease: "power3.out", stagger: 0.08 }
-  );
+  const cards = gsap.utils.toArray("[data-gsap-section='features-overview'] [data-gsap='fo-card']");
+
+  if (cards.length) {
+    // Scroll-triggered entry — batch so all visible cards pop in together
+    ScrollTrigger.batch(cards, {
+      start: "top bottom",
+      onEnter: (batch) => {
+        gsap.fromTo(
+          batch,
+          { opacity: 0, y: 45, scale: 0.95 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power3.out", stagger: 0.09 }
+        );
+      },
+    });
+
+    // Hover — lift + subtle scale (shadow handled by CSS transition)
+    cards.forEach((el) => {
+      const isWide = el.dataset.wide === "true" || el.classList.toString().includes("wideCard");
+      el.addEventListener("mouseenter", () =>
+        gsap.to(el, { y: -8, scale: isWide ? 1.012 : 1.025, duration: 0.28, ease: "power2.out" })
+      );
+      el.addEventListener("mouseleave", () =>
+        gsap.to(el, { y: 0, scale: 1, duration: 0.35, ease: "power2.inOut" })
+      );
+    });
+  }
 }
 
 /* ─────────────────────────────────────────────────────────────
