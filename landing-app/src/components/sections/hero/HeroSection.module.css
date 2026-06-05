@@ -385,6 +385,8 @@
   padding-right: 32px;
 }
 
+/* opacity:0 here so desktop never flashes before GSAP takes over;
+   mobile overrides this to 1 since GSAP is disabled there */
 .heroPreview {
   margin-top: 250px;
   margin-bottom: 0;
@@ -396,6 +398,12 @@
   position: relative;
   z-index: 2;
   opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .heroPreview {
+    opacity: 1;
+  }
 }
 
 .heroStrip {
@@ -618,7 +626,7 @@
   }
 
   .heroPreview {
-    margin-top: 32px;
+    margin-top: 132px;
     width: calc(100% - 16px);
     border-radius: 12px;
   }
