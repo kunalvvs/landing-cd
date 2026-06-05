@@ -94,18 +94,22 @@ function animateHero() {
   // Dashboard preview entrance + then infinite float
   const preview = document.querySelector("[class*='heroPreview']");
   if (preview) {
-    tl.fromTo(
+    gsap.fromTo(
       preview,
-      { opacity: 0, y: 90, scale: 0.94 },
+      { opacity: 0, scale: 1.06, y: 120 },
       {
-        opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "power3.out",
+        opacity: 1, scale: 1, y: 0, duration: 0.9, ease: "power3.out",
+        scrollTrigger: {
+          trigger: preview,
+          start: "top 70%",
+          toggleActions: "play none none none",
+        },
         onComplete() {
           gsap.to(preview, {
             y: -16, duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1,
           });
         },
-      },
-      "-=0.2"
+      }
     );
   }
 
