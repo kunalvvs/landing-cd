@@ -16,7 +16,7 @@ export default function HeroSection() {
     import("gsap").then(({ default: gsap }) => {
       gsap.set(el, {
         opacity: 0,
-        rotateX: -72,
+        rotateX: -20,
         y: 80,
         scale: 0.92,
         transformPerspective: 1400,

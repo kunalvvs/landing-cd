@@ -83,31 +83,31 @@ function animateHero() {
 
   const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
 
-  tl.fromTo("[class*='announcementBar']", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 })
+  tl.fromTo("[class*='heroStrip']", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 })
     .fromTo("[class*='navShell']",        { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 }, "-=0.2")
     .fromTo("[class*='heroBadge']",       { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.6)" }, "-=0.1")
     .fromTo("[id='hero-title']",          { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45 }, "-=0.15")
     .fromTo("[class*='subtitle']",        { opacity: 0, y: 25 }, { opacity: 1, y: 0, duration: 0.4 }, "-=0.2")
     .fromTo("[class*='ctaButton']",       { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.5)" }, "-=0.15")
-    .fromTo("[class*='brandMarquee'], [class*='brandStrip']", { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35 }, "-=0.1");
+    // .fromTo("[class*='brandMarquee'], [class*='brandStrip']", { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35 }, "-=0.1");
 
   // Dashboard preview entrance + then infinite float
-  const preview = document.querySelector("[class*='heroPreview']");
-  if (preview) {
-    tl.fromTo(
-      preview,
-      { opacity: 0, y: 60, scale: 0.94 },
-      {
-        opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out",
-        onComplete() {
-          gsap.to(preview, {
-            y: -16, duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1,
-          });
-        },
-      },
-      "-=0.2"
-    );
-  }
+  // const preview = document.querySelector("[class*='heroPreview']");
+  // if (preview) {
+  //   tl.fromTo(
+  //     preview,
+  //     { opacity: 0, y: 60, scale: 0.94 },
+  //     {
+  //       opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out",
+  //       onComplete() {
+  //         gsap.to(preview, {
+  //           y: -16, duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1,
+  //         });
+  //       },
+  //     },
+  //     "-=0.2"
+  //   );
+  // }
 
   // Scroll parallax on hero content
   ScrollTrigger.create({
