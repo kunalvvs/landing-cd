@@ -8,7 +8,7 @@ import styles from "./Navbar.module.css";
 const NAV_ITEMS = [
   { label: "Solution", href: "/solutions" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Resources", href: "/style-guide" },
+  { label: "Blogs", href: "/style-guide" },
   { label: "Contact", href: "/contact" },
   // { label: "About", href: "#" },
 ];

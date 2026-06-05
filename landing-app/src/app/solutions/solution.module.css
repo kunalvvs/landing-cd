@@ -68,6 +68,8 @@
   letter-spacing: 0.01em;
 }
 
+
+
 .heroTitle {
   font-family: "Funnel Display";
   font-size: clamp(2rem, 5vw, 4.25rem);
@@ -456,6 +458,7 @@
   border-radius: 40px;
   margin: 0 18px;
   margin-top: 40px;
+  margin-bottom: 90px;
 }
 
 /* Soft spotlight glow behind heading */
@@ -694,6 +697,10 @@
 
   .comparisonSection {
     padding: 60px 0 80px;
+  }
+
+  .comparisonSection{
+    margin-bottom: 40px;
   }
 
   .heroContent {
