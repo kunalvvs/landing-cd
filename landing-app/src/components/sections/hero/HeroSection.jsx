@@ -7,46 +7,44 @@ import styles from "./HeroSection.module.css";
 export default function HeroSection() {
   const previewRef = useRef(null);
 
-  useEffect(() => {
-    const el = previewRef.current;
-    if (!el) return;
+  // useEffect(() => {
+  //   const el = previewRef.current;
+  //   if (!el) return;
 
-    let observer;
+  //   let observer;
 
-    import("gsap").then(({ default: gsap }) => {
-      gsap.set(el, {
-        opacity: 0,
-        rotateX: -20,
-        y: 80,
-        scale: 0.92,
-        transformPerspective: 1400,
-        transformOrigin: "center bottom",
-      });
+  //   import("gsap").then(({ default: gsap }) => {
+  //     gsap.set(el, {
+  //       opacity: 0,
+  //       rotateX: -20,
+  //       y: 80,
+  //       transformPerspective: 1400,
+  //       transformOrigin: "center bottom",
+  //     });
 
-      observer = new IntersectionObserver(
-        (entries, obs) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              gsap.to(el, {
-                opacity: 1,
-                rotateX: 0,
-                y: 0,
-                scale: 1,
-                duration: 1.4,
-                ease: "power3.out",
-              });
-              obs.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
+  //     observer = new IntersectionObserver(
+  //       (entries, obs) => {
+  //         entries.forEach((entry) => {
+  //           if (entry.isIntersecting) {
+  //             gsap.to(el, {
+  //               opacity: 1,
+  //               rotateX: 0,
+  //               y: 0,
+  //               duration: 1.4,
+  //               ease: "power3.out",
+  //             });
+  //             obs.unobserve(entry.target);
+  //           }
+  //         });
+  //       },
+  //       { threshold: 0.15 }
+  //     );
 
-      observer.observe(el);
-    });
+  //     observer.observe(el);
+  //   });
 
-    return () => observer?.disconnect();
-  }, []);
+  //   return () => observer?.disconnect();
+  // }, []);
 
   return (
     <section className={styles.heroSection} aria-labelledby="hero-title">

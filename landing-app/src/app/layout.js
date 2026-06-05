@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono ,Inter, Nunito_Sans, Plus_Jakarta_Sans , Funnel_Display,
   Funnel_Sans,} from "next/font/google";
 import PageAnimations from "@/components/ui/PageAnimations";
+import SmoothScroller from "@/components/ui/SmoothScroller";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -71,6 +72,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${nunito.variable} ${jakarta.variable} ${funnelDisplay.variable}
         ${funnelSans.variable}`}>
       <body>
+        <SmoothScroller />
         <PageAnimations />
         {children}
       </body>

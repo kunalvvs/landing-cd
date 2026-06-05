@@ -92,34 +92,23 @@ function animateHero() {
     // .fromTo("[class*='brandMarquee'], [class*='brandStrip']", { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35 }, "-=0.1");
 
   // Dashboard preview entrance + then infinite float
-  // const preview = document.querySelector("[class*='heroPreview']");
-  // if (preview) {
-  //   tl.fromTo(
-  //     preview,
-  //     { opacity: 0, y: 60, scale: 0.94 },
-  //     {
-  //       opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out",
-  //       onComplete() {
-  //         gsap.to(preview, {
-  //           y: -16, duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1,
-  //         });
-  //       },
-  //     },
-  //     "-=0.2"
-  //   );
-  // }
+  const preview = document.querySelector("[class*='heroPreview']");
+  if (preview) {
+    tl.fromTo(
+      preview,
+      { opacity: 0, y: 90, scale: 0.94 },
+      {
+        opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "power3.out",
+        onComplete() {
+          gsap.to(preview, {
+            y: -16, duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1,
+          });
+        },
+      },
+      "-=0.2"
+    );
+  }
 
-  // Scroll parallax on hero content
-  ScrollTrigger.create({
-    trigger: "[class*='heroSection']",
-    start: "top top",
-    end: "bottom top",
-    scrub: 1,
-    onUpdate(self) {
-      const wrap = document.querySelector("[class*='contentWrap']");
-      if (wrap) gsap.set(wrap, { y: self.progress * 50 });
-    },
-  });
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -350,8 +339,8 @@ export default function PageAnimations() {
 
     registerPlugins();
 
-    // Small delay to ensure DOM is painted before GSAP measures
-    const raf = requestAnimationFrame(() => {
+    // Delay ensures DOM is painted and Lenis is initialized before GSAP measures
+    const timer = setTimeout(() => {
       animateHero();
       animateHowItWorks();
       animateFeaturesAutomation();
@@ -361,12 +350,11 @@ export default function PageAnimations() {
       animateOtherSections();
       animateGlobalHeadings();
 
-      // Refresh once everything is set up
       ScrollTrigger.refresh();
-    });
+    }, 150);
 
     return () => {
-      cancelAnimationFrame(raf);
+      clearTimeout(timer);
       ScrollTrigger.getAll().forEach((t) => t.kill());
       gsap.killTweensOf("*");
     };
