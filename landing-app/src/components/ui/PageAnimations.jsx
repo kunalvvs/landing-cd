@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -333,6 +334,8 @@ function animateGlobalHeadings() {
    MAIN
 ───────────────────────────────────────────────────────────── */
 export default function PageAnimations() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
@@ -362,7 +365,7 @@ export default function PageAnimations() {
       ScrollTrigger.getAll().forEach((t) => t.kill());
       gsap.killTweensOf("*");
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }
