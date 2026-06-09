@@ -54,7 +54,7 @@ function TestimonialCard({ item }) {
   return (
     <article
       className={styles.card}
-      style={{ backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}
+      style={{ backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)" }}
     >
       <div className={styles.cardHeader}>
         <div className={styles.avatarWrap}>
