@@ -148,11 +148,22 @@
   box-shadow: 0 0 21.6px 4px rgba(135, 82, 254, 0.40);
 }
 
+.thumbnailLink {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .thumbnailImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.thumbnailLink:hover .thumbnailImage {
+  transform: scale(1.04);
 }
 
 /* ── Card footer ── */

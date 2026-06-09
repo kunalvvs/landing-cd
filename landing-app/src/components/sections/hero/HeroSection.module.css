@@ -167,8 +167,9 @@
 }
 
 
-.starIcon{
-  margin-right: 10px;
+.starIcon {
+  display: block;
+  flex-shrink: 0;
 }
 
 /* ── Mobile Dropdown Menu ── */
@@ -344,8 +345,8 @@
 .ctaButton {
   margin-top: 22px;
   min-width: 202px;
-  min-height: 48px;
-  padding: 0 32px;
+  min-height: 45px;
+  padding: 0 28px 0 25px;
   border-radius: 999px;
   background: #030116;
   color: #ffffff;
@@ -354,6 +355,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 15px;
   transition: opacity 0.2s;
 }
 

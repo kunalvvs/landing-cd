@@ -136,11 +136,13 @@ export default function StyleGuidePage({ initialGuides = [] }) {
                     </div>
 
                     <div className={styles.thumbnail}>
-                      <img
-                        src={guide.image}
-                        alt={guide.imageAlt || guide.title}
-                        className={styles.thumbnailImage}
-                      />
+                      <Link href={`/style-guide/${guide.slug}`} className={styles.thumbnailLink}>
+                        <img
+                          src={guide.image}
+                          alt={guide.imageAlt || guide.title}
+                          className={styles.thumbnailImage}
+                        />
+                      </Link>
                     </div>
 
                     <div className={styles.cardFooter}>
