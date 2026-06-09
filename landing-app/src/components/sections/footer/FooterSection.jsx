@@ -158,8 +158,8 @@ export default function FooterSection() {
               className={styles.wmText}
               x="50%" y="88%"
               fill="none"
-              stroke="rgba(255,255,255,0.52)"
-              strokeWidth="0.8"
+              stroke="rgba(249, 184, 148, .26)"
+              strokeWidth="0"
               filter="url(#wm-border-glow)"
             >
               CREATORDESKS

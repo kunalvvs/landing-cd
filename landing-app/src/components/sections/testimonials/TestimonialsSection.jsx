@@ -52,7 +52,10 @@ const TESTIMONIALS = [
 
 function TestimonialCard({ item }) {
   return (
-    <article className={styles.card}>
+    <article
+      className={styles.card}
+      style={{ backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}
+    >
       <div className={styles.cardHeader}>
         <div className={styles.avatarWrap}>
           <Image
@@ -155,7 +158,7 @@ export default function TestimonialsSection() {
         </p>
       </div>
 
-      <div className={styles.rows}>
+      <div className={styles.rows}  >
         <MarqueeRow items={TESTIMONIALS} reverse={false} />
         <MarqueeRow items={[...TESTIMONIALS].reverse()} reverse={true} />
       </div>
