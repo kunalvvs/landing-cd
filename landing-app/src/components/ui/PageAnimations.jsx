@@ -99,7 +99,7 @@ function animateHero() {
       preview,
       { opacity: 0, scale: 1.06, y: 120 },
       {
-        opacity: 1, scale: 1, y: 0, duration: 0.9, ease: "power3.out",
+        opacity: 1, scale: 1, y: 0, duration: 1.5, ease: "power3.out",
         scrollTrigger: {
           trigger: preview,
           start: "top 70%",
@@ -127,23 +127,23 @@ function animateHowItWorks() {
   reveal("[id='how-it-works-title']", { y: 35 }, { duration: 0.45 });
 
   // Preview frame — slides from left
-  gsap.utils.toArray("[class*='previewFrame']").forEach((el) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, x: -50, scale: 0.97 },
-      {
-        opacity: 1, x: 0, scale: 1, duration: 0.55, ease: "power3.out",
-        scrollTrigger: { trigger: el, start: "top bottom" },
-        onComplete() {
-          gsap.to(el, { y: -10, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
-        },
-      }
-    );
-  });
+  // gsap.utils.toArray("[class*='previewFrame']").forEach((el) => {
+  //   gsap.fromTo(
+  //     el,
+  //     { opacity: 0, x: -50, scale: 0.97 },
+  //     {
+  //       opacity: 1, x: 0, scale: 1, duration: 0.55, ease: "power3.out",
+  //       scrollTrigger: { trigger: el, start: "top bottom" },
+  //       onComplete() {
+  //         gsap.to(el, { y: -10, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
+  //       },
+  //     }
+  //   );
+  // });
 
   // Steps — batch so they all pop in together when first one enters
   batchReveal(
-    "[class*='step'], [class*='stepHighlight']",
+    "[class*='step'], [class*='HowItWorks'] ,[class*='stepHighlight']",
     { x: 40, y: 0 },
     { duration: 0.4, ease: "power2.out", stagger: 0.07 }
   );
