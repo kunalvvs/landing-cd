@@ -72,7 +72,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${nunito.variable} ${jakarta.variable} ${funnelDisplay.variable}
         ${funnelSans.variable}`}>
       <body>
-        <SmoothScroller />
+        {/* <SmoothScroller /> */}
         <PageAnimations />
         {children}
       </body>
