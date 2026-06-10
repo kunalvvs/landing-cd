@@ -17,7 +17,11 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className={styles.navShell}>
+    <header style={{
+    background: "rgba(255,255,255,.21)",
+    backdropFilter: "blur(10px)",
+    WebkitBackdropFilter: "blur(10px)",
+  }} className={styles.navShell}>
       <Link href="/" className={styles.brand} aria-label="Creatordesks home">
         <Image
           src="/images/icons/cdlogo.png"
