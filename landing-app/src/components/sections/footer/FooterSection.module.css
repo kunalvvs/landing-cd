@@ -163,17 +163,27 @@
   object-position: center top;
 }
 
-/* ── Glass watermark ── */
+/* ── Watermark container ── */
 .watermark {
   position: absolute;
   inset: 0;
   pointer-events: none;
   user-select: none;
-  
 }
 
-/* Hidden SVG that owns the clipPath definition */
-.clipSvg {
+/* Desktop: PNG image — spans full width, anchored to bottom */
+.wmImage {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile: SVG text fallback — hidden on desktop */
+.wmTextSvg {
+  display: none;
   position: absolute;
   inset: 0;
   width: 100%;
@@ -182,34 +192,14 @@
   pointer-events: none;
 }
 
-/* Shared font class used by BOTH the clipPath text and the visual SVG text */
-.wmClipText,
+/* Font metrics for the mobile SVG text */
 .wmText {
   font-family: "Funnel Display", sans-serif;
   font-weight: 800;
-  font-size: 11.9vw;
-  letter-spacing: 0.01em;
+  font-size: 12.5vw;
+  letter-spacing: 0;
   text-anchor: middle;
   dominant-baseline: middle;
-}
-
-/* Frosted glass layer — fills the text shape via clip-path */
-.glassFrost {
-  position: absolute;
-  inset: 0;
-  backdrop-filter: blur(10px) brightness(1.06) saturate(1.25);
-  -webkit-backdrop-filter: blur(10px) brightness(1.06) saturate(1.25);
-  clip-path: url(#footer-wm-clip);
-}
-
-/* Visual SVG that renders the gradient/stroke layers */
-.textSvg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  pointer-events: none;
 }
 
 /* ── Responsive ── */
@@ -272,8 +262,12 @@
     margin-top: -20px;
   }
 
-  .wmClipText,
-  .wmText {
-    font-size: 12.5vw;
+  /* Hide the PNG, show the SVG text on mobile */
+  .wmImage {
+    display: none;
+  }
+
+  .wmTextSvg {
+    display: block;
   }
 }
