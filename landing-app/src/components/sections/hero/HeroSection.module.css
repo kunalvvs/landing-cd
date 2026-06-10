@@ -400,7 +400,7 @@
   overflow: hidden;
   position: relative;
   z-index: 2;
-  opacity: 0;
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
