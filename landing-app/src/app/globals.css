@@ -23,7 +23,7 @@ body::-webkit-scrollbar {
 body {
   min-height: 100%;
   color: #0f0b2e;
-  background: #f3e7ff;
+  background: #fff;
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
