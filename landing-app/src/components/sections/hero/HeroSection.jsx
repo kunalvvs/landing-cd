@@ -47,6 +47,7 @@ export default function HeroSection() {
   // }, []);
 
   return (
+    <>
     <section className={styles.heroSection} aria-labelledby="hero-title">
       <div className={styles.contentWrap}>
         <Navbar />
@@ -122,17 +123,19 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Brand trust strip */}
-      <div className={styles.heroStrip}>
-        <Image
-          src="/images/Hero section/strip.png"
-          alt="Trusted by Trustpilot, Meta, G2, Product Hunt and DPIIT"
-          width={1440}
-          height={100}
-          className={styles.stripImage}
-          priority
-        />
-      </div>
     </section>
+
+    {/* Brand trust strip — outside heroSection so hero bg doesn't cover it */}
+    <div className={styles.heroStrip}>
+      <Image
+        src="/images/Hero section/strip.png"
+        alt="Trusted by Trustpilot, Meta, G2, Product Hunt and DPIIT"
+        width={1440}
+        height={100}
+        className={styles.stripImage}
+        priority
+      />
+    </div>
+    </>
   );
 }

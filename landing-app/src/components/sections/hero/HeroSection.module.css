@@ -406,6 +406,7 @@
 @media (max-width: 768px) {
   .heroPreview {
     opacity: 1;
+   
     }
 }
 
@@ -545,10 +546,13 @@
   .previewImage {
     width: 100%;
     height: auto;
+    padding-top: 70px;
   }
 
   .heroStrip {
-    margin-top: 32px;
+    margin-top: 0;
+    /* background: #ffffff; */
+    padding: 24px 0 28px;
   }
 
   .stripImage {
@@ -629,7 +633,7 @@
   }
 
   .heroPreview {
-    margin-top: 132px;
+    margin-top: 134px;
     width: calc(100% - 16px);
     border-radius: 12px;
   }
