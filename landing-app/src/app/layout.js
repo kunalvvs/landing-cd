@@ -73,7 +73,7 @@ export default function RootLayout({ children }) {
         ${funnelSans.variable}`}>
       <body>
         <SmoothScroller />
-        <PageAnimations />
+        {/* <PageAnimations /> */}
         {children}
       </body>
     </html>
