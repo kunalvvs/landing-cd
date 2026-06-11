@@ -75,7 +75,7 @@ export default function FooterSection() {
             <ul className={styles.contactList}>
               <li>support@creatordesks.in</li>
               <li>+91 8923612313</li>
-              <li>4140 Parker Rd. Allentown, New Mexico 31134</li>
+              <li>Avas Vikas, Agra, Uttar Pradesh</li>
             </ul>
           </div>
 
