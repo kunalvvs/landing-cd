@@ -143,9 +143,9 @@ export default function FeaturesAutomationSection() {
           </div>
         </div>
           
-          <span className={styles.effects2} ><img className={styles.effect3} src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/features%20automation%20section%20img/effect3.png?updatedAt=1781235148962" alt="effects" /></span>
+          <span className={styles.effects2} ><img className={styles.effect3} src="https://ik.imagekit.io/Creatordesks/tr:q-75,f-webp/CD%20Landing%20Page/images/features%20automation%20section%20img/effect3.png?updatedAt=1781235148962" alt="effects" /></span>
 
-            <span className={styles.effects} ><img className={styles.effect1} src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/features%20automation%20section%20img/effect1.png?updatedAt=1781235149587" alt="effects" /></span>
+            <span className={styles.effects} ><img className={styles.effect1} src="https://ik.imagekit.io/Creatordesks/tr:q-75,f-webp/CD%20Landing%20Page/images/features%20automation%20section%20img/effect1.png?updatedAt=1781235149587" alt="effects" /></span>
 
       </div>
     </section>

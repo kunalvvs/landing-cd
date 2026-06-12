@@ -10,7 +10,7 @@
       rgba(255, 255, 255,1) 100%,
       #ffffff 100%
     ),
-    #fff url("https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Hero%20section/hero-bg.webp?updatedAt=1781235150031") center top / 100% auto no-repeat;
+    #fff url("https://ik.imagekit.io/Creatordesks/tr:q-70/CD%20Landing%20Page/images/Hero%20section/hero-bg.webp?updatedAt=1781235150031") center top / 100% auto no-repeat;
   min-height: 100vh;
   padding-bottom: 0;
   overflow: visible;
@@ -577,7 +577,7 @@
         transparent 100%,
         rgba(255, 255, 255, 1) 100%
       ),
-      #fff url("/images/Hero section/hero-bg.webp") center top / cover no-repeat;
+      #fff url("https://ik.imagekit.io/Creatordesks/tr:q-70/CD%20Landing%20Page/images/Hero%20section/hero-bg.webp?updatedAt=1781235150031") center top / cover no-repeat;
   }
 
   /* Remove backdrop-filter — forces GPU layer creation on every scroll frame */
