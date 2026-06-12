@@ -10,7 +10,7 @@ const STEPS = [
     title: "Connect Instagram",
     description:
       "One-click Meta login. No passwords, no browser extensions. Works with Business and Creator accounts.",
-    image: "/images/dashboard preview/stepimg1.png",
+    image: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/dashboard%20preview/stepimg1.png?updatedAt=1781235150849",
     imageAlt: "Instagram login setup preview",
     imageWidth: 617,
     imageHeight: 193,
@@ -20,7 +20,7 @@ const STEPS = [
     title: "Pick a Keyword & write a DM",
     description:
       'Choose a trigger word like "LINK." Write the message your followers get. Add your link, freebie, or discount code.',
-    image: "/images/dashboard preview/stepimg2.png",
+    image: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/dashboard%20preview/stepimg2.png?updatedAt=1781235151176",
     imageAlt: "Keyword DM setup preview",
     imageWidth: 617,
     imageHeight: 193,
@@ -30,7 +30,7 @@ const STEPS = [
     title: "Every comment becomes a conversation",
     description:
       "Someone comments your keyword? Creatordesks sends your DM in seconds. Works on Reels, Stories, and feed posts. Runs 24/7.",
-    image: "/images/dashboard preview/stepimg3.png",
+    image: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/dashboard%20preview/stepimg3.png?updatedAt=1781235151901",
     imageAlt: "Comment to DM automation preview",
     imageWidth: 617,
     imageHeight: 193,
@@ -72,7 +72,7 @@ export default function HowItWorksSection() {
           {/* LEFT — dashboard screenshot in purple bg card */}
           <figure className={styles.previewFrame}>
             <Image
-              src="/images/Hero section/dash.webp"
+              src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Hero%20section/dash.webp?updatedAt=1781235147029"
               alt="Creatordesks dashboard preview"
               width={1087}
               height={765}

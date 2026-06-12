@@ -99,7 +99,7 @@ export default function SolutionPage() {
             with CreatorDesk.
           </p>
           <a href="#" className={styles.heroCta}> 
-             <Image src="/images/Hero section/stars.png" className={styles.starIcon} width={25} height={25} alt="" /> TRY FOR FREE</a>
+             <Image src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Hero%20section/stars.png?updatedAt=1781235141589" className={styles.starIcon} width={25} height={25} alt="" /> TRY FOR FREE</a>
         </div>
       </div>
 

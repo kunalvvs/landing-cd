@@ -106,7 +106,7 @@ export default function HeroSection() {
         </h1>
 
         <a href="#" className={styles.ctaButton}>
-          <Image src="/images/Hero section/stars.png" className={styles.starIcon} width={25} height={25} alt="" />
+          <Image src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Hero%20section/stars.png?updatedAt=1781235141589" className={styles.starIcon} width={25} height={25} alt="" />
           TRY FOR FREE
         </a>
       </div>
@@ -114,7 +114,7 @@ export default function HeroSection() {
       {/* Dashboard preview — outside contentWrap so it overflows below hero bg */}
       <div ref={previewRef} className={styles.heroPreview}>
         <Image
-          src="/images/Hero section/dash.webp"
+          src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Hero%20section/dash.webp?updatedAt=1781235147029"
           alt="Creatordesks dashboard preview"
           width={1087}
           height={765}
@@ -128,7 +128,7 @@ export default function HeroSection() {
     {/* Brand trust strip — outside heroSection so hero bg doesn't cover it */}
     <div className={styles.heroStrip}>
       <Image
-        src="/images/Hero section/strip.png"
+        src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Hero%20section/strip.png?updatedAt=1781235145183"
         alt="Trusted by Trustpilot, Meta, G2, Product Hunt and DPIIT"
         width={1440}
         height={100}
