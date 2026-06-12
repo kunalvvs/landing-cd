@@ -45,7 +45,7 @@ export default async function BlogSection() {
                   <h3 className={styles.cardTitle}>{guide.title}</h3>
                   <p className={styles.cardDesc}>
                     {shortDesc}
-                    <Link href={`/style-guide/${guide.slug}`} className={styles.readMoreInline}>
+                    <Link href={`/style-guide/${guide.slug}`} className={styles.readMoreInline} aria-label={`Read more about ${guide.title}`}>
                       Read More
                     </Link>
                   </p>
@@ -69,7 +69,7 @@ export default async function BlogSection() {
 
                 {/* Bottom CTA */}
                 <div className={styles.cardFooter}>
-                  <Link href={`/style-guide/${guide.slug}`} className={styles.readMoreBtn}>
+                  <Link href={`/style-guide/${guide.slug}`} className={styles.readMoreBtn} aria-label={`Read more about ${guide.title}`}>
                     Read More
                   </Link>
                 </div>

@@ -87,7 +87,7 @@ export default function FeaturesOverviewSection({
             </div>
 
             <div className={styles.wideMedia}>
-              <img className={styles.projectCard} src='https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/features%20card/featurecard3.png?updatedAt=1781235151753' />
+              <img className={styles.projectCard} src='https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/features%20card/featurecard3.png?updatedAt=1781235151753' alt="Creatordesks DM automation feature — collect leads from Instagram comments" />
               {/* <div className={styles.projectCard}>
                 <div className={styles.projectHeader}>
                   <h4>Project Overview</h4>
