@@ -52,10 +52,7 @@ const TESTIMONIALS = [
 
 function TestimonialCard({ item }) {
   return (
-    <article
-      className={styles.card}
-      style={{ backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)" }}
-    >
+    <article className={styles.card}>
       <div className={styles.cardHeader}>
         <div className={styles.avatarWrap}>
           <Image
@@ -126,7 +123,16 @@ function MarqueeRow({ items, reverse = false }) {
     track.addEventListener("mouseenter", pause);
     track.addEventListener("mouseleave", resume);
 
+    // Stop the marquee entirely while the section is offscreen —
+    // otherwise both tracks tween 24 cards on every frame of the whole page
+    const observer = new IntersectionObserver(
+      ([entry]) => (entry.isIntersecting ? tween.resume() : tween.pause()),
+      { rootMargin: "100px" }
+    );
+    observer.observe(track);
+
     return () => {
+      observer.disconnect();
       tween.kill();
       track.removeEventListener("mouseenter", pause);
       track.removeEventListener("mouseleave", resume);

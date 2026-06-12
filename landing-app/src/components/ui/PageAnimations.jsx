@@ -12,6 +12,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function registerPlugins() {
   gsap.registerPlugin(ScrollTrigger);
+  // Throttle ScrollTrigger callbacks to meaningful frames only
+  ScrollTrigger.config({ limitCallbacks: true, ignoreMobileResize: true });
 }
 
 /* ──────────────────────────────────────────────────────────
@@ -102,7 +104,9 @@ function animateHero() {
         opacity: 1, scale: 1, y: 0, duration: 1.5, ease: "power3.out",
         scrollTrigger: {
           trigger: preview,
-          start: "top 70%",
+          // "top bottom" = play the moment the image peeks into the viewport,
+          // so the heavy entrance doesn't run in the middle of an active scroll
+          start: "top bottom",
           toggleActions: "play none none none",
         },
         onComplete() {

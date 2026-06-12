@@ -402,6 +402,9 @@
   position: relative;
   z-index: 2;
   opacity: 0;
+  /* Own compositor layer — the GSAP float tween runs every frame,
+     this stops it repainting the hero bg behind it */
+  will-change: transform;
 }
 
 @media (max-width: 768px) {

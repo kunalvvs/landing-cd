@@ -54,13 +54,14 @@
 .card {
   flex-shrink: 0;
   width: 360px;
-  background: rgba(255, 255, 255, 0.1);
+  /* Frosted-glass look WITHOUT backdrop-filter — blur behind a moving element
+     must be recomputed every frame × 24 cards = the main scroll-jank source.
+     A more opaque translucent white reads the same on the busy bg. */
+  background: rgba(255, 255, 255, 0.22);
   border-radius: 20px;
   padding: 22px 24px 20px;
   border: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
 }
 
 /* ── Card header ── */

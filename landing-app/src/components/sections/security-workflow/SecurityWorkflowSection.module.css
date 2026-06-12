@@ -500,9 +500,11 @@
   50%       { transform: translateY(-7px); }
 }
 
+/* transform-only pulse — animating box-shadow forces a full repaint
+   every frame and can't run on the GPU compositor */
 @keyframes nodePulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 8px 20px rgba(111, 91, 255, 0.38); }
-  50%       { transform: scale(1.12); box-shadow: 0 12px 28px rgba(111, 91, 255, 0.55); }
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
 }
 
 /* nodeLead & nodeFollowUp have translateX applied so we combine */
@@ -514,13 +516,13 @@
 }
 
 @keyframes nodePulseShiftLeft {
-  0%, 100% { transform: translateX(-60%) scale(1);    box-shadow: 0 8px 20px rgba(111,91,255,0.38); }
-  50%       { transform: translateX(-60%) scale(1.12); box-shadow: 0 12px 28px rgba(111,91,255,0.55); }
+  0%, 100% { transform: translateX(-60%) scale(1); }
+  50%       { transform: translateX(-60%) scale(1.12); }
 }
 
 @keyframes nodePulseShiftRight {
-  0%, 100% { transform: translateX(20%) scale(1);    box-shadow: 0 8px 20px rgba(111,91,255,0.38); }
-  50%       { transform: translateX(20%) scale(1.12); box-shadow: 0 12px 28px rgba(111,91,255,0.55); }
+  0%, 100% { transform: translateX(20%) scale(1); }
+  50%       { transform: translateX(20%) scale(1.12); }
 }
 
 /* ─────────────────────────────────────────────
