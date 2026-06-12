@@ -70,17 +70,7 @@ export default function FeaturesAutomationSection() {
 
         <div className={styles.inner}>
           {/* Brand row */}
-          {/* <div className={styles.brandRow} data-gsap="fade-up">
-            <Image
-              src="/images/features automation section img/ClickUp Brain icon.png"
-              alt="Creatordesks AI"
-              width={150}
-              height={150}
-              className={styles.brandIcon}
-              priority
-            />
-            <p className={styles.brandText}>Creatordesks AI</p>
-          </div> */}
+       
 
           <h2
             id="automation-title"
@@ -122,63 +112,7 @@ export default function FeaturesAutomationSection() {
             ))}
           </div>
 
-          {/* Big card — Engage AI */}
-          {/* <article
-            className={styles.bigCard}
-            aria-label="Engage AI overview"
-            data-gsap="fade-up"
-          >
-            <div className={styles.bigLeft}>
-              <div className={styles.engageRow}>
-                <Image
-                  src="/images/features automation section img/ClickUp Brain icon.png"
-                  alt="Engage"
-                  width={22}
-                  height={22}
-                  className={styles.engageIcon}
-                />
-                <span className={styles.engageName}>Engage</span>
-              </div>
-
-              <h3 className={styles.bigTitle}>
-               <span className={styles.greytext} >Meet</span>  Engage AI <span className={styles.greytext}>: The</span>  Creator <span className={styles.greytext}>Focused</span>  AI Model <span className={styles.greytext}>Built to Understand Your</span>  Audience.
-              </h3>
-
-              <p className={styles.bigDescription}>
-                Built to save hours, boost engagement, and help creators grow
-                even while they sleep.
-              </p>
-
-              <p className={styles.bigMeta}>
-                Coming Soon &nbsp; <img className={styles.osIcons} src="/images/features automation section img/window.png" alt="" />  Windows  <img className={styles.browIcons} src="/images/features automation section img/chrome.png" alt="" /> &nbsp; Chrome and
-                &nbsp;<img className={styles.appleIcons} src="/images/features automation section img/apple.png" alt="" />&nbsp; Mac
-              </p>
-
-              <a href="#" className={styles.bigButton}>
-                Sign Up for Early Access
-              </a>
-            </div>
-
-            <div className={styles.bigRight}>
-              <Image
-                src="/images/features automation section img/Mask Group.png"
-                alt="Engage AI intent and response map"
-                width={938}
-                height={596}
-                className={styles.bigImage}
-              />
-
-              <div
-                className={styles.productHuntPill}
-                aria-label="Product Hunt badge"
-              >
-                <span className={styles.phIcon} aria-hidden="true">
-                  P
-                </span>
-                <span className={styles.phText}>#1 Product of the Week</span>
-              </div>
-            </div>
-          </article> */}
+          
 
           {/* Bottom 3 feature items — FIXED structure for mobile */}
           <div className={styles.bottomGrid}>

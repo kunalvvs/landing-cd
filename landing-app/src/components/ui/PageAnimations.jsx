@@ -337,6 +337,8 @@ export default function PageAnimations() {
   const pathname = usePathname();
 
   useEffect(() => {
+    if (pathname.startsWith("/admin")) return;
+
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 

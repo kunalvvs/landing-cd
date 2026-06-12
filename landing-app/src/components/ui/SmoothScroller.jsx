@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function SmoothScroller() {
   useEffect(() => {
+    if (window.location.pathname.startsWith("/admin")) return;
     if (window.innerWidth <= 768) return;
 
     const lenis = new Lenis({
