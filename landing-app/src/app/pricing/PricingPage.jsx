@@ -234,7 +234,7 @@ export default function PricingPage() {
             We believe in empowering creators. That&apos;s why Creatordesks is&nbsp;100% free till the end of 2026.
           </p>
           <a href="#" className={styles.heroCta}>
-            <Image src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Hero%20section/stars.png?updatedAt=1781235141589" className={styles.starIcon} width={25} height={25} alt="" />
+            <Image src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Hero%20section/stars.png?updatedAt=1781235141589" className={styles.starIcon} width={25} height={25} alt="stars" />
             TRY FOR FREE
           </a>
         </section>
@@ -298,15 +298,15 @@ export default function PricingPage() {
                 </h2>
                 <ul className={styles.whyReasons}>
                   <li>
-                    <img src="/images/Pricing/heart.png" alt="" className={styles.whyIcon} />
+                    <img src="/images/Pricing/heart.png" alt="heart" className={styles.whyIcon} />
                     <span>We Believe in empowering creators with the best tools to grow faster.</span>
                   </li>
                   <li>
-                    <img src="/images/Pricing/rocket.png" alt="" className={styles.whyIcon} />
+                    <img src="/images/Pricing/rocket.png" alt="rocket" className={styles.whyIcon} />
                     <span>Our mission is to support every creator and business, no matter the size.</span>
                   </li>
                   <li>
-                    <img src="/images/Pricing/shield.png" alt="" className={styles.whyIcon} />
+                    <img src="/images/Pricing/shield.png" alt="shield" className={styles.whyIcon} />
                     <span>That&apos;s why we&apos;re giving full access to all premium features - for free.</span>
                   </li>
                 </ul>

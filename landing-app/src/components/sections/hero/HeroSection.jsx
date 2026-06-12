@@ -57,7 +57,7 @@ export default function HeroSection() {
             <Image
               className={styles.metaIcon}
               src="/images/Hero section/metaicon.png"
-              alt=""
+              alt="metaIcon"
               width={16}
               height={16}
               aria-hidden="true"
@@ -69,7 +69,7 @@ export default function HeroSection() {
               <Image
                 className={styles.avatarImg}
                 src="/images/Hero section/avatar1.png"
-                alt=""
+                alt="avatar"
                 width={20}
                 height={20}
                 aria-hidden="true"
@@ -79,7 +79,7 @@ export default function HeroSection() {
               <Image
                 className={styles.avatarImg}
                 src="/images/Hero section/avatar3.png"
-                alt=""
+                alt="avatar"
                 width={20}
                 height={20}
                 aria-hidden="true"
@@ -89,7 +89,7 @@ export default function HeroSection() {
               <Image
                 className={styles.avatarImg}
                 src="/images/Hero section/avatar2.png"
-                alt=""
+                alt="avatar"
                 width={20}
                 height={20}
                 aria-hidden="true"
@@ -106,7 +106,7 @@ export default function HeroSection() {
         </h1>
 
         <a href="#" className={styles.ctaButton}>
-          <Image src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Hero%20section/stars.png?updatedAt=1781235141589" className={styles.starIcon} width={25} height={25} alt="" />
+          <Image src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Hero%20section/stars.png?updatedAt=1781235141589" className={styles.starIcon} width={25} height={25} alt="stars" />
           TRY FOR FREE
         </a>
       </div>

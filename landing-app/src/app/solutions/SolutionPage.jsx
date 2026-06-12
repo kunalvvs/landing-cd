@@ -99,7 +99,7 @@ export default function SolutionPage() {
             with CreatorDesk.
           </p>
           <a href="#" className={styles.heroCta}> 
-             <Image src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Hero%20section/stars.png?updatedAt=1781235141589" className={styles.starIcon} width={25} height={25} alt="" /> TRY FOR FREE</a>
+             <Image src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Hero%20section/stars.png?updatedAt=1781235141589" className={styles.starIcon} width={25} height={25} alt="stars" /> TRY FOR FREE</a>
         </div>
       </div>
 
@@ -108,7 +108,7 @@ export default function SolutionPage() {
         <div className={styles.inner}>
           <div className={styles.sectionHead}>
             <span className={`${styles.badge} ${styles.badgeProblem}`}>
-              <span className={styles.badgeIcon} aria-hidden="true"><img src="/images/Solution/problemicon.png" alt="" /></span>
+              <span className={styles.badgeIcon} aria-hidden="true"><img src="/images/Solution/problemicon.png" alt="problemIcon" /></span>
               The Problem
             </span>
             <h2 id="problem-title" className={styles.sectionTitle}>
@@ -147,7 +147,7 @@ export default function SolutionPage() {
         <div className={styles.inner}>
           <div className={styles.sectionHead}>
             <span className={`${styles.badge} ${styles.badgeSolution}`}>
-              <span className={styles.badgeIcon} aria-hidden="true"> <img src="/images/Solution/soluicon.png" alt="" /> </span>
+              <span className={styles.badgeIcon} aria-hidden="true"> <img src="/images/Solution/soluicon.png" alt="solution" /> </span>
               The Solution
             </span>
             <h2 id="solution-title" className={styles.sectionTitle}>
@@ -168,7 +168,7 @@ export default function SolutionPage() {
                   {f.circles ? (
                     /* Card 4 — circles + floating chips */
                     <>
-                      <Image src={f.circles} alt="" width={280} height={280} className={styles.img4Circles} />
+                      <Image src={f.circles} alt="circleImage" width={280} height={280} className={styles.img4Circles} />
                       <Image src={f.chips[0]} alt="Lindsey Press" width={180} height={48} className={styles.img4Chip1} />
                       <Image src={f.chips[1]} alt="Ann Stanton"   width={170} height={48} className={styles.img4Chip2} />
                       <Image src={f.chips[2]} alt="Livia Curtis"  width={160} height={48} className={styles.img4Chip3} />
@@ -176,7 +176,7 @@ export default function SolutionPage() {
                   ) : (
                     /* Cards 1–3 — two overlapping UI images */
                     <>
-                      <Image src={f.back}  alt=""      width={220} height={200} className={`${styles.featureImgBack}  ${styles[`imgBack${i + 1}`]}`}  />
+                      <Image src={f.back}  alt={f.title}      width={220} height={200} className={`${styles.featureImgBack}  ${styles[`imgBack${i + 1}`]}`}  />
                       <Image src={f.front} alt={f.title} width={260} height={220} className={`${styles.featureImgFront} ${styles[`imgFront${i + 1}`]}`} />
                     </>
                   )}
@@ -197,7 +197,7 @@ export default function SolutionPage() {
         <div className={styles.inner}>
           <div className={styles.sectionHead}>
             <span className={`${styles.badge} ${styles.badgeWhite}`}>
-              <span className={styles.badgeIcon} aria-hidden="true"> <img src="/images/Solution/soluicon.png" alt="" /> </span>
+              <span className={styles.badgeIcon} aria-hidden="true"> <img src="/images/Solution/soluicon.png" alt="solution" /> </span>
               The Solution
             </span>
             <h2 id="comparison-title" className={styles.comparisonTitle}>
@@ -241,7 +241,7 @@ export default function SolutionPage() {
               <div className={`${styles.comparisonCardHead} ${styles.creatorHead}`}>
                 <Image
                   src="/images/icons/icon.png"
-                  alt=""
+                  alt="icon"
                   width={30}
                   height={30}
                 />

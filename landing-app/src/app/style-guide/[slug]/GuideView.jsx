@@ -21,7 +21,7 @@ function injectDecorativeImage(html) {
   return html.replace(/<\/p>/gi, () => {
     pCount++;
     if (pCount === 2) {
-      return `</p><figure style="margin:2rem 0;border-radius:1.25rem;overflow:hidden;"><img src="${DECORATIVE_IMG}" alt="" style="width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover;" /></figure>`;
+      return `</p><figure style="margin:2rem 0;border-radius:1.25rem;overflow:hidden;"><img src="${DECORATIVE_IMG}" alt="mid Image" style="width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover;" /></figure>`;
     }
     return "</p>";
   });

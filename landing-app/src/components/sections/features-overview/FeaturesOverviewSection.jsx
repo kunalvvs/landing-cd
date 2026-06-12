@@ -30,7 +30,7 @@ const FEATURE_CARDS = [
 ];
 
 const DEFAULT_BADGE_ICON = (
-  <img src="/images/Hero section/metaicon.png" alt="" style={{width:18,height:14,flexShrink:0}} />
+  <img src="/images/Hero section/metaicon.png" alt="metaIcon" style={{width:18,height:14,flexShrink:0}} />
 );
 
 export default function FeaturesOverviewSection({

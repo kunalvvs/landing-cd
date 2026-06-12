@@ -48,7 +48,7 @@ export default function HowItWorksSection() {
           <Image
             className={styles.metabadge}
             src="/images/Hero section/metaicon.png"
-            alt=""
+            alt="metaIcon"
             width={15}
             height={11}
             aria-hidden="true"
