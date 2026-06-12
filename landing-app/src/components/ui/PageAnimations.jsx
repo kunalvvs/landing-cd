@@ -97,7 +97,7 @@ function animateHero() {
   if (preview) {
     gsap.fromTo(
       preview,
-      { opacity: 0, scale: 1.06, y: 120 },
+      { opacity: 0, scale: 1.06, y: 130 },
       {
         opacity: 1, scale: 1, y: 0, duration: 1.5, ease: "power3.out",
         scrollTrigger: {
