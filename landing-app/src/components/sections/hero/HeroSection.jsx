@@ -120,6 +120,7 @@ export default function HeroSection() {
           height={765}
           className={styles.previewImage}
           priority
+          fetchPriority="high"
         />
       </div>
 
