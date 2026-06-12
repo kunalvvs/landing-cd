@@ -6,6 +6,12 @@ import Navbar from "@/components/ui/Navbar";
 import FooterSection from "@/components/sections/footer/FooterSection";
 import styles from "./guide.module.css";
 
+function compressImageUrl(url, params = "q-75,f-webp") {
+  if (!url || !url.includes("ik.imagekit.io")) return url;
+  if (url.includes("/tr:")) return url;
+  return url.replace(/^(https:\/\/ik\.imagekit\.io\/[^/]+\/)/, `$1tr:${params}/`);
+}
+
 function slugify(str) {
   return str.toLowerCase().trim()
     .replace(/[^\w\s-]/g, "")
@@ -145,7 +151,7 @@ export default function GuideView({ guide, related }) {
           <div className={styles.heroRight}>
             <div className={styles.heroImageCard}>
               <img
-                src={guide.image}
+                src={compressImageUrl(guide.image)}
                 alt={guide.imageAlt || guide.title}
                 className={styles.heroImage}
               />

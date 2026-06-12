@@ -13,6 +13,20 @@ function getImageKit() {
   return _ik;
 }
 
+/**
+ * Inserts ImageKit URL transformations into any ik.imagekit.io URL.
+ * Safe to call on local paths — returns them unchanged.
+ * Skips URLs that already have a /tr: segment.
+ */
+export function compressImageUrl(url, params = "q-75,f-webp") {
+  if (!url || !url.includes("ik.imagekit.io")) return url;
+  if (url.includes("/tr:")) return url;
+  return url.replace(
+    /^(https:\/\/ik\.imagekit\.io\/[^/]+\/)/,
+    `$1tr:${params}/`
+  );
+}
+
 export async function uploadImage(base64Data, fileName, folder = "/blog") {
   const result = await getImageKit().upload({
     file: base64Data,
@@ -20,5 +34,5 @@ export async function uploadImage(base64Data, fileName, folder = "/blog") {
     folder,
     useUniqueFileName: true,
   });
-  return result.url;
+  return compressImageUrl(result.url);
 }

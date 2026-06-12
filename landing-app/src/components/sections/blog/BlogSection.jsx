@@ -3,6 +3,7 @@ import styles from "./BlogSection.module.css";
 import { connectDB } from "@/lib/mongodb";
 import Guide from "@/lib/models/Guide";
 import { GUIDES } from "@/app/style-guide/guidesData";
+import { compressImageUrl } from "@/lib/imagekit";
 
 async function getFeaturedGuides() {
   try {
@@ -60,7 +61,7 @@ export default async function BlogSection() {
                 <div className={styles.thumbnail}>
                   <Link href={`/style-guide/${guide.slug}`} className={styles.thumbnailLink}>
                     <img
-                      src={guide.image}
+                      src={compressImageUrl(guide.image)}
                       alt={guide.imageAlt || guide.title}
                       className={styles.thumbnailImage}
                     />
