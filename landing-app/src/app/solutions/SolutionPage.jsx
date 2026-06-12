@@ -6,22 +6,22 @@ import styles from "./solution.module.css";
 
 const PROBLEMS = [
   {
-    img: "/images/Solution/image1.png",
+    img: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Solution/image1.png?updatedAt=1781235149986",
     title: "Views without engagement",
     desc: "Creators get reach, but struggle to turn attention into real conversations and community.",
   },
   {
-    img: "/images/Solution/image2.png",
+    img: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Solution/image2.png?updatedAt=1781235149097",
     title: "Likes without loyalty",
     desc: "Content performs well but followers rarely become long-term audience or customers.",
   },
   {
-    img: "/images/Solution/image3.png",
+    img: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Solution/image3.png?updatedAt=1781235149128",
     title: "Lost Leads in comments",
     desc: "Potential buyers ask questions in comments, but most opportunities are missed or forgotten.",
   },
   {
-    img: "/images/Solution/image4.png",
+    img: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Solution/image4.png?updatedAt=1781235149812",
     title: "Manual DM Burnout",
     desc: "Replying to every DM manually becomes overwhelming as audience size grows.",
   },
@@ -29,29 +29,29 @@ const PROBLEMS = [
 
 const FEATURES = [
   {
-    back:  "/images/Solution/Background+Border+Shadow.png",
-    front: "/images/Solution/Background+Border+Shadow(1).png",
+    back:  "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Solution/Background+Border+Shadow.png?updatedAt=1781235148633",
+    front: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Solution/Background+Border+Shadow(1).png?updatedAt=1781235149259",
     title: "Replies to Comments Instantly",
     desc: "Streamline your operations through intelligent workflow automation that saves time, reduces errors, and boosts productivity.",
   },
   {
-    back:  "/images/Solution/Background+Border+Shadow(2).png",
-    front: "/images/Solution/Background+Border+Shadow(3).png",
+    back:  "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Solution/Background+Border+Shadow(2).png?updatedAt=1781235148055",
+    front: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Solution/Background+Border+Shadow(3).png?updatedAt=1781235149791",
     title: "Send Automated DMs",
     desc: "Transform raw engagement into strategic results using advanced automation, dashboards, and predictive messaging.",
   },
   {
-    back:  "/images/Solution/Background+Border+Shadow(4).png",
-    front: "/images/Solution/Background+Border+Shadow(5).png",
+    back:  "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Solution/Background+Border+Shadow(4).png?updatedAt=1781235148069",
+    front: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Solution/Background+Border+Shadow(5).png?updatedAt=1781235149025",
     title: "Conversation with Followers",
     desc: "We guide your audience through full-scale digital engagement — modernizing how you connect and convert at scale.",
   },
   {
-    circles: "/images/Solution/CircleBorder.png",
+    circles: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Solution/CircleBorder.png?updatedAt=1781235138758",
     chips: [
-      "/images/Solution/Background+Border+Shadow(8).png",
-      "/images/Solution/Background+Border+Shadow(7).png",
-      "/images/Solution/Background+Border+Shadow(6).png",
+      "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Solution/Background+Border+Shadow(8).png?updatedAt=1781235144000",
+      "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Solution/Background+Border+Shadow(7).png?updatedAt=1781235144933",
+      "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Solution/Background+Border+Shadow(6).png?updatedAt=1781235144783",
     ],
     title: "Keep Users Engaged with your Content",
     desc: "Combine data and design to deliver smarter, more personalized digital experiences that connect with your users.",
@@ -76,8 +76,8 @@ export default function SolutionPage() {
         {/* Background clipped separately so navbar dropdown is NOT clipped */}
         <div className={styles.heroBgWrap} aria-hidden="true">
           <Image
-            src="/images/Solution/bg.webp"
-            alt=""
+            src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Solution/bg.webp?updatedAt=1781235146306"
+            alt="solution bg"
             fill
             priority
             className={styles.heroBg}

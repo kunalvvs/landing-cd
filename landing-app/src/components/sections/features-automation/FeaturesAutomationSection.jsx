@@ -6,7 +6,7 @@ const TOP_FEATURES = [
     id: "creator-agent",
     label: "CREATOR STUDIO+",
     title: "Studio+ for Creators to Create the Tomorrow",
-    image: "/images/features automation section img/auto-img.png",
+    image: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/features%20automation%20section%20img/auto-img.png?updatedAt=1781235152138",
     imageAlt: "Creator agent chat preview",
     comingSoon: true,
   },
@@ -14,14 +14,14 @@ const TOP_FEATURES = [
     id: "audience-engagement",
     label: "AUDIENCE ENGAGEMENT",
     title: "Never miss a Potential Customer",
-    image: "/images/features automation section img/auto-img2.png",
+    image: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/features%20automation%20section%20img/auto-img2.png?updatedAt=1781235138542",
     imageAlt: "Audience engagement conversation preview",
   },
   {
     id: "comment-to-dm",
     label: "COMMENT TO DM",
     title: "Turn comment into conversations",
-    image: "/images/features automation section img/auto-img3.png",
+    image: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/features%20automation%20section%20img/auto-img3.png?updatedAt=1781235138377",
     imageAlt: "Comment to DM automation preview",
   },
 ];
@@ -29,7 +29,7 @@ const TOP_FEATURES = [
 const BOTTOM_FEATURES = [
   {
     id: "audience",
-    image: "/images/features automation section img/search mask.png",
+    image: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/features%20automation%20section%20img/search%20mask.png?updatedAt=1781235140509",
     imageAlt: "Understands your audience",
     title: "Creator-Focused AI",
     description:
@@ -37,7 +37,7 @@ const BOTTOM_FEATURES = [
   },
   {
     id: "connected",
-    image: "/images/features automation section img/social icons mask.png",
+    image: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/features%20automation%20section%20img/social%20icons%20mask.png?updatedAt=1781235144422",
     imageAlt: "Connected social icons",
     title: "Connected to Instagram",
     description:
@@ -45,7 +45,7 @@ const BOTTOM_FEATURES = [
   },
   {
     id: "powered",
-    image: "/images/features automation section img/othermask.png",
+    image: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/features%20automation%20section%20img/othermask.png?updatedAt=1781235150572",
     imageAlt: "Powered by Engage AI",
     title: "Powered by Studio+",
     description:

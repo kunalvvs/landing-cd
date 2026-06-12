@@ -92,8 +92,8 @@ export default function FooterSection() {
       {/* ── Background image section ── */}
       <div className={styles.imageSection}>
         <Image
-          src="/images/footer/footer.webp"
-          alt=""
+          src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/footer/footer.webp?updatedAt=1781235150810"
+          alt="footer background"
           fill
           className={styles.bgImage}
           priority={false}
@@ -101,8 +101,8 @@ export default function FooterSection() {
         <div className={styles.watermark} aria-hidden="true">
           {/* Desktop: pre-rendered glass PNG — hidden on mobile */}
           <Image
-            src="/images/footer/CREATORDESKS.png"
-            alt=""
+            src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/footer/CREATORDESKS.png?updatedAt=1781235151183"
+            alt="footer bottom text"
             width={1280}
             height={114}
             className={styles.wmImage}

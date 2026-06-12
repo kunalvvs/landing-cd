@@ -7,7 +7,7 @@ const FEATURE_CARDS = [
     title: "Comment-to-DM Automation",
     description:
       "Send automatic DMs when people comment keywords on your reels, posts, or campaigns.",
-    image: "/images/features card/featurecard1.png",
+    image: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/features%20card/featurecard1.png?updatedAt=1781235151945",
     imageAlt: "Task progress automation preview",
   },
   {
@@ -15,7 +15,7 @@ const FEATURE_CARDS = [
     title: "Smart Automation Workflows",
     description:
       "Create rules for keywords, instant replies, links, freebies, and lead capture.",
-    image: "/images/features card/featurecard2.png",
+    image: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/features%20card/featurecard2.png?updatedAt=1781235150725",
     imageAlt: "Assignments workflow preview",
   },
   {
@@ -23,7 +23,7 @@ const FEATURE_CARDS = [
     title: `Real-Time Growth Tracking`,
     description:
       "Monitor DMs sent, link clicks, followers gained, and automation performance in real time.",
-    image: "/images/features card/Background.png",
+    image: "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/features%20card/background.png?updatedAt=1781235152177",
     imageAlt: "Audience conversation inbox preview",
     tall: true,
   },
@@ -87,7 +87,7 @@ export default function FeaturesOverviewSection({
             </div>
 
             <div className={styles.wideMedia}>
-              <img className={styles.projectCard} src='/images/features card/featurecard3.png' />
+              <img className={styles.projectCard} src='https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/features%20card/featurecard3.png?updatedAt=1781235151753' />
               {/* <div className={styles.projectCard}>
                 <div className={styles.projectHeader}>
                   <h4>Project Overview</h4>

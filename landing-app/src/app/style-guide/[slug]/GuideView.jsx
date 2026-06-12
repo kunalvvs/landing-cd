@@ -13,7 +13,7 @@ function slugify(str) {
     .replace(/^-+|-+$/g, "");
 }
 
-const DECORATIVE_IMG = "/images/blog-img/bg.webp";
+const DECORATIVE_IMG = "https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/blog-img/bg.webp?updatedAt=1781235147255";
 
 // Inject decorative image after the 2nd paragraph
 function injectDecorativeImage(html) {

@@ -311,7 +311,7 @@ export default function PricingPage() {
                   </li>
                 </ul>
               </div>
-              <img src="/images/Pricing/gift.webp" alt="" className={styles.whyGift} />
+              <img src="https://ik.imagekit.io/Creatordesks/CD%20Landing%20Page/images/Pricing/gift.webp?updatedAt=1781235140688" alt="gift Icon" className={styles.whyGift} />
             </div>
 
             {/* Right comparison table */}
