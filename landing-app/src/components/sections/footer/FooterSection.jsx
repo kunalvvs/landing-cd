@@ -55,7 +55,7 @@ export default function FooterSection() {
               <li><Link href="/">Home</Link></li>
               <li><Link href="/solutions">Solutions</Link></li>
               <li><Link href="/pricing">Pricing</Link></li>
-              <li><Link href="/about">About</Link></li>
+              {/* <li><Link href="/about">About</Link></li> */}
             </ul>
           </div>
 
